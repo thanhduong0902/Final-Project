@@ -21,7 +21,7 @@ window.addEventListener("scroll", function () {
 const menuTabs = document.querySelector(".menu-taps");
 menuTabs.addEventListener("click", function (e) {
     if (e.target.classList.contains("menu-tap-item") && !e.target.classList.contains("active")) {
-        const target = e.target.getAttribute("data-target");
+        const target = e.target.getAttribute("data-title");
         // console.log(target);
         menuTabs.querySelector(".active").classList.remove("active");
         e.target.classList.add("active");
@@ -31,7 +31,3 @@ menuTabs.addEventListener("click", function (e) {
 
     }
 })
-//-----------------Animation-----------
-AOS.init();
-
-

@@ -31,7 +31,6 @@ ul {
 
 .container {
     max-width: 1170px;
-    /* background-color: red; */
     margin: auto;
 }
 
@@ -105,7 +104,6 @@ ul {
     display: block;
     background-color: #FBF8F3;
     z-index: -1;
-    /*transform: translateY(-100%);*/
     transition: all 0.5s ease;
 }
 
@@ -182,11 +180,10 @@ ul {
     top: 0;
     width: 280px;
     height: 100%;
-    background-color: #FBF8F3;
     padding: 80px 30px 40px;
     transition: 0.5s ease;
     transform: translateX(100%);
-
+    background-image: url("https://cdn.pixabay.com/photo/2015/07/10/14/04/coffee-839233_960_720.jpg");
 }
 
 .nav.open {
@@ -194,7 +191,7 @@ ul {
 }
 
 .nav ul li a {
-    color: black;
+    color: wheat;
     font-size: 20px;
     font-family: "Poppins", sans-serif;
     font-weight: 300;
@@ -320,8 +317,6 @@ ul {
         transform: rotate(0deg);
     }
 
-    /* 50% {transform: rotate(90deg);}
-    70% {transform: rotate(180deg);} */
     100% {
         transform: rotate(360deg);
     }
@@ -336,7 +331,7 @@ ul {
     border: 5px solid var(--main-color);
     top: calc(50% - 50px);
     left: calc(50% - 50px);
-    /* transform: translate(-50%, -50%); */
+
     animation: Quay 10s infinite;
 
 }
@@ -430,6 +425,7 @@ ul {
 
 .menu-tap-content.active {
     display: flex;
+    flex-wrap: wrap;
 }
 
 /* testimony-section */
