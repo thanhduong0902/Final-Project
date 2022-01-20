@@ -89,8 +89,7 @@ ul {
 }
 
 .header {
-    /* padding: 12px 0; */
-    /* background-color: var(--dark-light); */
+
     position: fixed;
     top: 0;
     left: 0;
@@ -104,9 +103,9 @@ ul {
     width: 100%;
     height: 100%;
     display: block;
-    background-color: var(--dark-light);
+    background-color: #FBF8F3;
     z-index: -1;
-    transform: translateY(-100%);
+    /*transform: translateY(-100%);*/
     transition: all 0.5s ease;
 }
 
@@ -183,11 +182,11 @@ ul {
     top: 0;
     width: 280px;
     height: 100%;
-    background-color: var(--dark-light);
+    background-color: #FBF8F3;
     padding: 80px 30px 40px;
     transition: 0.5s ease;
     transform: translateX(100%);
-    /* overflow-y: auto; */
+
 }
 
 .nav.open {
@@ -195,8 +194,8 @@ ul {
 }
 
 .nav ul li a {
-    color: var(--white);
-    font-size: 25px;
+    color: black;
+    font-size: 20px;
     font-family: "Poppins", sans-serif;
     font-weight: 300;
     transition: 0.3s ease;
@@ -213,7 +212,6 @@ ul {
 
 /* Home-section */
 .home-section {
-    /* background-color: var(--main-color); */
     position: relative;
     overflow: hidden;
 }
@@ -233,7 +231,7 @@ ul {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: url("image/bg.jpg");
+    background-image: url("https://cdn.pixabay.com/photo/2017/01/26/02/06/platter-2009590_960_720.jpg");
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -249,7 +247,7 @@ ul {
     position: absolute;
     display: block;
     background-color: var(--dark);
-    opacity: 0.3;
+    opacity: 0.5;
 }
 
 .home-section .home-text {
@@ -271,15 +269,7 @@ ul {
     font-size: 25px;
 }
 
-/* .home-section .home-text a {
-    display: inline-block;
-    padding: 12px 30px;
-    border-radius: 30px;
-    border: 2px solid var(--main-color);
-    color: var(--main-color);
-    text-transform: uppercase;
-    transition: all 0.5s ease;
-} */
+
 .btn:hover {
     background-color: var(--white-light);
     color: var(--main-color);
@@ -322,7 +312,7 @@ ul {
     transform: translate(-50%, -50%);
     font-family: var(--cursive-font);
     font-weight: 600;
-    color: var(--dark);
+    color: yellow;
 }
 
 @keyframes Quay {
@@ -429,6 +419,11 @@ ul {
     transition: all 0.5s ease;
 }
 
+.menu-item .menu-item-title img {
+    height: 70px;
+    width: 100px;
+}
+
 .menu-tap-content {
     display: none;
 }
@@ -480,55 +475,10 @@ ul {
 
 }
 
-/* team section */
-.team-section {
-    background-color: var(--dark);
-}
-
-.team-item {
-    width: calc(100%/3);
-    padding: 0 15px;
-    position: relative;
-
-}
-
-.team-item:hover .team-item-info {
-    background-color: var(--main-color);
-    transform: translateY(-20px);
-}
-
-.team-item:hover img {
-    transform: skewX(2deg);
-}
-
-.team-item img {
-    width: 100%;
-    border-radius: 10px;
-    transition: all 0.3s ease;
-}
-
-.team-item-info {
-    position: absolute;
-    background-color: var(--dark-light);
-    bottom: 0px;
-    left: 30px;
-    right: 30px;
-    text-align: center;
-    padding: 15px 0;
-    border-radius: 10px;
-    transform: translateY(50%);
-    transition: all 0.5s ease;
-
-}
-
-.team-item-info h3 {
-    font-size: 18px;
-    margin-bottom: 12px;
-}
 
 /* footer */
 .footer-section {
-    background-image: url("image/footer.jpg");
+    background-image: url("https://thewayweseeit.org/wp-content/uploads/2017/07/food-photography3.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
