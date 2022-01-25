@@ -184,7 +184,10 @@ ul {
     padding: 80px 30px 40px;
     transition: 0.5s ease;
     transform: translateX(100%);
-    background-image: url("https://cdn.pixabay.com/photo/2015/07/10/14/04/coffee-839233_960_720.jpg");
+    background-image: url("https://images.pexels.com/photos/6692156/pexels-photo-6692156.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-position: center;
+    background-size: cover;
+
 }
 
 .nav.open {
@@ -207,6 +210,8 @@ ul {
 .nav ul li {
     margin-bottom: 10px;
 }
+
+
 
 /* Home-section */
 .home-section {
@@ -340,6 +345,11 @@ ul {
 /* menu-section */
 .menu-section {
     background-color: var(--dark);
+
+}
+
+.menu-section button {
+    cursor: pointer;
 }
 
 .menu-taps {
@@ -372,7 +382,7 @@ ul {
     padding: 20px 15px;
     align-items: center;
     position: relative;
-
+    cursor: pointer;
 }
 
 .menu-tap-content .menu-item:hover .menu-item-price {
@@ -413,6 +423,7 @@ ul {
     font-size: 16px;
     color: var(--main-color);
     transition: all 0.5s ease;
+    display:
 }
 
 .menu-item .menu-item-title img {
@@ -523,12 +534,78 @@ ul {
     color: var(--main-color);
 }
 
+.cart {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.cart h2 {
+    margin-bottom: 20px;
+}
+
+.cart table {
+    width: 100%;
+}
+
+.cart table thead tr th:first-child {
+    text-align: left;
+}
+
+.cart table tr td {
+    border-bottom: 1px solid #ddd;
+    padding: 12px 0;
+}
+
+.cart table thead tr th:last-child {
+    text-align: right;
+}
+
+.cart table tbody tr td:last-child {
+    text-align: right;
+}
+
+/* ------------------------- */
+.cart button {
+    margin-top: 12px;
+    height: 30px;
+    padding: 0 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: tomato;
+}
+
+.cart {
+
+    height: 100vh;
+    width: 400px;
+    right: 0;
+    top: 0;
+    background-color: rgb(22, 19, 19);
+    padding: 12px 20px;
+    overflow-y: scroll;
+
+    transition: all 0.3s ease;
+}
+
+.cart i {
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+.cart-icon i {
+    cursor: pointer;
+}
+
 .copyright {
     text-align: center;
     border-top: 1px solid var(--white-light);
     width: 100%;
     padding: 80px 0 12px;
 }
+
 
 /* Responsive */
 @media(max-width: 991px) {}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/54f0cb7e4a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="giohang.css">
+    <title>Website - Giỏ hàng</title>
+</head>
+
+<body>
+    <secsion class="top">
+        <div class="container">
+            <div class="row">
+
+                <div class="top-menu-icons">
+                    <ul>
+                        <li>
+                            <input type="text" placeholder="tìm kiếm">
+                            <i class="fas fa-search"></i>
+                        </li>
+                        <li>
+                            <i class="fas fa-user-secret"></i>
+                        </li>
+                        <li>
+                            <i class="fas fa-shopping-cart"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </secsion>
+    <!-- -------------------------cart---------------- -->
+    <section class="cart">
+        <div class="container">
+            <div class="cart-top-wrap">
+                <div class="cart-top">
+                    <div class="cart-top-cart cart-top-item">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="cart-top-adress cart-top-item">
+                        <i class="fas fa-map-marker-alt "></i>
+                    </div>
+                    <div class="cart-top-payment cart-top-item">
+                        <i class="fas fa-money-check-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="cart-content row">
+                <div class="cart-content-left">
+                    <table>
+                        <tr>
+
+                            <th>Tên sản phẩm</th>
+
+                            <th>SL</th>
+                            <th>Thành tiền</th>
+                            <th>Xóa</th>
+                        </tr>
+                        <tr>
+
+                            <td>
+                                <p>Rau muống luộc</p>
+                            </td>
+
+
+                            <td><input type="number" value="1" min="1"></td>
+                            <td>
+                                <p>60.000 <sup>đ</sup></p>
+                            </td>
+                            <td><span>X</span></td>
+                        </tr>
+                        <tr>
+
+                            <td>
+                                <p>Sườn xào chua ngọt</p>
+                            </td>
+
+
+                            <td><input type="number" value="1" min="1"></td>
+                            <td>
+                                <p>150.000 <sup>đ</sup></p>
+                            </td>
+                            <td><span>X</span></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="cart-content-right">
+                    <table>
+                        <tr>
+                            <th colspan="2">TỔNG TIỀN GIỎ HÀNG</th>
+                        </tr>
+                        <tr>
+                            <td>TỔNG SẢN PHẨM</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>TỔNG TIỀN HÀNG</td>
+                            <td>
+                                <p>210.000 <sup>đ</sup></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>TẠM TÍNH</td>
+                            <td>
+                                <p style="color: black; font-weight: bold;">210.000 <sup>đ</sup></p>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <div class="cart-content-right-button">
+                        <button>TIẾP TỤC MUA SẮM</button>
+                        <button onclick="redirect()">THANH TOÁN</button>
+                    </div>
+                    <div class="cart-content-right-dangnhap">
+
+                        <p>Hãy <a href="">Đăng nhập</a>tài khoản của bạn để tích điểm thành viên</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- -------------------------Footer -->
+    <section class="footer">
+        <div class="footer-container">
+
+            <div class="input-email">
+                <input type="text" placeholder="Nhập email của bạn">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+            <div class="footer-items">
+                <li><a href=""><img src="image/dathongbao.png" alt=""></a></li>
+                <li><a href="">Liên hệ</a></li>
+                <li><a href="">Tuyển dụng</a></li>
+                <li><a href="">Giới thiệu</a></li>
+                <li><a href=""><i class="fab fa-facebook-f"></i></a><a href=""><i class="fab fa-youtube"></i></a></li>
+            </div>
+            <div class="footer-text">
+
+                Địa chỉ kinh doanh: Q.Bắc Từ Liêm, TP.Hà Nội, Việt Nam - 0000000000 <br>
+                Đặt hàng online : 1111111111 .
+            </div>
+
+        </div>
+    </section>
+    <script>
+        function redirect() {
+            window.location = "http://127.0.0.1:5500/thanhtoan/giaohang.html"
+        }
+    </script>
+
+</body>
+
+</html>

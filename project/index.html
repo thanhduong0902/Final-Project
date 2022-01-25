@@ -21,17 +21,18 @@
                             src="https://www.designyourway.net/blog/wp-content/uploads/2017/10/hugo.jpg"
                             alt="Ảnh Logo"></a>
                 </div>
+                <span id="welcome"></span>
                 <button class="nav-toggler">
                     <span></span>
                 </button>
                 <nav class="nav">
                     <ul>
-                        <li class="nav-item"><a href="#Home">Trang chủ</a></li>
-                        <li class="nav-item"><a href="#About">Hugo's</a></li>
-                        <li class="nav-item"><a href="#Menu">Menu</a></li>
-                        <li class="nav-item"><a href="#Testimonial">Phản hồi</a></li>
-                        <li class="nav-item"><a onclick=Redirect()>Đăng nhập/Đăng kí</a></li>
-                        <li class="nav-item"><a href="#Contact">Liên hệ</a></li>
+                        <li class="nav-item"><a href="#Home"><i class="fas fa-home"></i> Trang chủ</a></li>
+                        <li class="nav-item"><a href="#About"><i class="fas fa-search-plus"></i> Hugo's</a></li>
+                        <li class="nav-item"><a href="#Menu"><i class="fas fa-clipboard-list"></i> Menu</a></li>
+                        <li class="nav-item"><a href="#Testimonial"><i class="fas fa-comments"></i> Phản hồi</a></li>
+                        <li class="nav-item"><a onclick=Redirect()><i class="fas fa-key"></i> Đăng nhập/Đăng kí</a></li>
+                        <li class="nav-item"><a href="#Contact"><i class="fas fa-phone-volume"></i> Liên hệ</a></li>
                     </ul>
                 </nav>
             </div>
@@ -41,7 +42,6 @@
     <!--Home-section - begin-->
     <section class="home-section" id="home">
         <div class="home-section-bg">
-
         </div>
         <div class="container">
             <div class="row min-h-100">
@@ -101,10 +101,10 @@
             </div>
             <div class="row">
                 <div class="menu-taps">
-                    <button class="menu-tap-item active" data-title="#Lunch">Lunch</button>
-                    <button class="menu-tap-item" data-title="#Dinner">Dinner</button>
-                    <button class="menu-tap-item" data-title="#Drinks">Drinks</button>
-                    <button class="menu-tap-item" data-title="#Desserts">Desserts</button>
+                    <button class="menu-tap-item active" data-title="#Lunch">Sáng</button>
+                    <button class="menu-tap-item" data-title="#Dinner">Tối</button>
+                    <button class="menu-tap-item" data-title="#Drinks">Đồ uống</button>
+                    <button class="menu-tap-item" data-title="#Desserts">Tráng miệng</button>
                 </div>
             </div>
             <div class="row menu-tap-content active" id="Lunch">
@@ -114,7 +114,8 @@
                         <h3>Pizza ngũ vị</h3>
                     </div>
                     <div class="menu-item-price">
-                        150.000 VNĐ
+                        <p style="margin-left: 20px;"> 150.000 </p>
+                        <button class="btn order">Đặt ngay</button>
                     </div>
                 </div>
                 <div class="menu-item">
@@ -123,7 +124,8 @@
                         <h3>Cá hồi</h3>
                     </div>
                     <div class="menu-item-price">
-                        150.000 VNĐ
+                        <p style="margin-left: 20px;"> 150.000 </p>
+                        <button class="btn order">Đặt ngay</button>
                     </div>
                 </div>
                 <div class="menu-item">
@@ -132,17 +134,20 @@
                         <h3>Thịt xông khói</h3>
                     </div>
                     <div class="menu-item-price">
-                        150.000 VNĐ
+                        <p style="margin-left: 20px;"> 150.000 </p>
+                        <button class="btn order">Đặt ngay</button>
                     </div>
                 </div>
-                <div class="menu-item">
+                <div class="menu-item ">
                     <div class="menu-item-title">
                         <img src="https://cdn.pixabay.com/photo/2020/06/10/13/30/food-5282718_960_720.jpg" alt="">
                         <h3>Ngonnn</h3>
                     </div>
                     <div class="menu-item-price">
-                        150.000 VNĐ
+                        <p style="margin-left: 20px;"> 150.000 </p>
+                        <button class="btn order">Đặt ngay</button>
                     </div>
+
                 </div>
                 <div class="menu-item">
                     <div class="menu-item-title">
@@ -151,7 +156,8 @@
                         <h3>Gà quay thơm ngon</h3>
                     </div>
                     <div class="menu-item-price">
-                        150.000 VNĐ
+                        <p style="margin-left: 20px;"> 150.000 </p>
+                        <button class="btn order">Đặt ngay</button>
                     </div>
                 </div>
                 <div class="menu-item">
@@ -161,7 +167,8 @@
                         <h3>Nộm Cún</h3>
                     </div>
                     <div class="menu-item-price">
-                        150.000 VNĐ
+                        <p style="margin-left: 20px;"> 150.000 </p>
+                        <button class="btn order">Đặt ngay</button>
                     </div>
                 </div>
                 <div class="menu-item">
@@ -171,7 +178,8 @@
                         <h3>Lẩu tôm</h3>
                     </div>
                     <div class="menu-item-price">
-                        150.000 VNĐ
+                        <p style="margin-left: 20px;"> 150.000 </p>
+                        <button class="btn order">Đặt ngay</button>
                     </div>
                 </div>
                 <div class="menu-item">
@@ -181,7 +189,8 @@
                         <h3>Mì Ý</h3>
                     </div>
                     <div class="menu-item-price">
-                        150.000 VNĐ
+                        <p style="margin-left: 20px;"> 150.000 </p>
+                        <button class="btn order">Đặt ngay</button>
                     </div>
                 </div>
             </div>
@@ -190,50 +199,55 @@
                     <div class="menu-item-title">
                         <img src="https://invest.hawaii.gov/buy-hawaii/wp-content/uploads/sites/3/2020/06/local_food_hero_image.jpg"
                             alt="">
-                        <h3>Món trưa</h3>
+                        <h3>Món tối</h3>
                     </div>
                     <div class="menu-item-price">
-                        150.000 VNĐ
+                        <p style="margin-left: 20px;"> 150.000 </p>
+                        <button class="btn order">Đặt ngay</button>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="menu-item-title">
                         <img src="https://invest.hawaii.gov/buy-hawaii/wp-content/uploads/sites/3/2020/06/local_food_hero_image.jpg"
                             alt="">
-                        <h3>Món trưa</h3>
+                        <h3>Món tối</h3>
                     </div>
                     <div class="menu-item-price">
-                        150.000 VNĐ
+                        <p style="margin-left: 20px;"> 150.000 </p>
+                        <button class="btn order">Đặt ngay</button>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="menu-item-title">
                         <img src="https://invest.hawaii.gov/buy-hawaii/wp-content/uploads/sites/3/2020/06/local_food_hero_image.jpg"
                             alt="">
-                        <h3>Món trưa</h3>
+                        <h3>Món tối</h3>
                     </div>
                     <div class="menu-item-price">
-                        150.000 VNĐ
+                        <p style="margin-left: 20px;"> 150.000 </p>
+                        <button class="btn order">Đặt ngay</button>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="menu-item-title">
                         <img src="https://invest.hawaii.gov/buy-hawaii/wp-content/uploads/sites/3/2020/06/local_food_hero_image.jpg"
                             alt="">
-                        <h3>Món trưa</h3>
+                        <h3>Món tối</h3>
                     </div>
                     <div class="menu-item-price">
-                        150.000 VNĐ
+                        <p style="margin-left: 20px;"> 150.000 </p>
+                        <button class="btn order">Đặt ngay</button>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="menu-item-title">
                         <img src="https://invest.hawaii.gov/buy-hawaii/wp-content/uploads/sites/3/2020/06/local_food_hero_image.jpg"
                             alt="">
-                        <h3>Món trưa</h3>
+                        <h3>Món tối</h3>
                     </div>
                     <div class="menu-item-price">
-                        150.000 VNĐ
+                        <p style="margin-left: 20px;"> 150.000 </p>
+                        <button class="btn order">Đặt ngay</button>
                     </div>
                 </div>
 
@@ -243,20 +257,22 @@
                     <div class="menu-item-title">
                         <img src="https://invest.hawaii.gov/buy-hawaii/wp-content/uploads/sites/3/2020/06/local_food_hero_image.jpg"
                             alt="">
-                        <h3>Món trưa</h3>
+                        <h3>Đồ uống</h3>
                     </div>
                     <div class="menu-item-price">
-                        150.000 VNĐ
+                        <p style="margin-left: 20px;"> 150.000 </p>
+                        <button class="btn order">Đặt ngay</button>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="menu-item-title">
                         <img src="https://invest.hawaii.gov/buy-hawaii/wp-content/uploads/sites/3/2020/06/local_food_hero_image.jpg"
                             alt="">
-                        <h3>Món trưa</h3>
+                        <h3>Đồ uống</h3>
                     </div>
                     <div class="menu-item-price">
-                        150.000 VNĐ
+                        <p style="margin-left: 20px;"> 150.000 </p>
+                        <button class="btn order">Đặt ngay</button>
                     </div>
                 </div>
             </div>
@@ -267,6 +283,10 @@
                             alt="">
                         <h3>Tráng miệng</h3>
                     </div>
+                    <div class="menu-item-price">
+                        <p style="margin-left: 20px;"> 150.000 </p>
+                        <button class="btn order">Đặt ngay</button>
+                    </div>
                 </div>
                 <div class="menu-item">
                     <div class="menu-item-title">
@@ -274,13 +294,19 @@
                             alt="">
                         <h3>Tráng miệng</h3>
                     </div>
+                    <div class="menu-item-price">
+                        <p style="margin-left: 20px;"> 150.000 </p>
+                        <button class="btn order">Đặt ngay</button>
+                    </div>
                 </div>
             </div>
+            <div><button class="btn" style="margin-left: 43% " onclick="thanhToan()">Thanh
+                    toán</button></div>
         </div>
     </section>
     <!-- Menu-Section-end -->
     <!-- Testimonis-Section -->
-    <section class="testimony section-padding" id="Testimonial">
+    <section class=" testimony section-padding" id="Testimonial">
         <div class="container">
             <div class="row">
                 <div class="section-title">
@@ -298,8 +324,10 @@
                             <img src="image/Test1.jpg" alt="">
                         </div>
                     </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a elit sit amet turpis
-                        suscipit pharetra. Nullam ut dictum arcu. Cras non ex nibh. Nulla at neque ipsum. Curabitur
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a elit sit amet
+                        turpis
+                        suscipit pharetra. Nullam ut dictum arcu. Cras non ex nibh. Nulla at neque ipsum.
+                        Curabitur
                         convallis luctus lacinia.</p>
                     <div class="rating">
                         <i class="fas fa-star"></i>
@@ -319,8 +347,10 @@
                             <img src="image/Test2.jpg" alt="">
                         </div>
                     </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a elit sit amet turpis
-                        suscipit pharetra. Nullam ut dictum arcu. Cras non ex nibh. Nulla at neque ipsum. Curabitur
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a elit sit amet
+                        turpis
+                        suscipit pharetra. Nullam ut dictum arcu. Cras non ex nibh. Nulla at neque ipsum.
+                        Curabitur
                         convallis luctus lacinia.</p>
                     <div class="rating">
                         <i class="fas fa-star"></i>
@@ -340,8 +370,10 @@
                             <img src="image/Test3.jpg" alt="">
                         </div>
                     </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a elit sit amet turpis
-                        suscipit pharetra. Nullam ut dictum arcu. Cras non ex nibh. Nulla at neque ipsum. Curabitur
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a elit sit amet
+                        turpis
+                        suscipit pharetra. Nullam ut dictum arcu. Cras non ex nibh. Nulla at neque ipsum.
+                        Curabitur
                         convallis luctus lacinia.</p>
                     <div class="rating">
                         <i class="fas fa-star"></i>
@@ -368,7 +400,7 @@
                     <p>09:30-23:00 <br> Các ngày trong tuần</p>
                 </div>
                 <div class="footer-item">
-                    <h3>Liện hệ</h3>
+                    <h3>Liên hệ</h3>
                     <p>Phone: 0973999949 <br> Email: nguyenns@ABC,com</p>
                     <div class="social-item">
                         <i class="fab fa-facebook-f"></i>
@@ -385,7 +417,28 @@
             </div>
         </div>
     </section>
+    <section class="cart">
+        <h2>Cart</h2>
+        <form>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sản phẩm</th>
+                        <th>Giá</th>
+                        <th>SL</th>
+                        <th>Chọn</th>
+                    </tr>
+                </thead>
+                <tbody>
 
+                </tbody>
+            </table>
+            <div style="text-align: right;" class="price-total">
+                <p style="font-weight: bold;">Tổng tiền:<span>0</span><sup>đ</sup></p>
+            </div>
+            <button>Chốt đơn</button>
+        </form>
+    </section>
     <!---------------------------------Script------------------  -->
     <script src="script.js"></script>
 </body>
