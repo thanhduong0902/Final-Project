@@ -546,42 +546,82 @@ ul {
 
 /* Login - Logout Form */
 
+@keyframes login { 
+    from {
+        top: -200px;
+    }
+    to {
+        top: 12.5%
+    }    
+}
 #loginForm {
     background-color:#F3C693; 
     height: 75%; 
-    width: 30%;
+    width: 70%;
     border-radius: 5px;
     position: fixed;
-    text-align: center; 
     display: none;
-    right: 35%; 
+    right: 15%; 
     top: 12.5%; 
+    animation: login 0.4s linear;
+}
+
+.mainFormLogin { 
+    height: 100%; 
+    width: 30%;
+    display: inline-block;
+    position: relative;
+    left: 4%;
+    top: -70px;
+    z-index: 0;
+}
+
+.mainFormRgt { 
+    height: 100%; 
+    width: 30%;
+    display: inline-block;
+    position: relative;
+    left: 4%;
+    top: -40px;
+    display:none;
+    z-index: 0;
+}
+
+.imgLogin {
+    width: 60%;
+    height: 100%;
+    position: relative;
+    display: inline-block;
+    right: 0px;
+    top: 0px;
+    animation: ZoomInout 20s infinite;
 }
 
 .close {
-    color:black;
-    font-size: 40px;
+    color:rgb(252, 5, 5);
+    font-size: 60px;
+    text-transform: uppercase;
     position: absolute;
-    right: 15px;
+    left: 96%;
+    top: -1%;
     transform: rotate(45deg);
     cursor: pointer;
+    z-index: 3;
 }
 
  /* ---------------------------------- */
 .headerLogin {
-    width: 60%;
+    width: 100%;
     height: 35px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 9%;
+    margin-left: 1%;
     display: grid;
     grid-template-columns: 50% 50%;
     background-color: #f3f1ef; 
     border: 0;
-    border-radius: 30px
+    border-radius: 30px;
 }
 
-.btnLogin {
+.btnLogin1 {
     /* #F3C693 */
     background-color: #f36060;
     border-radius: 30px;
@@ -591,8 +631,27 @@ ul {
     cursor: pointer;
 }
 
-.btnRegister {
+.btnRegister1 {
     background-color:transparent;
+    border-radius: 30px;
+    border-color: transparent;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btnLogin2 {
+    /* #F3C693 */
+    background-color: transparent;
+    border-radius: 30px;
+    border-color: transparent;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btnRegister2 {
+    background-color:#f36060;
     border-radius: 30px;
     border-color: transparent;
     font-size: 20px;
@@ -603,7 +662,6 @@ ul {
 /* ------------------------------  */
 .inputLogin {
     top: 15%;
-	position:absolute;
 	width: 80%;
 	margin-left: 9%;
 }
@@ -686,16 +744,13 @@ ul {
 
 /* -------------------------------- */
 .inputRegister {
-    top: 16%;
-	position:absolute;
 	width: 80%;
 	margin-left: 9%;
-    display: none;
 }
 
 .yourName_Ctn {
 	width: 100%;
-    margin-top: 5%;
+    margin-top: 10%;
     display: grid;
     grid-template-rows: 55% 45%;
 }
@@ -732,6 +787,7 @@ ul {
 .passRgt_Ctn {
 	width: 100%;
     margin-top: 5%;
+    margin-bottom: 7%;
     display: grid;
     grid-template-rows: 55% 45%;
 }
@@ -750,7 +806,7 @@ ul {
 .passRgtConfirm_Ctn {
 	width: 100%;
     margin-top: 5%;
-    margin-bottom: 5%;
+    margin-bottom: 7%;
     display: grid;
     grid-template-rows: 55% 45%;
 }
@@ -766,17 +822,14 @@ ul {
     display: inline-block;
 }
 
-::placeholder {
-    font-size: 19px;
-    color: rgb(70, 67, 67)
-}
-
 .submitRgt {
 	width: 85%;
 	padding: 10px 30px;
 	cursor: pointer;
 	display: block;
-	margin: auto;
+    margin-top: 10%; 
+    margin-right: auto;
+    margin-left: auto;
 	background: #f36060;
 	border: 0;
 	outline: none;
@@ -784,12 +837,12 @@ ul {
     font-size: 20px;
 }
 
-.inputLogin input {
+.mainFormLogin input {
     font-size: 19px;
     color:black;
 }
 
-.inputRegister input {
+.mainFormRgt input {
     font-size: 19px;
     text-decoration-line: none;
     color:black;
@@ -798,26 +851,28 @@ ul {
 
 
 /* Responsive */
-@media(max-width: 991px) {
+
+@media(max-width: 1024px) {
     #loginForm {
-        width: 70%;
-        height: 65%;
-        right: 15%; 
-        left: 15%;
-        top: 17.5%; 
+        height: 60%; 
+        width: 80%;
+        border-radius: 5px;
+        position: fixed;
         display: none;
+        right: 10%; 
+        top: 20%;  
     }
 
-    #check-box {
-        margin-right: 20px;
-        width: 20px;
-        height: 20px; 
-        display: inline-block;
+    .mainFormLogin { 
+        width: 33%
     }
-    
-    .checkbox_text {
-        color:black;
-        font-size: 24px;
+
+    .mainFormRgt {  
+        width: 33%
+    }
+
+    .close {
+        font-size: 50px;
     }
 }
 
@@ -845,24 +900,75 @@ ul {
     }
 
     #loginForm {
-        width: 80%;
-        height: 65%;
-        right: 10%; 
-        left: 10%;
-        top: 17.5%; 
-        display: none;
+        width: 60%;
+        height: 80%;
+        left: 20%;
+        top: 12.5%; 
     }
 
-    #check-box {
-        margin-right: 20px;
-        width: 20px;
-        height: 20px; 
-        display: inline-block;
+    .imgLogin {
+        display: block;
+        width: 100%;
+        height: 35%;
+        top: 0px;
+    }
+
+    .mainFormLogin { 
+        width: 85%;
+        display: block;
+        position: absolute;
+        left: 7%;
+        top: 40%;
+    }
+
+    .headerLogin {
+        width: 80%;
+        height: 5%;
+        margin-left: 10%
+    }
+
+    .emailLogin_Ctn {
+        margin-top: 10%;
+    }
+
+    .passLogin_Ctn {
+        margin-top: 5%;
+    }
+
+    .submitLogin {
+        margin-top: 6%;
+        height: 6%;
+        padding-top: 2%;
+    }
+
+    .mainFormRgt {  
+        width: 85%;
+        display: block;
+        left: 7%;
+        top: 3%;
+    }
+
+    .yourName_Ctn {
+        margin-top: 4%;
+    }
+
+    .emailRgt_Ctn, 
+    .passRgt_Ctn {
+        margin-top: 2%;
     }
     
-    .checkbox_text {
-        color:black;
-        font-size: 24px;
+    .passRgtConfirm_Ctn {
+        margin-top: -5%;
+    }
+
+    .submitRgt {
+        margin-top: -3%;
+        height: 6%;
+        padding-top: 2%;
+    }
+    
+    .close {
+        left: 90%;
     }
 }
 
@@ -881,11 +987,74 @@ ul {
     }
 
     #loginForm {
-        width: 90%;
-        height: 55%;
-        right: 5%; 
-        left: 5%;
-        top: 22.5%; 
-        display: none;
+        width: 60%;
+        height: 77%;
+        left: 20%;
+        top: 12.5%; 
+    }
+
+    .imgLogin {
+        display: block;
+        width: 100%;
+        height: 40%;
+        top: 0px;
+    }
+
+    .mainFormLogin { 
+        width: 85%;
+        display: block;
+        position: absolute;
+        left: 7%;
+        top: 45%;
+    }
+
+    .headerLogin {
+        width: 80%;
+        height: 5%;
+        margin-left: 10%
+    }
+
+    .emailLogin_Ctn {
+        margin-top: 10%;
+    }
+
+    .passLogin_Ctn {
+        margin-top: 5%;
+    }
+
+    .submitLogin {
+        margin-top: 6%;
+        height: 6%;
+        padding-top: 2%;
+    }
+
+    .mainFormRgt {  
+        width: 85%;
+        display: block;
+        left: 7%;
+        top: 3%;
+    }
+
+    .yourName_Ctn {
+        margin-top: 5%;
+    }
+
+    .emailRgt_Ctn, 
+    .passRgt_Ctn {
+        margin-top: 0%;
+    }
+    
+    .passRgtConfirm_Ctn {
+        margin-top: -5%;
+    }
+
+    .submitRgt {
+        margin-top: -3%;
+        height: 6%;
+        padding-top: 2%;
+    }
+    
+    .close {
+        left: 90%;
     }
 }
