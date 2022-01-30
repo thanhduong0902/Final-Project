@@ -80,10 +80,12 @@ btn.forEach(function (button, index) {
 //--------------------------------Login Form-------------------------------------------///
 
 const loginForm = document.getElementById("loginForm")
-const btnLogin = document.querySelector(".btnLogin")
-const btnRegister = document.querySelector(".btnRegister")
-const inputLogin = document.querySelector(".inputLogin")
-const inputRegister = document.querySelector(".inputRegister")
+const btnLogin1 = document.querySelector(".btnLogin1")
+const btnRegister1 = document.querySelector(".btnRegister1")
+const btnLogin2 = document.querySelector(".btnLogin2")
+const btnRegister2 = document.querySelector(".btnRegister2")
+const mainFormLogin = document.querySelector(".mainFormLogin")
+const mainFormRgt = document.querySelector(".mainFormRgt")
 const emailLogin = document.querySelector(".emailLogin")
 const passLogin = document.querySelector(".passLogin")
 const emailRgt = document.querySelector(".emailRgt")
@@ -94,6 +96,7 @@ const errorMess = document.getElementById("error")
 const submitLogin = document.querySelector(".submitLogin")
 const submitRgt = document.querySelector(".submitRgt")
 const close = document.querySelector(".close")
+const check_boxLogin = document.querySelector(".check-box")
 
 
 close.onclick = (e) => {
@@ -121,29 +124,36 @@ function removeInputValue(input) {
     }
 }
 
-btnLogin.onclick = ((e) => {
+btnLogin2.onclick = ((e) => {
     e.preventDefault();
-    inputLogin.style.display = "block";
-    inputRegister.style.display = "none";
-    btnLogin.style.backgroundColor = "#f36060";
-    btnRegister.style.backgroundColor = "#f3f1ef";
-    
+    mainFormLogin.style.display = "inline-block";
+    mainFormRgt.style.display = "none";
 })
 
-btnRegister.onclick = ((e) => {
+btnRegister1.onclick = ((e) => {
     e.preventDefault();
-    inputRegister.style.display = "block";
-    inputLogin.style.display = "none";
-    btnRegister.style.backgroundColor = "#f36060"; 
-    btnLogin.style.backgroundColor = "#f3f1ef";
+    mainFormRgt.style.display = "inline-block";
+    mainFormLogin.style.display = "none";
 })
 
-inputLogin.onsubmit = function(e) {
+btnLogin1.onclick = ((e) => {
+    e.preventDefault();
+    mainFormLogin.style.display = "inline-block";
+    mainFormRgt.style.display = "none";
+})
+
+btnRegister2.onclick = ((e) => {
+    e.preventDefault();
+    mainFormRgt.style.display = "inline-block";
+    mainFormLogin.style.display = "none";
+})
+
+mainFormLogin.onsubmit = function(e) {
     e.preventDefault();
     checkLoginInputs();
 }
 
-inputRegister.onsubmit = (e) => {
+mainFormRgt.onsubmit = (e) => {
     e.preventDefault();
     checkRgtInputs();
 }
@@ -215,6 +225,7 @@ function checkLoginInputs() {
         setError(emailLogin, "Email is not valid")
         setBlur(emailLogin)
     } else rightInputs(emailLogin)
+    
 
     if(passLogin.value.trim() === "") {
         setError(passLogin, "Please enter your Password!")
@@ -223,6 +234,23 @@ function checkLoginInputs() {
         setError(passLogin, "Password must be longer than 7 characters")
         setBlur(passLogin)
     } else rightInputs(passLogin)
+    
+    userAction()
+
+    // if (emailLogin.value.trim() !== "" && isEmail(emailLogin.value.trim()) == true
+    //     && passLogin.value.trim() !== "" && passLogin.value.trim().length > 7)  {
+    //     document.getElementById('check-box').onclick = function(e){
+    //         if (this.checked){
+    //             localStorage.setItem('user', JSON.stringify(emailLogin.value.trim()))
+    //         } else {
+    //             sessionStorage.setItem('user', JSON.stringify(emailLogin.value.trim()))
+    //         }
+    //     }
+
+    //     loginForm.style.display = "none";
+    //     document.body.style.backgroundColor = "initial";
+    //     document.body.style.opacity = "initial";
+    // }
 }
 
 
@@ -316,4 +344,65 @@ function checkRgtInputs() {
         setError(passRgtConfirm, "Passwords do not match!")
         setBlur(passRgtConfirm)
     } else rightInputs(passRgtConfirm)
+
+    userAction()
+
+}
+
+
+/*---------------------------API---------------------------*/
+
+const userAction = async () => {
+    const response = await fetch('https://61ec15037ec58900177cde6c.mockapi.io/api/login/users');
+    const myJson = await response.json(); //extract JSON from the http response
+
+    if (yourName.value.trim() !== "" 
+        && emailRgt.value.trim() !== "" && isEmail(emailRgt.value.trim()) 
+        && passRgt.value.trim() !== "" && passRgt.value.trim().length > 7 
+        && passRgtConfirm.value.trim() !== "" && passRgtConfirm.value.trim() === passRgt.value.trim()) {
+            const currentUser = {
+                yourName : yourName.value.trim(),
+                password : passRgt.value.trim(),
+                email : emailRgt.value.trim(),
+            }
+
+            if(mainFormRgt.onsubmit) {
+                myJson.push(currentUser)
+                mainFormRgt.style.display = "none"
+                mainFormLogin.style.display = "inline-block"
+                document.body.style.backgroundColor = "initial";
+                document.body.style.opacity = "initial";
+            }
+    }
+
+    if (emailLogin.value.trim() !== "" && isEmail(emailLogin.value.trim()) == true
+        && passLogin.value.trim() !== "" && passLogin.value.trim().length > 7) {
+            for (let i = 0; i < myJson.length; i++) {
+                if(emailLogin.value.trim() !== myJson[i]["email"] 
+                    && passLogin.value.trim() !== myJson[i]["password"]) {
+                    // alert("Wrong email or password")
+                    setError(passLogin, "Wrong email or password")
+                    setBlur(emailLogin)
+                    setBlur(passLogin)
+                    emailLogin.oninput = (e) => {
+                        removeErrorMess(emailLogin)
+                    }
+                    passLogin.oninput = (e) => {
+                        removeErrorMess(passLogin);
+                    }
+                } else {
+                    document.getElementById('check-box').onclick = function(e){
+                        if (this.checked){
+                            localStorage.setItem('user', JSON.stringify(emailLogin.value.trim()))
+                        } else {
+                            sessionStorage.setItem('user', JSON.stringify(emailLogin.value.trim()))
+                        }
+                    }
+
+                    loginForm.style.display = "none";
+                    document.body.style.backgroundColor = "initial";
+                    document.body.style.opacity = "initial";
+                }
+            }
+        }
 }
