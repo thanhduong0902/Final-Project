@@ -422,54 +422,67 @@
     <!----------------Login/Logout Form -------------->
 
     <div id="loginForm">
+        <img src="https://cdn.pixabay.com/photo/2017/01/26/02/06/platter-2009590_960_720.jpg" class="imgLogin"/>
+        
         <div class="close">+</div>
 
-        <div class="headerLogin">
-            <button class="btnLogin">Login</button>
-            <button class="btnRegister">Register</button>
-        </div>
+        <form class="mainFormLogin">
+            <div class="headerLogin">
+                <button class="btnLogin1">Login</button>
+                <button class="btnRegister1">Register</button>
+            </div>
 
-        <form class="inputLogin">
-            <div class="emailLogin_Ctn">
-                <input class="emailLogin" type="text" placeholder="Email"/>
-                <br />
-                <span id="error"></span>
-            </div> 
-            <div class="passLogin_Ctn"> 
-                <input class="passLogin" type="text" placeholder="Password"/>
-                <br />
-                <span id="error"></span>
-            </div> 
-            <input type="checkbox" id="check-box" value="1"/> 
-            <span class="checkbox_text">Remember me</span>
-            <button class="submitLogin" type="submit" value="submit">Log in</button>
+            <form class="inputLogin">
+                <div class="emailLogin_Ctn">
+                    <input class="emailLogin" type="text" placeholder="Email"/>
+                    <br />
+                    <span id="error"></span>
+                </div> 
+                <div class="passLogin_Ctn"> 
+                    <input class="passLogin" type="password" placeholder="Password"/>
+                    <br />
+                    <span id="error"></span>
+                </div> 
+                <input type="checkbox" id="check-box" value="1"/> 
+                <span class="checkbox_text">Remember me</span>
+                <button class="submitLogin" type="submit" value="submit">Log in</button>
+            </form>
         </form>
 
-        <form class="inputRegister">
-            <div class="yourName_Ctn">
-                <input class="yourName" type="text" placeholder="Name"/>
-                <br />
-                <span id="error"></span>
+        <form class="mainFormRgt">
+            <div class="headerLogin">
+                <button class="btnLogin2">Login</button>
+                <button class="btnRegister2">Register</button>
             </div>
-            <div class="emailRgt_Ctn">  
-                <input class="emailRgt" type="text" placeholder="Email" />
-                <br />
-                <span id="error"></span>
-            </div> 
-            <div class="passRgt_Ctn">
-                <input class="passRgt" type="text" placeholder="Password"/>
-                <br />
-                <span id="error"></span>
-            </div>
-            <div class="passRgtConfirm_Ctn">
-                <input class="passRgtConfirm" type="text" placeholder="Confirm Password"/>
-                <br />
-                <span id="error"></span>
-            </div>   
-            <button class="submitRgt" type="submit" value="submit">Register</button>
+
+            <form class="inputRegister">
+                <div class="yourName_Ctn">
+                    <input class="yourName" type="text" placeholder="Name"/>
+                    <br />
+                    <span id="error"></span>
+                </div>
+                <div class="emailRgt_Ctn">  
+                    <input class="emailRgt" type="text" placeholder="Email" />
+                    <br />
+                    <span id="error"></span>
+                </div> 
+                <div class="passRgt_Ctn">
+                    <input class="passRgt" type="password" placeholder="Password"/>
+                    <br />
+                    <span id="error"></span>
+                </div>
+                <div class="passRgtConfirm_Ctn">
+                    <input class="passRgtConfirm" type="password" placeholder="Confirm Password"/>
+                    <br />
+                    <span id="error"></span>
+                </div>   
+                <button class="submitRgt" type="submit" value="submit">Register</button>
+            </form>
         </form>
+       
+        <!-- <img src="https://cdn.pixabay.com/photo/2017/01/26/02/06/platter-2009590_960_720.jpg" class="imgLogin"/> -->
     </div>
-    
+
     
 
     <!---------------------------------Script------------------  -->
