@@ -544,8 +544,340 @@ ul {
 }
 
 
+
+/* Login - Logout Form */
+
+@keyframes login {
+    from {
+        top: -200px;
+    }
+
+    to {
+        top: 12.5%
+    }
+}
+
+#loginForm {
+    background-color: #F3C693;
+    height: 75%;
+    width: 70%;
+    border-radius: 5px;
+    position: fixed;
+    display: none;
+    right: 15%;
+    top: 12.5%;
+    animation: login 0.4s linear;
+}
+
+.mainFormLogin {
+    height: 100%;
+    width: 30%;
+    display: inline-block;
+    position: relative;
+    left: 4%;
+    top: -70px;
+    z-index: 0;
+}
+
+.mainFormRgt {
+    height: 100%;
+    width: 30%;
+    display: inline-block;
+    position: relative;
+    left: 4%;
+    top: -40px;
+    display: none;
+    z-index: 0;
+}
+
+.imgLogin {
+    width: 60%;
+    height: 100%;
+    position: relative;
+    display: inline-block;
+    right: 0px;
+    top: 0px;
+    animation: ZoomInout 20s infinite;
+}
+
+.close {
+    color: rgb(252, 5, 5);
+    font-size: 60px;
+    text-transform: uppercase;
+    position: absolute;
+    left: 96%;
+    top: -1%;
+    transform: rotate(45deg);
+    cursor: pointer;
+    z-index: 3;
+}
+
+/* ---------------------------------- */
+.headerLogin {
+    width: 100%;
+    height: 35px;
+    margin-left: 1%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    background-color: #f3f1ef;
+    border: 0;
+    border-radius: 30px;
+}
+
+.btnLogin1 {
+    /* #F3C693 */
+    background-color: #f36060;
+    border-radius: 30px;
+    border-color: transparent;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btnRegister1 {
+    background-color: transparent;
+    border-radius: 30px;
+    border-color: transparent;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btnLogin2 {
+    /* #F3C693 */
+    background-color: transparent;
+    border-radius: 30px;
+    border-color: transparent;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btnRegister2 {
+    background-color: #f36060;
+    border-radius: 30px;
+    border-color: transparent;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* ------------------------------  */
+.inputLogin {
+    top: 15%;
+    width: 80%;
+    margin-left: 9%;
+}
+
+.emailLogin_Ctn {
+    width: 100%;
+    margin-top: 18%;
+    display: grid;
+    grid-template-rows: 55% 45%;
+}
+
+.emailLogin {
+    width: 100%;
+    padding: 3% 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 2px solid black;
+    background-color: #F3C693;
+    display: inline-block;
+}
+
+.passLogin_Ctn {
+    width: 100%;
+    margin-top: 13%;
+    margin-bottom: 7%;
+    display: grid;
+    grid-template-rows: 55% 45%;
+}
+
+.passLogin {
+    width: 100%;
+    padding: 3% 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 2px solid black;
+    background-color: #F3C693;
+    display: inline-block;
+}
+
+::placeholder {
+    font-size: 18px;
+}
+
+.submitLogin {
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin-top: 10%;
+    margin-right: auto;
+    margin-left: auto;
+    background: #f36060;
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+    font-size: 20px;
+}
+
+#check-box {
+    margin-right: 10px;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+}
+
+.checkbox_text {
+    color: rgb(29, 28, 28);
+    font-size: 19px;
+}
+
+#error {
+    color: rgb(252, 77, 77);
+    font-size: 18px;
+    margin-top: 15%;
+    margin-left: 0px;
+    position: absolute;
+}
+
+/* -------------------------------- */
+.inputRegister {
+    width: 80%;
+    margin-left: 9%;
+}
+
+.yourName_Ctn {
+    width: 100%;
+    margin-top: 10%;
+    display: grid;
+    grid-template-rows: 55% 45%;
+}
+
+.yourName {
+    width: 100%;
+    padding: 3% 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 2px solid black;
+    background-color: #F3C693;
+    display: inline-block;
+}
+
+.emailRgt_Ctn {
+    width: 100%;
+    margin-top: 5%;
+    display: grid;
+    grid-template-rows: 55% 45%;
+}
+
+.emailRgt {
+    width: 100%;
+    padding: 3% 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 2px solid black;
+    background-color: #F3C693;
+    display: inline-block;
+}
+
+.passRgt_Ctn {
+    width: 100%;
+    margin-top: 5%;
+    margin-bottom: 7%;
+    display: grid;
+    grid-template-rows: 55% 45%;
+}
+
+.passRgt {
+    width: 100%;
+    padding: 3% 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 2px solid black;
+    background-color: #F3C693;
+    display: inline-block;
+}
+
+.passRgtConfirm_Ctn {
+    width: 100%;
+    margin-top: 5%;
+    margin-bottom: 7%;
+    display: grid;
+    grid-template-rows: 55% 45%;
+}
+
+.passRgtConfirm {
+    width: 100%;
+    padding: 3% 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 2px solid black;
+    background-color: #F3C693;
+    display: inline-block;
+}
+
+.submitRgt {
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin-top: 10%;
+    margin-right: auto;
+    margin-left: auto;
+    background: #f36060;
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+    font-size: 20px;
+}
+
+.mainFormLogin input {
+    font-size: 19px;
+    color: black;
+}
+
+.mainFormRgt input {
+    font-size: 19px;
+    text-decoration-line: none;
+    color: black;
+}
+
+
+
 /* Responsive */
-@media(max-width: 991px) {}
+
+@media(max-width: 1024px) {
+    #loginForm {
+        height: 60%;
+        width: 80%;
+        border-radius: 5px;
+        position: fixed;
+        display: none;
+        right: 10%;
+        top: 20%;
+    }
+
+    .mainFormLogin {
+        width: 33%
+    }
+
+    .mainFormRgt {
+        width: 33%
+    }
+
+    .close {
+        font-size: 50px;
+    }
+}
 
 @media(max-width: 767px) {
     .testimony-item {
@@ -569,6 +901,78 @@ ul {
     .about-text {
         margin-bottom: 40px;
     }
+
+    #loginForm {
+        width: 60%;
+        height: 80%;
+        left: 20%;
+        top: 12.5%;
+    }
+
+    .imgLogin {
+        display: block;
+        width: 100%;
+        height: 35%;
+        top: 0px;
+    }
+
+    .mainFormLogin {
+        width: 85%;
+        display: block;
+        position: absolute;
+        left: 7%;
+        top: 40%;
+    }
+
+    .headerLogin {
+        width: 80%;
+        height: 5%;
+        margin-left: 10%
+    }
+
+    .emailLogin_Ctn {
+        margin-top: 10%;
+    }
+
+    .passLogin_Ctn {
+        margin-top: 5%;
+    }
+
+    .submitLogin {
+        margin-top: 6%;
+        height: 6%;
+        padding-top: 2%;
+    }
+
+    .mainFormRgt {
+        width: 85%;
+        display: block;
+        left: 7%;
+        top: 3%;
+    }
+
+    .yourName_Ctn {
+        margin-top: 4%;
+    }
+
+    .emailRgt_Ctn,
+    .passRgt_Ctn {
+        margin-top: 2%;
+    }
+
+    .passRgtConfirm_Ctn {
+        margin-top: -5%;
+    }
+
+    .submitRgt {
+        margin-top: -3%;
+        height: 6%;
+        padding-top: 2%;
+    }
+
+    .close {
+        left: 90%;
+    }
 }
 
 @media(max-width: 575px) {
@@ -583,5 +987,77 @@ ul {
 
     .menu-item {
         width: 100%;
+    }
+
+    #loginForm {
+        width: 60%;
+        height: 77%;
+        left: 20%;
+        top: 12.5%;
+    }
+
+    .imgLogin {
+        display: block;
+        width: 100%;
+        height: 40%;
+        top: 0px;
+    }
+
+    .mainFormLogin {
+        width: 85%;
+        display: block;
+        position: absolute;
+        left: 7%;
+        top: 45%;
+    }
+
+    .headerLogin {
+        width: 80%;
+        height: 5%;
+        margin-left: 10%
+    }
+
+    .emailLogin_Ctn {
+        margin-top: 10%;
+    }
+
+    .passLogin_Ctn {
+        margin-top: 5%;
+    }
+
+    .submitLogin {
+        margin-top: 6%;
+        height: 6%;
+        padding-top: 2%;
+    }
+
+    .mainFormRgt {
+        width: 85%;
+        display: block;
+        left: 7%;
+        top: 3%;
+    }
+
+    .yourName_Ctn {
+        margin-top: 5%;
+    }
+
+    .emailRgt_Ctn,
+    .passRgt_Ctn {
+        margin-top: 0%;
+    }
+
+    .passRgtConfirm_Ctn {
+        margin-top: -5%;
+    }
+
+    .submitRgt {
+        margin-top: -3%;
+        height: 6%;
+        padding-top: 2%;
+    }
+
+    .close {
+        left: 90%;
     }
 }

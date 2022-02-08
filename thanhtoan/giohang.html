@@ -59,7 +59,7 @@
                                 <th>Tên sản phẩm</th>
 
                                 <th>SL</th>
-                                <th>Thành tiền</th>
+                                <th>Đơn giá</th>
                                 <th>Xóa</th>
                             </tr>
                         </thead>
@@ -67,23 +67,18 @@
 
                         </tbody>
                     </table>
-                </div>
-                <div class="cart-content-right">
-                    <div style="text-align: center;" class="price-total">
+                    <div style="text-align: center; display: flex; justify-content:space-around;" class="price-total">
                         <p style="font-weight: bold;">Tổng tiền:<span>0</span><sup>đ</sup></p>
-                    </div>
-                    <div class="cart-content-right-button">
-                        <button>TIẾP TỤC MUA SẮM</button>
-                        <button onclick="redirect()">THANH TOÁN</button>
-                    </div>
-                    <div class="cart-content-right-dangnhap">
-
-                        <p>Hãy <a href="">Đăng nhập</a>tài khoản của bạn để tích điểm thành viên</p>
 
                     </div>
+                    <button onclick="redirect()">
+                        <p style="font-weight: bold;">THANH TOÁN</p>
+                    </button>
                 </div>
+
             </div>
         </div>
+
     </section>
 
     <!-- -------------------------Footer -->
@@ -111,7 +106,7 @@
     </section>
     <script>
         function redirect() {
-            window.location = "http://127.0.0.1:5500/thanhtoan/giaohang.html"
+            window.location = "http://127.0.0.1:5500/thanhtoan/giaohang.html";
         }
         let list = localStorage.getItem('listSP');
         list = JSON.parse(list);
@@ -124,8 +119,9 @@
             var cartTable = document.querySelector("tbody")
 
             cartTable.append(addtr)
-            carttotal()
             deleteCart()
+            carttotal()
+
         }
         function carttotal() {
             var cartItem = document.querySelectorAll("tbody tr")
