@@ -31,8 +31,9 @@
                         <li class="nav-item"><a href="#About"><i class="fas fa-search-plus"></i> Hugo's</a></li>
                         <li class="nav-item"><a href="#Menu"><i class="fas fa-clipboard-list"></i> Menu</a></li>
                         <li class="nav-item"><a href="#Testimonial"><i class="fas fa-comments"></i> Phản hồi</a></li>
-                        <li class="nav-item"><a onclick=Redirect()><i class="fas fa-key"></i> Đăng nhập/Đăng kí</a></li>
+                        <li class="nav-item"><a onclick=Redirect() id="Login"><i class="fas fa-key"></i> Đăng nhập/Đăng kí</a></li>
                         <li class="nav-item"><a href="#Contact"><i class="fas fa-phone-volume"></i> Liên hệ</a></li>
+                        <li class="nav-item"><a id="Logout" onclick= Logout()></a></li>
                     </ul>
                 </nav>
             </div>
@@ -420,7 +421,7 @@
 
 
     <!----------------Login/Logout Form -------------->
-    
+
     <div id="loginForm">
         <img src="https://cdn.pixabay.com/photo/2017/01/26/02/06/platter-2009590_960_720.jpg" class="imgLogin"/>
         
@@ -480,7 +481,6 @@
             </form>
         </form>
     </div>
-
 
     
     <!---------------------------------Script------------------  -->
