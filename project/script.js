@@ -401,19 +401,36 @@ const userActionLogin = async () => {
                 }
             } else {
                 removeErrorMess(passLogin)
-                document.getElementById('check-box').onchange = function(e){
-                    if (this.checked){
-                        localStorage.setItem('user', JSON.stringify(emailLogin.value.trim()))
-                    } else {
-                        sessionStorage.setItem('user', JSON.stringify(emailLogin.value.trim()))
-                    }
+
+                let checked = document.getElementById('check-box').checked; 
+                if (checked){
+                    localStorage.setItem('user', JSON.stringify(emailLogin.value.trim()))
+                } else {
+                    sessionStorage.setItem('user', JSON.stringify(emailLogin.value.trim()))
                 }
 
                 loginForm.style.display = "none";
                 document.body.style.backgroundColor = "initial";
                 document.body.style.opacity = "initial";
+                clear()
             }
         }
     }
 }
 
+const user = localStorage.getItem("user")
+if (user) {
+    const welcome = document.getElementById("welcome")
+    document.getElementById("Login").innerHTML = ""
+    document.getElementById("Logout").innerHTML = "Đăng xuất"
+    welcome.innerHTML = `Chào mừng đến với Hugo's Restarant!` 
+}
+
+
+/*---------------------Logout------------------*/
+
+function Logout() {
+    localStorage.removeItem("user")
+    sessionStorage.removeItem("user")
+    location.reload();
+}
