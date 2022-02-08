@@ -39,7 +39,7 @@ function Redirect() {
 }
 
 function thanhToan() {
-    window.location = "http://127.0.0.1:5500/thanhtoan/giohang.html"
+    window.location = "/thanhtoan/giohang.html"
 }
 
 /* thanh toan */
