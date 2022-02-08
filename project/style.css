@@ -559,7 +559,7 @@ ul {
     background-color:#F3C693; 
     height: 75%; 
     width: 70%;
-    border-radius: 5px;
+    border-radius: 7px;
     position: fixed;
     display: none;
     right: 15%; 
@@ -580,7 +580,6 @@ ul {
 .mainFormRgt { 
     height: 100%; 
     width: 30%;
-    display: inline-block;
     position: relative;
     left: 4%;
     top: -40px;
@@ -595,7 +594,8 @@ ul {
     display: inline-block;
     right: 0px;
     top: 0px;
-    animation: ZoomInout 20s infinite;
+    border-radius: 7px 0px 0px 7px;
+    /* animation: ZoomInout 20s infinite; */
 }
 
 .close {
@@ -944,7 +944,7 @@ ul {
 
     .mainFormRgt {  
         width: 85%;
-        display: block;
+        display: none;
         left: 7%;
         top: 3%;
     }
@@ -1004,7 +1004,7 @@ ul {
     .mainFormLogin { 
         width: 85%;
         display: block;
-        position: absolute;
+        /* position: absolute; */
         left: 7%;
         top: 45%;
     }
@@ -1031,7 +1031,7 @@ ul {
 
     .mainFormRgt {  
         width: 85%;
-        display: block;
+        display: none;
         left: 7%;
         top: 3%;
     }
