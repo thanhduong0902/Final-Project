@@ -412,6 +412,11 @@ const userActionLogin = async () => {
                 loginForm.style.display = "none";
                 document.body.style.backgroundColor = "initial";
                 document.body.style.opacity = "initial";
+                
+                document.getElementById("Login").innerHTML = ""
+                document.getElementById("Logout").style.display = "inline-block"
+                welcome.innerHTML = "Chào mừng đến với Hugo's Restarant!"
+                
                 clear()
             }
         }
@@ -422,8 +427,8 @@ const user = localStorage.getItem("user")
 if (user) {
     const welcome = document.getElementById("welcome")
     document.getElementById("Login").innerHTML = ""
-    document.getElementById("Logout").innerHTML = "Đăng xuất"
-    welcome.innerHTML = `Chào mừng đến với Hugo's Restarant!` 
+    document.getElementById("Logout").style.display = "inline-block"
+    welcome.innerHTML = "Chào mừng đến với Hugo's Restarant!"
 }
 
 
