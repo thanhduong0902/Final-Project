@@ -867,11 +867,34 @@ ul {
     }
 
     .mainFormLogin { 
-        width: 33%
+        width: 33%;
+        top: -9%;
+        left: 3%
     }
 
     .mainFormRgt {  
-        width: 33%
+        width: 33%;
+        top: -8%;
+        left: 2%
+    }
+
+    .yourName_Ctn {
+        margin-top: 5%;
+    }
+
+    .emailRgt_Ctn, 
+    .passRgt_Ctn {
+        margin-top: 2%;
+    }
+    
+    .passRgtConfirm_Ctn {
+        margin-top: -5%;
+    }
+
+    .submitRgt {
+        margin-top: -3%;
+        height: 10%;
+        padding-top: 2%;
     }
 
     .close {
@@ -912,61 +935,63 @@ ul {
     .imgLogin {
         display: block;
         width: 100%;
-        height: 35%;
+        height: 40%;
         top: 0px;
+        border-radius: 7px 7px 0px 0px;
     }
 
     .mainFormLogin { 
-        width: 85%;
+        width: 80%;
         display: block;
         position: absolute;
-        left: 7%;
-        top: 40%;
+        left: 10%;
+        top: 44%
     }
 
     .headerLogin {
         width: 80%;
-        height: 5%;
+        height: 6%;
         margin-left: 10%
     }
 
     .emailLogin_Ctn {
-        margin-top: 10%;
+        margin-top: 7%;
     }
 
     .passLogin_Ctn {
-        margin-top: 5%;
+        margin-top: 2.5%;
+        margin-bottom: 1%;
     }
 
     .submitLogin {
         margin-top: 6%;
-        height: 6%;
+        height: 7%;
         padding-top: 2%;
     }
 
     .mainFormRgt {  
-        width: 85%;
+        width: 80%;
         display: none;
-        left: 7%;
+        left: 10%;
         top: 3%;
     }
 
     .yourName_Ctn {
-        margin-top: 4%;
+        margin-top: 2%;
     }
 
     .emailRgt_Ctn, 
     .passRgt_Ctn {
-        margin-top: 2%;
+        margin-top: -4%;
     }
     
     .passRgtConfirm_Ctn {
-        margin-top: -5%;
+        margin-top: -11%;
     }
 
     .submitRgt {
-        margin-top: -3%;
-        height: 6%;
+        margin-top: -10%;
+        height: 7%;
         padding-top: 2%;
     }
     
@@ -1001,33 +1026,34 @@ ul {
         width: 100%;
         height: 40%;
         top: 0px;
+        border-radius: 7px 7px 0px 0px;
     }
 
     .mainFormLogin { 
         width: 85%;
         display: block;
-        /* position: absolute; */
         left: 7%;
-        top: 45%;
+        top: 43%;
     }
 
     .headerLogin {
         width: 80%;
-        height: 5%;
+        height: 6%;
         margin-left: 10%
     }
 
     .emailLogin_Ctn {
-        margin-top: 10%;
+        margin-top: 8%;
     }
 
     .passLogin_Ctn {
-        margin-top: 5%;
+        margin-top: 3%;
+        margin-bottom: 1%;
     }
 
     .submitLogin {
-        margin-top: 6%;
-        height: 6%;
+        margin-top: 7%;
+        height: 7%;
         padding-top: 2%;
     }
 
@@ -1035,25 +1061,25 @@ ul {
         width: 85%;
         display: none;
         left: 7%;
-        top: 3%;
+        top: 2.5%;
     }
 
     .yourName_Ctn {
-        margin-top: 5%;
+        margin-top: 4%;
     }
 
     .emailRgt_Ctn, 
     .passRgt_Ctn {
-        margin-top: 0%;
+        margin-top: -3%;
     }
     
     .passRgtConfirm_Ctn {
-        margin-top: -5%;
+        margin-top: -10%;
     }
 
     .submitRgt {
-        margin-top: -3%;
-        height: 6%;
+        margin-top: -10%;
+        height: 6.5%;
         padding-top: 2%;
     }
     
