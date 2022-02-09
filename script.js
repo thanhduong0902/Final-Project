@@ -62,6 +62,7 @@ if (listSP == null) {
     listSP = new Array();
 }
 
+let count = 0;
 btn.forEach(function (button, index) {
     button.addEventListener("click", function (event) {
         var btnItem = event.target
@@ -69,6 +70,8 @@ btn.forEach(function (button, index) {
         var productImg = product.querySelector("img").src
         var productName = product.querySelector("H3").innerText
         var productPrice = product.querySelector("p").innerText
+        var productCount = document.getElementById("count");
+        productCount.innerHTML = ++count;
         var meal = objProduct(productImg, productName, productPrice);
         listSP.push(meal);
         var jsonSP = JSON.stringify(listSP);
