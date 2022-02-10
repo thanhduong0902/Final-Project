@@ -106,7 +106,7 @@
                 </div>
             </div>
             <div class="payment-content-right-payment">
-                <button>XÁC NHẬN</button>
+                <button onclick="confirm()">XÁC NHẬN</button>
             </div>
         </div>
     </section>
@@ -134,6 +134,13 @@
 
         </div>
     </section>
+    <script>
+        function confirm() {
+            localStorage.removeItem("listSP");
+            window.location = "https://thanhduong0902.github.io/Final-Project/";
+            
+        }
+    </script>
 </body>
 
 </html>
