@@ -33,9 +33,7 @@ menuTabs.addEventListener("click", function (e) {
 })
 
 function Redirect() {
-    loginForm.style.display = "inline-block";
-    document.body.style.backgroundColor = "black";
-    document.body.style.opacity = "0.8"
+    bgLogin.style.display = "block";
 }
 
 function thanhToan() {
@@ -84,6 +82,7 @@ btn.forEach(function (button, index) {
 
 //--------------------------------Login Form-------------------------------------------///
 
+const bgLogin = document.querySelector("#bg-login");
 const loginForm = document.getElementById("loginForm")
 const btnLogin1 = document.querySelector(".btnLogin1")
 const btnRegister1 = document.querySelector(".btnRegister1")
@@ -120,9 +119,7 @@ function clear() {
 
 close.onclick = (e) => {
     e.preventDefault();
-    loginForm.style.display = "none";
-    document.body.style.backgroundColor = "initial";
-    document.body.style.opacity = "initial";
+    bgLogin.style.display = "none";
     clear()
 }
 
@@ -197,7 +194,15 @@ function rightInputs(input) {
     input.style.borderRadius = "0px";
 }
 
-
+const checkRgtEmail = async () => {
+    const response = await fetch('https://61ec15037ec58900177cde6c.mockapi.io/api/login/users');
+    const myJson = await response.json();
+    for (let i = 0; i < myJson.length; i++) {
+        if(emailRgt.value.trim() === myJson[i].email) {
+            setError(emailRgt, "Email is already registered!")
+        }
+    }
+}
 
 /*---------------------------API---------------------------*/
 const userAction = async () => {
@@ -242,7 +247,10 @@ emailRgt.onblur = (e) => {
     } else if(!isEmail(emailRgt.value.trim())) {
         setError(emailRgt, "Email is not valid")
         setBlur(emailRgt)
-    } 
+    } else if(emailRgt.value.trim() !== "") {
+        checkRgtEmail()
+        setBlur(emailRgt)
+    }
 }
 
 emailRgt.oninput = (e) => {
@@ -322,8 +330,6 @@ function checkRgtInputs() {
                 alert("Successfully register")
                 mainFormRgt.style.display = "none"
                 mainFormLogin.style.display = "inline-block"
-                document.body.style.backgroundColor = "initial";
-                document.body.style.opacity = "initial";
                 clear()
             }
     }
@@ -413,9 +419,8 @@ const userActionLogin = async () => {
                     sessionStorage.setItem('user', JSON.stringify(emailLogin.value.trim()))
                 }
 
-                loginForm.style.display = "none";
-                document.body.style.backgroundColor = "initial";
-                document.body.style.opacity = "initial";
+                bgLogin.style.display = "none";
+                alert("Successfully Login")
                 
                 document.getElementById("Login").innerHTML = ""
                 document.getElementById("Logout").style.display = "inline-block"
