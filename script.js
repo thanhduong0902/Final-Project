@@ -75,7 +75,9 @@ btn.forEach(function (button, index) {
         var meal = objProduct(productImg, productName, productPrice);
         if (!listSP.includes(meal))
             listSP.push(meal);
-        else alert("Món ăn đã có trong bill, quý khách có thể điều chỉnh số lượng khi thanh toán");
+        else {count--;
+            alert("Món ăn đã có trong bill, quý khách có thể điều chỉnh số lượng khi thanh toán");
+             }
         var jsonSP = JSON.stringify(listSP);
         localStorage.setItem('listSP', jsonSP);
     })
