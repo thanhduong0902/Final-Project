@@ -424,7 +424,8 @@ const userActionLogin = async () => {
                 
                 document.getElementById("Login").innerHTML = ""
                 document.getElementById("Logout").style.display = "inline-block"
-                welcome.innerHTML = "Chào mừng đến với Hugo's Restarant!"
+                const userName = myJson[i].yourName
+                welcome.innerHTML = `Chào mừng ${userName} đến với Hugo's Restaurant!`
                 
                 clear()
             }
@@ -433,12 +434,21 @@ const userActionLogin = async () => {
 }
 
 const user = localStorage.getItem("user")
-if (user) {
-    const welcome = document.getElementById("welcome")
-    document.getElementById("Login").innerHTML = ""
-    document.getElementById("Logout").style.display = "inline-block"
-    welcome.innerHTML = "Chào mừng đến với Hugo's Restarant!"
+const checkLogin = async () => {
+    const response = await fetch('https://61ec15037ec58900177cde6c.mockapi.io/api/login/users');
+    const myJson = await response.json();
+    for (let i = 0; i < myJson.length; i++) {
+        const userName = myJson[i].yourName
+        if (user) {
+            const welcome = document.getElementById("welcome")
+            document.getElementById("Login").innerHTML = ""
+            document.getElementById("Logout").style.display = "inline-block"
+            welcome.innerHTML = `Chào mừng ${userName} đến với Hugo's Restaurant!`
+        }
+    }
 }
+
+checkLogin()
 
 
 /*---------------------Logout------------------*/
