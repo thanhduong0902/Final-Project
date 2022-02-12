@@ -73,7 +73,9 @@ btn.forEach(function (button, index) {
         var productCount = document.getElementById("count");
         productCount.innerHTML = ++count;
         var meal = objProduct(productImg, productName, productPrice);
-        listSP.push(meal);
+        if (!listSP.includes(meal))
+            listSP.push(meal);
+        else alert("Món ăn đã có trong bill, quý khách có thể điều chỉnh số lượng khi thanh toán");
         var jsonSP = JSON.stringify(listSP);
         localStorage.setItem('listSP', jsonSP);
     })
