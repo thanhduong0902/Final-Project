@@ -951,6 +951,7 @@ ul {
         height: 60%;
         left: 25%;
         top: 20%; 
+	overflow: auto;
     }
 
     .imgLogin {
@@ -1038,7 +1039,8 @@ ul {
         width: 62%;
         height: 60%;
         left: 19%;
-        top: 20%; 
+        top: 20%;
+	overflow: auto;
     }
 
     .imgLogin {
