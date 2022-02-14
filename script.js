@@ -68,15 +68,95 @@ btn.forEach(function (button, index) {
         var productImg = product.querySelector("img").src
         var productName = product.querySelector("H3").innerText
         var productPrice = product.querySelector("p").innerText
-        var productCount = document.getElementById("count");
-        productCount.innerHTML = ++count;
+        addCart(productPrice, productImg, productName)
+
         var meal = objProduct(productImg, productName, productPrice);
-        
-             listSP.push(meal);
-        
-        var jsonSP = JSON.stringify(listSP);
-        localStorage.setItem('listSP', jsonSP);
+
+        listSP.push(meal);
+
     })
+})
+function addCart(productPrice, productImg, productName) {
+    var addtr = document.createElement("tr");
+    var cartItem = document.querySelectorAll("tbody tr");
+    for (var i = 0; i < cartItem.length; i++) {
+        var productT = document.querySelectorAll(".title")
+        if (productT[i].innerHTML == productName) {
+            alert("Món ăn đã có trong đơn, quý khách có thể điều chỉnh số lượng sau")
+            count--;
+            return;
+        }
+    }
+    var trcontent = '<tr><td style="display: flex; align - items: center "><img style="width: 70px; height: 50px" src="' + productImg + '" alt=""><span class="title" style="margin-left:10px;margin-top: 15px">' + productName + '</span></td><td><input style="width: 30px; outline: none; " type="number" value="1" min="1"></td><td><p><span class="prices">' + productPrice + '</span><sup>đ</sup></p></td><td style="cursor: pointer; "><span class="delete">Xóa</span></td></tr>'
+    addtr.innerHTML = trcontent;
+    var cartTable = document.querySelector("tbody")
+
+    cartTable.append(addtr)
+    deleteCart()
+    carttotal()
+}
+
+function carttotal() {
+    var cartItem = document.querySelectorAll("tbody tr")
+    var totalC = 0
+    for (var i = 0; i < cartItem.length; i++) {
+        var inputValue = cartItem[i].querySelector("input").value
+        // console.log(inputValue)
+        var productPrice = cartItem[i].querySelector(".prices").innerHTML
+        //console.log(productPrice)
+        totalA = inputValue * productPrice * 1000
+
+        totalC = totalC + totalA
+        //totalD = totalC.toLocaleString('de-DE')
+
+
+    }
+    count = cartItem.length;
+    var productCount = document.getElementById("count");
+
+    productCount.innerHTML = count;
+    var cartTotalA = document.querySelector(".price-total span")
+    cartTotalA.innerHTML = totalC
+
+    inputchange()
+
+}
+//---------------------Deletet cart----------------------------
+function deleteCart() {
+    var cartItem = document.querySelectorAll("tbody tr")
+    for (var i = 0; i < cartItem.length; i++) {
+        var productT = document.querySelectorAll(".delete")
+        productT[i].addEventListener("click", function (event) {
+            var cartDelete = event.target
+            var cartitemR = cartDelete.parentElement.parentElement
+
+            cartitemR.remove()
+
+
+            carttotal()
+
+            // console.log(cartitemR)
+        })
+    }
+}
+function inputchange() {
+    var cartItem = document.querySelectorAll("tbody tr")
+    for (var i = 0; i < cartItem.length; i++) {
+        var inputValue = cartItem[i].querySelector("input")
+        inputValue.addEventListener("change", function () {
+            carttotal()
+        })
+
+    }
+}
+const cartbtn = document.querySelector(".fa-times")
+const cartShow = document.querySelector(".fa-concierge-bell")
+cartShow.addEventListener("click", function () {
+
+    document.querySelector(".cart").style.left = "0"
+})
+cartbtn.addEventListener("click", function () {
+    document.querySelector(".cart").style.left = "-100%"
 })
 
 
