@@ -407,9 +407,17 @@ function checkRgtInputs() {
             
             userAction()
             if(mainFormRgt.onsubmit) {
-                alert("Successfully register")
+                Swal.fire({
+                    title: 'Successfully register!',
+                    icon: "success",
+                    padding: '1.5em',
+                    color: '#eaa023',
+                    iconColor: 'green',
+                    confirmButtonColor:  '#eaa023',
+                })
                 mainFormRgt.style.display = "none"
                 mainFormLogin.style.display = "inline-block"
+               
                 clear()
             }
     }
@@ -500,7 +508,14 @@ const userActionLogin = async () => {
                 }
 
                 bgLogin.style.display = "none";
-                alert("Successfully Login")
+                Swal.fire({
+                    title: 'Successfully login!',
+                    icon: "success",
+                    padding: '1.5em',
+                    color: '#eaa023',
+                    iconColor: 'green',
+                    confirmButtonColor:  '#eaa023',
+                })
                 
                 document.getElementById("Login").innerHTML = ""
                 document.getElementById("Logout").style.display = "inline-block"
