@@ -166,7 +166,7 @@ function thanhtoan() {
     }
     var list = JSON.stringify(listSP);
     localStorage.setItem('listSP', list);
-    window.location="/Final-Project/thanhtoan/giohang.html"
+    
 }
 
 //--------------------------------Login Form-------------------------------------------///
