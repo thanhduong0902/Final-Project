@@ -407,6 +407,9 @@ function checkRgtInputs() {
             
             userAction()
             if(mainFormRgt.onsubmit) {
+                mainFormRgt.style.display = "none"
+                mainFormLogin.style.display = "inline-block"
+                
                 Swal.fire({
                     title: 'Successfully register!',
                     icon: "success",
@@ -415,9 +418,7 @@ function checkRgtInputs() {
                     iconColor: 'green',
                     confirmButtonColor:  '#eaa023',
                 })
-                mainFormRgt.style.display = "none"
-                mainFormLogin.style.display = "inline-block"
-               
+
                 clear()
             }
     }
