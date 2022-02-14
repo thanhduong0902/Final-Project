@@ -37,7 +37,7 @@ function Redirect() {
 }
 
 function thanhToan() {
-    window.location = "/Final-Project/blob/master/thanhtoan/giaohang.html"
+    window.location = "/Final-Project/thanhtoan/giohang.html"
 }
 
 /* thanh toan */
