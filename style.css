@@ -1133,3 +1133,46 @@ ul {
     }
     
 }
+/* ---------------Cart-------------- */
+
+.cart {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+
+}
+
+.cart h2 {
+    margin-bottom: 20px;
+}
+
+.cart table {
+    width: 100%;
+
+}
+
+.cart table thead tr th:first-child {
+    text-align: left;
+}
+
+.cart table tr td {
+    border-bottom: 1px solid #ddd;
+}
+
+.cart i {
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.cart {
+    position: fixed;
+    height: 100vh;
+    width: 500px;
+    left: 0;
+    top: 68px;
+    background-color: var(--dark-light);
+    padding: 12px 20px;
+    overflow-y: scroll;
+    left: -100%;
+    transition: all 0.5s ease;
+}
