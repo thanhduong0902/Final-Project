@@ -119,6 +119,16 @@ function carttotal() {
     cartTotalA.innerHTML = totalC
 
     inputchange()
+    var img = document.querySelectorAll(".cart-img");
+    var ten = document.querySelectorAll(".title");
+    var gia = document.querySelectorAll(".prices");
+    var number = document.querySelectorAll(".soluong");
+    for (var i = 0; i < img.length; i++) {
+        meal = objProduct(img[i].src, ten[i].innerHTML, gia[i].innerHTML, number[i].value)
+        listSP.push(meal);
+    }
+    var list = JSON.stringify(listSP);
+    localStorage.setItem('listSP', list);
 
 }
 //---------------------Deletet cart----------------------------
