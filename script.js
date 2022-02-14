@@ -36,9 +36,6 @@ function Redirect() {
     bgLogin.style.display = "block";
 }
 
-function thanhToan() {
-    window.location = "/Final-Project/thanhtoan/giohang.html"
-}
 
 /* thanh toan */
 function objProduct(Img, Name, Price, Count) {
