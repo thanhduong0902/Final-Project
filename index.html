@@ -16,10 +16,14 @@
     <header class="header">
         <div class="container">
             <div class="row justify-content-between ">
-                <div class="logo">
-                    <a href="#"><img width="80px"
-                            src="https://www.designyourway.net/blog/wp-content/uploads/2017/10/hugo.jpg"
-                            alt="Ảnh Logo"></a>
+                <div style="display: flex">
+                    <div style=" font-size: 50px;cursor: pointer;"><i class="fas fa-concierge-bell"></i><span><sup
+                                id="count" style="color: coral;">0</sup></span></div>
+                    <div class="logo">
+                        <a href="#"><img width="80px"
+                                src="https://www.designyourway.net/blog/wp-content/uploads/2017/10/hugo.jpg"
+                                alt="Ảnh Logo"></a>
+                    </div>
                 </div>
                 <span id="welcome" style="position: fixed; margin-left: 30%;"></span>
                 <button class="nav-toggler">
@@ -110,12 +114,14 @@
                 </div>
             </div>
             <div class="row">
+
                 <div class="menu-taps">
                     <button class="menu-tap-item active" data-title="#Lunch">Sáng</button>
                     <button class="menu-tap-item" data-title="#Dinner">Tối</button>
                     <button class="menu-tap-item" data-title="#Drinks">Đồ uống</button>
                     <button class="menu-tap-item" data-title="#Desserts">Tráng miệng</button>
                 </div>
+
             </div>
             <div class="row menu-tap-content active" id="Lunch">
                 <div class="menu-item">
@@ -310,11 +316,7 @@
                     </div>
                 </div>
             </div>
-            <div style="display: flex;"><button class="btn" style="margin-left: 43% " onclick="thanhToan()">Thanh
-                    toán</button>
-                <a href="" style="margin-left:50px;font-size:50px; margin-top: 30px;"><i
-                        class="fas fa-concierge-bell"></i><span><sup id="count" style="color: coral;">0</sup></span></a>
-            </div>
+
 
         </div>
     </section>
@@ -338,8 +340,9 @@
                             <img src="image/Test1.jpg" alt="">
                         </div>
                     </div>
-                    <p>Thật tuyệt khi trải nghiệm những món ăn hấp dẫn tại nhà hàng, hương vị đậm đà, vị ngon tròn vị, những món ăn thật sự rất bắt mắt và tôi rất vui 
-                    khi được trải nghiệm tại nhà hàng</p>
+                    <p>Thật tuyệt khi trải nghiệm những món ăn hấp dẫn tại nhà hàng, hương vị đậm đà, vị ngon tròn vị,
+                        những món ăn thật sự rất bắt mắt và tôi rất vui
+                        khi được trải nghiệm tại nhà hàng</p>
                     <div class="rating">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -424,12 +427,46 @@
             </div>
         </div>
     </section>
+    <section class="cart">
+        <i class="fas fa-times"></i>
+        <h2>Hóa Đơn</h2>
+        <form action="">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Món</th>
+                        <th>Số lượng</th>
+                        <th>Đơn giá</th>
+                        <th>Chọn</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--<tr>
+                        <td style="display: flex; align-items:center"><img style="width:70px"
+                                src="https://cdn.pixabay.com/photo/2021/07/19/16/04/pizza-6478478_960_720.jpg">Pizza
+                            Ngũ vị</td>
 
+                        <td><input style="width: 30px;outline: none;" type="number" value="1" min="1"></td>
+                        <td>
+                            <p>150.000</p>
+                        </td>
+                        <td style="cursor: pointer;">Xóa</td>
+                    </tr>
+                    -->
+                </tbody>
+            </table>
+            <div class="price-total" style="text-align: right;">
+                <p style="font-weight: bold;">Tổng tiền:<span></span></p>
+
+            </div>
+            <button class="btn" onclick="thanhToan()"> Thanh Toán </button>
+        </form>
+    </section>
 
     <!----------------Login/Logout Form -------------->
     <div id="bg-login">
         <div id="loginForm">
-            <img src="https://cdn.pixabay.com/photo/2017/01/26/02/06/platter-2009590_960_720.jpg" class="imgLogin"/>
+            <img src="https://cdn.pixabay.com/photo/2017/01/26/02/06/platter-2009590_960_720.jpg" class="imgLogin" />
 
             <div class="close">+</div>
 
@@ -441,16 +478,16 @@
 
                 <form class="inputLogin">
                     <div class="emailLogin_Ctn">
-                        <input class="emailLogin" type="text" placeholder="Email"/>
+                        <input class="emailLogin" type="text" placeholder="Email" />
                         <br />
                         <span id="error"></span>
-                    </div> 
-                    <div class="passLogin_Ctn"> 
-                        <input class="passLogin" type="password" placeholder="Password"/>
+                    </div>
+                    <div class="passLogin_Ctn">
+                        <input class="passLogin" type="password" placeholder="Password" />
                         <br />
                         <span id="error"></span>
-                    </div> 
-                    <input type="checkbox" id="check-box" value="1"/> 
+                    </div>
+                    <input type="checkbox" id="check-box" value="1" />
                     <span class="checkbox_text">Remember me</span>
                     <button class="submitLogin" type="submit" value="submit">Log in</button>
                 </form>
@@ -464,32 +501,32 @@
 
                 <form class="inputRegister">
                     <div class="yourName_Ctn">
-                        <input class="yourName" type="text" placeholder="Name"/>
+                        <input class="yourName" type="text" placeholder="Name" />
                         <br />
                         <span id="error"></span>
                     </div>
-                    <div class="emailRgt_Ctn">  
+                    <div class="emailRgt_Ctn">
                         <input class="emailRgt" type="text" placeholder="Email" />
                         <br />
                         <span id="error"></span>
-                    </div> 
+                    </div>
                     <div class="passRgt_Ctn">
-                        <input class="passRgt" type="password" placeholder="Password"/>
+                        <input class="passRgt" type="password" placeholder="Password" />
                         <br />
                         <span id="error"></span>
                     </div>
                     <div class="passRgtConfirm_Ctn">
-                        <input class="passRgtConfirm" type="password" placeholder="Confirm Password"/>
+                        <input class="passRgtConfirm" type="password" placeholder="Confirm Password" />
                         <br />
                         <span id="error"></span>
-                    </div>   
+                    </div>
                     <button class="submitRgt" type="submit" value="submit">Register</button>
                 </form>
             </form>
         </div>
     </div>
 
-    
+
     <!---------------------------------Script------------------  -->
     <script src="script.js"></script>
 </body>
