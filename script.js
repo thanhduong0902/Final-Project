@@ -283,36 +283,6 @@ function rightInputs(input) {
     input.style.borderRadius = "0px";
 }
 
-const checkRgtEmail = async () => {
-    const response = await fetch('https://61ec15037ec58900177cde6c.mockapi.io/api/login/users');
-    const myJson = await response.json();
-    for (let i = 0; i < myJson.length; i++) {
-        if (emailRgt.value.trim() === myJson[i].email) {
-            setError(emailRgt, "Email is already registered!")
-        }
-    }
-}
-
-/*---------------------------API---------------------------*/
-const userAction = async () => {
-    const currentUser = {
-        yourName: yourName.value.trim(),
-        password: passRgt.value.trim(),
-        email: emailRgt.value.trim(),
-    }
-
-    const response = await fetch('https://61ec15037ec58900177cde6c.mockapi.io/api/login/users', {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(currentUser),
-    });
-    const myJson = await response.json();
-}
-
-
-
 // ---------------------------------- //
 
 
@@ -336,10 +306,7 @@ emailRgt.onblur = (e) => {
     } else if (!isEmail(emailRgt.value.trim())) {
         setError(emailRgt, "Email is not valid")
         setBlur(emailRgt)
-    } else if (emailRgt.value.trim() !== "") {
-        checkRgtEmail()
-        setBlur(emailRgt)
-    }
+    } 
 }
 
 emailRgt.oninput = (e) => {
@@ -414,7 +381,6 @@ function checkRgtInputs() {
         passRgtConfirm.value.trim() !== "" &&
         passRgtConfirm.value.trim() === passRgt.value.trim()) {
 
-        userAction()
         if (mainFormRgt.onsubmit) {
             mainFormRgt.style.display = "none"
             mainFormLogin.style.display = "inline-block"
@@ -468,93 +434,61 @@ passLogin.oninput = (e) => {
 
 //Check Login submit
 function checkLoginInputs() {
-    if (emailLogin.value.trim() === "") {
+    if(emailLogin.value.trim() === "") {
         setError(emailLogin, "Please enter your Email!")
         setBlur(emailLogin)
-    } else if (!isEmail(emailLogin.value.trim())) {
+    } else if(!isEmail(emailLogin.value.trim())) {
         setError(emailLogin, "Email is not valid")
         setBlur(emailLogin)
     } else rightInputs(emailLogin)
+    
 
-
-    if (passLogin.value.trim() === "") {
+    if(passLogin.value.trim() === "") {
         setError(passLogin, "Please enter your Password!")
         setBlur(passLogin)
-    } else if (passLogin.value.trim().length <= 7) {
+    } else if(passLogin.value.trim().length <= 7) {
         setError(passLogin, "Password must be longer than 7 characters")
         setBlur(passLogin)
     } else rightInputs(passLogin)
 
-    userActionLogin()
-}
+    if(emailLogin.value.trim() !== "" 
+       && passLogin.value.trim() !== "") {
+        removeErrorMess(passLogin)
 
-
-const userActionLogin = async () => {
-    const response = await fetch('https://61ec15037ec58900177cde6c.mockapi.io/api/login/users');
-    const myJson = await response.json();
-
-    if (emailLogin.value.trim() !== "" && isEmail(emailLogin.value.trim())
-        && passLogin.value.trim().length > 7) {
-        for (let i = 0; i < myJson.length; i++) {
-            if (emailLogin.value.trim() !== myJson[i].email
-                && passLogin.value.trim() !== myJson[i].password) {
-                setError(passLogin, "Wrong email or password")
-                setBlur(emailLogin)
-                setBlur(passLogin)
-                emailLogin.oninput = (e) => {
-                    removeErrorMess(emailLogin)
-                }
-                passLogin.oninput = (e) => {
-                    removeErrorMess(passLogin);
-                }
-            } else {
-                removeErrorMess(passLogin)
-
-                let checked = document.getElementById('check-box').checked;
-                if (checked) {
-                    localStorage.setItem('user', JSON.stringify(emailLogin.value.trim()))
-                } else {
-                    sessionStorage.setItem('user', JSON.stringify(emailLogin.value.trim()))
-                }
-
-                bgLogin.style.display = "none";
-                Swal.fire({
-                    title: 'Successfully login!',
-                    icon: "success",
-                    padding: '1.5em',
-                    color: '#eaa023',
-                    iconColor: 'green',
-                    confirmButtonColor: '#eaa023',
-                })
-
-                document.getElementById("Login").innerHTML = ""
-                document.getElementById("Logout").style.display = "inline-block"
-                const userName = myJson[i].yourName
-                welcome.innerHTML = `Chào mừng ${userName} đến với Hugo's Restaurant!`
-
-                clear()
-            }
+        let checked = document.getElementById('check-box').checked; 
+        if (checked){
+            localStorage.setItem('user', emailLogin.value.trim())
+        } else {
+            sessionStorage.setItem('user', emailLogin.value.trim())
         }
+
+        bgLogin.style.display = "none";
+        Swal.fire({
+            title: 'Successfully login!',
+            icon: "success",
+            padding: '1.5em',
+            color: '#eaa023',
+            iconColor: 'green',
+            confirmButtonColor:  '#eaa023',
+        })
+        
+        document.getElementById("Login").innerHTML = ""
+        document.getElementById("Logout").style.display = "inline-block"
+        const welcome = document.getElementById("welcome")
+        welcome.innerHTML = "Chào mừng đến với Hugo's Restaurant!"
     }
+        
+        clear()
 }
+
 
 const user = localStorage.getItem("user")
-const checkLogin = async () => {
-    const response = await fetch('https://61ec15037ec58900177cde6c.mockapi.io/api/login/users');
-    const myJson = await response.json();
-    for (let i = 0; i < myJson.length; i++) {
-        const userName = myJson[i].yourName
-        if (user) {
-            const welcome = document.getElementById("welcome")
-            document.getElementById("Login").innerHTML = ""
-            document.getElementById("Logout").style.display = "inline-block"
-            welcome.innerHTML = `Chào mừng ${userName} đến với Hugo's Restaurant!`
-        }
-    }
+if (user) {
+    const welcome = document.getElementById("welcome")
+    welcome.innerHTML = "Chào mừng đến với Hugo's Restaurant!"
+    document.getElementById("Login").innerHTML = ""
+    document.getElementById("Logout").style.display = "inline-block"
 }
-
-checkLogin()
-
 
 /*---------------------Logout------------------*/
 
