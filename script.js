@@ -159,7 +159,7 @@ function thanhtoan() {
     for (var i = 0; i < cartItem.length; i++) {
         var photo = cartItem[i].children[0].children[0].src;
         var ten = cartItem[i].children[0].children[1].innerHTML;
-        var number = cartItem[i].children[1].value;
+        var number = cartItem[i].children[1].children[0].value;
         var gia = cartItem[i].children[2].children[0].children[0].innerHTML;
         var meal = objProduct(photo, ten, gia, number);
         listSP.push(meal)
