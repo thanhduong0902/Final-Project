@@ -129,19 +129,19 @@
             var totalC = 0
             for (var i = 0; i < cartItem.length; i++) {
                 var inputValue = cartItem[i].querySelector(".count").innerHTML
-                // console.log(inputValue)
+                
                 var productPrice = cartItem[i].querySelector(".prices").innerHTML
-                //console.log(productPrice)
+                
                 totalA = inputValue * productPrice * 1000
 
                 totalC = totalC + totalA
-                
+
 
             }
             var cartTotalA = document.querySelector(".price-total span")
             cartTotalA.innerHTML = totalC
 
-            
+
 
         }
         //---------------------Deletet cart----------------------------
