@@ -135,12 +135,11 @@
                 totalA = inputValue * productPrice * 1000
 
                 totalC = totalC + totalA
-                totalD = totalC.toLocaleString('de-DE')
-                console.log(totalD)
+                
 
             }
             var cartTotalA = document.querySelector(".price-total span")
-            cartTotalA.innerHTML = totalD
+            cartTotalA.innerHTML = totalC
 
             
 
@@ -155,7 +154,7 @@
                     var cartitemR = cartDelete.parentElement.parentElement
                     cartitemR.remove()
                     carttotal()
-                    // console.log(cartitemR)
+                    
                 })
             }
         }
