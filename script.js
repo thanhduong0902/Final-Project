@@ -34,6 +34,7 @@ menuTabs.addEventListener("click", function (e) {
 
 function Redirect() {
     bgLogin.style.display = "block";
+    document.getElementById("cartIcon").style.display = "none"
 }
 
 
@@ -209,6 +210,7 @@ function clear() {
 close.onclick = (e) => {
     e.preventDefault();
     bgLogin.style.display = "none";
+    document.getElementById("cartIcon").style.display = "block"
     clear()
 }
 
@@ -474,6 +476,7 @@ function checkLoginInputs() {
         
         document.getElementById("Login").innerHTML = ""
         document.getElementById("Logout").style.display = "inline-block"
+        document.getElementById("cartIcon").style.display = "block"
         const welcome = document.getElementById("welcome")
         welcome.innerHTML = "Chào mừng đến với Hugo's Restaurant!"
     }
