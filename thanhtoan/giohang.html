@@ -142,7 +142,7 @@
             var cartTotalA = document.querySelector(".price-total span")
             cartTotalA.innerHTML = totalD
 
-            inputchange()
+            
 
         }
         //---------------------Deletet cart----------------------------
@@ -159,16 +159,7 @@
                 })
             }
         }
-        function inputchange() {
-            var cartItem = document.querySelectorAll("tbody tr")
-            for (var i = 0; i < cartItem.length; i++) {
-                var inputValue = cartItem[i].querySelector("input")
-                inputValue.addEventListener("change", function () {
-                    carttotal()
-                })
-
-            }
-        }
+        
 
 
 
