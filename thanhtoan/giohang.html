@@ -58,8 +58,8 @@
 
                                 <th>Tên sản phẩm</th>
 
-                                <th>SL</th>
-                                <th>Thành tiền</th>
+                                <th>Số lượng</th>
+                                <th>Đơn giá</th>
                                 <th>Xóa</th>
                             </tr>
                         </thead>
@@ -116,7 +116,7 @@
         for (let i = 0; i < list.length; i++) {
             var addtr = document.createElement("tr");
             var cartItem = document.querySelectorAll("tbody tr");
-            var trcontent = '<tr><td style="display: flex; align - items: center; "><img style="width: 70px; height: 50px" src="' + list[i].Img + '" alt=""><span class="title" style="margin-left:10px;margin-top: 15px">' + list[i].Name + '</span></td><td><input style="width: 30px; outline: none; " type="number" value="1" min="1"></td><td><p><span class="prices">' + list[i].Price + '</span><sup>đ</sup></p></td><td style="cursor: pointer; "><span class="delete">Xóa</span></td></tr>'
+            var trcontent = '<tr><td style="display: flex; align - items: center; "><img style="width: 70px; height: 50px" src="' + list[i].Img + '" alt=""><span class="title" style="margin-left:10px;margin-top: 15px">' + list[i].Name + '</span></td><td><span class="count">' + list[i].Count + '</span></td><td><p><span class="prices">' + list[i].Price + '</span><sup>đ</sup></p></td><td style="cursor: pointer; "><span class="delete">Xóa</span></td></tr>'
             addtr.innerHTML = trcontent;
             var cartTable = document.querySelector("tbody")
 
@@ -128,7 +128,7 @@
             var cartItem = document.querySelectorAll("tbody tr")
             var totalC = 0
             for (var i = 0; i < cartItem.length; i++) {
-                var inputValue = cartItem[i].querySelector("input").value
+                var inputValue = cartItem[i].querySelector(".count").innerHTML
                 // console.log(inputValue)
                 var productPrice = cartItem[i].querySelector(".prices").innerHTML
                 //console.log(productPrice)
