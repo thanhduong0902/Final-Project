@@ -82,7 +82,7 @@ function addCart(productPrice, productImg, productName) {
             return;
         }
     }
-    var trcontent = '<tr><td style="display: flex; align - items: center "><img style="width: 70px; height: 50px" src="' + productImg + '" alt=""><span class="title" style="margin-left:10px;margin-top: 15px">' + productName + '</span></td><td><input style="width: 30px; outline: none; " type="number" value="1" min="1"></td><td><p><span class="prices">' + productPrice + '</span><sup>đ</sup></p></td><td style="cursor: pointer; "><span class="delete">Xóa</span></td></tr>'
+    var trcontent = '<tr><td style="display: flex; align - items: center "><img style="width: 70px; height: 50px" src="' + productImg + '" alt=""><span class="title" style="margin-left:10px;margin-top: 15px">' + productName + '</span></td><td><input style="width: 30px; outline: none;color:black " type="number" value="1" min="1"></td><td><p><span class="prices">' + productPrice + '</span><sup>đ</sup></p></td><td style="cursor: pointer; "><span class="delete">Xóa</span></td></tr>'
     addtr.innerHTML = trcontent;
     var cartTable = document.querySelector("tbody")
 
