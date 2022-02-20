@@ -551,68 +551,54 @@
 
     <!----------------Login/Logout Form -------------->
     <div id="bg-login">
-        <form class="mainFormLogin">
-            <div class="logoLogin">
-                <i class="fas fa-sign-in-alt"></i>
-            </div>
-
+        <div class="LoginForm">
             <div class="close1">+</div>
-
-            <div class="welcomeLogin">Welcome, please Login!</div>
-            <div class="emailLogin_Ctn">
-                <input class="emailLogin" type="text" placeholder="Email" />
-                <i class="fas fa-user emailLgLogo"></i>
-                <br />
-                <!-- <span id="error"></span> -->
-            </div>
-            <div class="passLogin_Ctn">
-                <input class="passLogin" type="password" placeholder="Password" />
-
-                <i class="fas fa-key passLgLogo"></i>
-                <br />
-                <!-- <span id="error"></span> -->
-            </div>
-            <input type="checkbox" id="check-box" value="1" />
-            <span class="checkbox_text">Remember me</span>
-            <button class="submitLogin" type="submit" value="submit">Log in</button>
-            <span class="qsLogin">Don't have an account? <strong class="iqsLogin">Sign up</strong></span>
-        </form>
-
-        <form class="mainFormRgt">
-            <div class="logoRgt">
-                <i class="fas fa-user-plus"></i>
-            </div>
-
+            <form class="mainFormLogin">
+                <div class="emailLogin_Ctn">
+                    <input class="emailLogin" type="text" placeholder="Email"  />
+                    <i class="emailLgLogo fa-solid fa-user"></i>
+                    <br />
+                </div>
+                <div class="passLogin_Ctn">
+                    <input class="passLogin" type="password" placeholder="Password" />
+                    <i class="passLgLogo fa-solid fa-key"></i>
+                    <br />
+                </div>
+                <input type="checkbox" id="check-box" value="1" />
+                <span class="checkbox_text">Remember me</span>
+                <button class="submitLogin" type="submit" value="submit">Log in</button>
+                <span class="qsLogin">Don't have an account? <strong class="iqsLogin">Sign up</strong></span> 
+            </form>
+        </div>
+        
+        <div class="RgtForm">
             <div class="close2">+</div>
-
-            <div class="welcomeRgt">Welcome, please Register</div>
-            <div class="account">Already a member? <strong class="iAccount">Log in</strong></div>
-            <div class="yourName_Ctn">
-                <input class="yourName" type="text" placeholder="Name" />
-                <i class="yNameLogo fas fa-user"></i>
-                <br />
-                <!-- <span id="error"></span> -->
-            </div>
-            <div class="emailRgt_Ctn">
-                <input class="emailRgt" type="text" placeholder="Email" />
-                <i class="emailRgtLogo fas fa-at"></i>
-                <br />
-                <!-- <span id="error"></span> -->
-            </div>
-            <div class="passRgt_Ctn">
-                <input class="passRgt" type="password" placeholder="Password" />
-                <i class="passRgtLogo fas fa-key"></i>
-                <br />
-                <!-- <span id="error"></span> -->
-            </div>
-            <div class="passRgtConfirm_Ctn">
-                <input class="passRgtConfirm" type="password" placeholder="Confirm Password" />
-                <i class="fas fa-check passCfLogo"></i>
-                <br />
-                <!-- <span id="error"></span> -->
-            </div>
-            <button class="submitRgt" type="submit" value="submit">Register</button>
-        </form>
+            <form class="mainFormRgt">
+                
+                <div class="yourName_Ctn">
+                    <input class="yourName" type="text" placeholder="Name" />
+                    <i class="yNameLogo fa-solid fa-user"></i>
+                    <br />
+                </div>
+                <div class="emailRgt_Ctn">
+                    <input class="emailRgt" type="text" placeholder="Email" />
+                    <i class="emailRgtLogo fa-solid fa-envelope"></i>
+                    <br />
+                </div>
+                <div class="passRgt_Ctn">
+                    <input class="passRgt" type="password" placeholder="Password"  />
+                    <i class="passRgtLogo fa-solid fa-lock"></i>
+                    <br />
+                </div>
+                <div class="passRgtConfirm_Ctn">
+                    <input class="passRgtConfirm" type="password" placeholder="Confirm Password" />
+                    <i class="passCfLogo fa-solid fa-lock"></i>
+                    <br />
+                </div>
+                <button class="submitRgt" type="submit" value="submit">Register</button>
+                <div class="account">Already a member? <strong class="iAccount">Log in</strong></div>
+            </form>
+        </div>
     </div>
 
 
