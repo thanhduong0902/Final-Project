@@ -522,17 +522,15 @@ const userActionLogin = async () => {
     }
 }
 
-const user = localStorage.getItem("user")
+const user = JSON.parse(localStorage.getItem("user"))
 const checkLogin = async () => {
     const response = await fetch('https://61ec15037ec58900177cde6c.mockapi.io/api/login/users');
     const myJson = await response.json();
     for (let i = 0; i < myJson.length; i++) {
         const userName = myJson[i].yourName
         if (user) {
-            console.log(localStorage.getItem("user"))
             if(user == myJson[i].email) {
                 const userName = myJson[i].yourName
-                console.log(userName)
                 Swal.fire({
                     title: `Chào mừng ${userName} đến với Hugo's Restaurant!`,
                     icon: "success",
@@ -549,7 +547,6 @@ const checkLogin = async () => {
 }
 
 checkLogin()
-
 
 /*---------------------Logout------------------*/
 
