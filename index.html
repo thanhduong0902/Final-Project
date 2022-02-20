@@ -453,67 +453,65 @@
         </form>
     </section>
 
-    <!----------------Login/Logout Form -------------->
+        <!----------------Login/Logout Form -------------->
     <div id="bg-login">
-        <div id="loginForm">
-            <img src="https://cdn.pixabay.com/photo/2017/01/26/02/06/platter-2009590_960_720.jpg" class="imgLogin" />
+        <form class="mainFormLogin">
+            <div class="logoLogin">
+                <i class="fas fa-sign-in-alt"></i>
+            </div>
 
-            <div class="close">+</div>
+            <div class="welcomeLogin">Welcome, please Login!</div>
+            <div class="emailLogin_Ctn">
+                <input class="emailLogin" type="text" placeholder="Email"  />
+                <i class="emailLgLogo fa-solid fa-user"></i>
+                <br />
+                <!-- <span id="error"></span> -->
+            </div>
+            <div class="passLogin_Ctn">
+                <input class="passLogin" type="password" placeholder="Password" />
+                <i class="passLgLogo fa-solid fa-key"></i>
+                <br />
+                <!-- <span id="error"></span> -->
+            </div>
+            <input type="checkbox" id="check-box" value="1" />
+            <span class="checkbox_text">Remember me</span>
+            <button class="submitLogin" type="submit" value="submit">Log in</button>
+            <span class="qsLogin">Don't have an account? <strong class="iqsLogin">Sign up</strong></span> 
+        </form>
 
-            <form class="mainFormLogin">
-                <div class="headerLogin">
-                    <button class="btnLogin1">Login</button>
-                    <button class="btnRegister1">Register</button>
-                </div>
-
-                <form class="inputLogin">
-                    <div class="emailLogin_Ctn">
-                        <input class="emailLogin" type="text" placeholder="Email" />
-                        <br />
-                        <span id="error"></span>
-                    </div>
-                    <div class="passLogin_Ctn">
-                        <input class="passLogin" type="password" placeholder="Password" />
-                        <br />
-                        <span id="error"></span>
-                    </div>
-                    <input type="checkbox" id="check-box" value="1" />
-                    <span class="checkbox_text">Remember me</span>
-                    <button class="submitLogin" type="submit" value="submit">Log in</button>
-                </form>
-            </form>
-
-            <form class="mainFormRgt">
-                <div class="headerLogin">
-                    <button class="btnLogin2">Login</button>
-                    <button class="btnRegister2">Register</button>
-                </div>
-
-                <form class="inputRegister">
-                    <div class="yourName_Ctn">
-                        <input class="yourName" type="text" placeholder="Name" />
-                        <br />
-                        <span id="error"></span>
-                    </div>
-                    <div class="emailRgt_Ctn">
-                        <input class="emailRgt" type="text" placeholder="Email" />
-                        <br />
-                        <span id="error"></span>
-                    </div>
-                    <div class="passRgt_Ctn">
-                        <input class="passRgt" type="password" placeholder="Password" />
-                        <br />
-                        <span id="error"></span>
-                    </div>
-                    <div class="passRgtConfirm_Ctn">
-                        <input class="passRgtConfirm" type="password" placeholder="Confirm Password" />
-                        <br />
-                        <span id="error"></span>
-                    </div>
-                    <button class="submitRgt" type="submit" value="submit">Register</button>
-                </form>
-            </form>
-        </div>
+        <form class="mainFormRgt">
+            <div class="logoRgt">
+                <i class="fa-solid fa-user-plus"></i>
+            </div>
+            
+            <div class="welcomeRgt">Welcome, please Register</div>
+            <div class="account">Already a member? <strong class="iAccount">Log in</strong></div>
+            <div class="yourName_Ctn">
+                <input class="yourName" type="text" placeholder="Name" />
+                <i class="yNameLogo fa-solid fa-user"></i>
+                <br />
+                <!-- <span id="error"></span> -->
+            </div>
+            <div class="emailRgt_Ctn">
+                <input class="emailRgt" type="text" placeholder="Email" />
+                <i class="emailRgtLogo fa-solid fa-envelope"></i>
+                <br />
+                <!-- <span id="error"></span> -->
+            </div>
+            <div class="passRgt_Ctn">
+                <input class="passRgt" type="password" placeholder="Password"  />
+                <i class="passRgtLogo fa-solid fa-lock"></i>
+                <br />
+                <!-- <span id="error"></span> -->
+            </div>
+            <div class="passRgtConfirm_Ctn">
+                <input class="passRgtConfirm" type="password" placeholder="Confirm Password" />
+                <i class="passCfLogo fa-solid fa-lock"></i>
+                <br />
+                <!-- <span id="error"></span> -->
+            </div>
+            <button class="submitRgt" type="submit" value="submit">Register</button>
+        </form>
     </div>
 
 
