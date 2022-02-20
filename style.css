@@ -22,7 +22,7 @@
 a {
     text-decoration: none;
     cursor: pointer;
-	color:var(--main-color)
+    color: var(--main-color)
 }
 
 #welcome {
@@ -127,25 +127,6 @@ ul {
     cursor: pointer;
 }
 
-.nav-toggler.active {
-    position: absolute;
-    z-index: 1;
-    right: 0;
-    transition: all 0.5s ease;
-    transform: translateX(-200px);
-}
-
-.nav-toggler.active span {
-    background-color: transparent;
-}
-
-.nav-toggler.active span::before {
-    transform: rotate(135deg);
-}
-
-.nav-toggler.active span::after {
-    transform: rotate(-135deg);
-}
 
 .nav-toggler span {
     display: block;
@@ -180,21 +161,16 @@ ul {
 
 .nav {
     position: fixed;
-    right: 0;
+    left: -100%;
     top: 0;
     width: 300px;
     height: 100%;
-    padding: 80px 30px 40px;
+    padding: 30px 30px 40px;
     transition: 0.5s ease;
-    transform: translateX(100%);
     background-image: url("https://images.pexels.com/photos/1673876/pexels-photo-1673876.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
     background-position: center;
     background-size: cover;
 
-}
-
-.nav.open {
-    transform: translateX(0%);
 }
 
 .nav ul li a {
@@ -548,7 +524,6 @@ ul {
 
 
 
-
 /* Login - Logout Form */
 
 #bg-login {
@@ -559,7 +534,7 @@ ul {
     background-color: #fff;
     top: 0px;
     z-index: 1000;
-    text-align: center; 
+    text-align: center;
     background-image: url("../bg3.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -568,15 +543,15 @@ ul {
     background-position: center;
 }
 
-.mainFormLogin { 
-    background-color: rgb(90,117,138);
+.mainFormLogin {
+    background-color: rgb(90, 117, 138);
     height: 66%;
     width: 28%;
     display: inline-block;
     margin-top: 8%;
     text-align: center;
     position: relative;
-    box-shadow: 10px 10px 15px 5px rgb(35,46,57);
+    box-shadow: 10px 10px 15px 5px rgb(35, 46, 57);
     border-radius: 5px 3px 0px 5px;
 }
 
@@ -584,7 +559,7 @@ ul {
     width: 95px;
     height: 95px;
     border-radius: 50%;
-    background-color: rgb(52,68,85);
+    background-color: rgb(52, 68, 85);
     position: absolute;
     top: -12%;
     font-size: 40px;
@@ -595,8 +570,8 @@ ul {
     box-shadow: 3px 3px 15px;
 }
 
-.mainFormRgt { 
-    background-color: rgb(90,117,138);
+.mainFormRgt {
+    background-color: rgb(90, 117, 138);
     height: 70%;
     width: 28%;
     display: inline-block;
@@ -605,7 +580,7 @@ ul {
     margin-right: auto;
     text-align: center;
     position: relative;
-    box-shadow: 10px 10px 15px 5px rgb(35,46,57);
+    box-shadow: 10px 10px 15px 5px rgb(35, 46, 57);
     border-radius: 5px 3px 0px 5px;
     display: none;
 }
@@ -614,7 +589,7 @@ ul {
     width: 95px;
     height: 95px;
     border-radius: 50%;
-    background-color: rgb(52,68,85);
+    background-color: rgb(52, 68, 85);
     position: absolute;
     top: -12%;
     font-size: 40px;
@@ -624,9 +599,9 @@ ul {
     z-index: 10;
     box-shadow: 3px 3px 15px;
 }
-     
+
 .close2 {
-    color:rgb(52,68,85);
+    color: rgb(52, 68, 85);
     font-size: 60px;
     text-transform: uppercase;
     position: absolute;
@@ -642,7 +617,7 @@ ul {
 }
 
 .close1 {
-    color:rgb(52,68,85);
+    color: rgb(52, 68, 85);
     font-size: 60px;
     text-transform: uppercase;
     position: absolute;
@@ -667,7 +642,7 @@ ul {
 }
 
 .emailLogin_Ctn {
-	width: 100%;
+    width: 100%;
     margin-top: 10%;
     position: relative;
     display: block;
@@ -677,7 +652,7 @@ ul {
 .emailLgLogo {
     position: absolute;
     font-size: 20px;
-    z-index: 1; 
+    z-index: 1;
     margin-top: 4%;
     right: 15%;
 }
@@ -686,15 +661,15 @@ ul {
     width: 80%;
     height: 50px;
     margin-left: 10%;
-    border-left: 5px solid rgb(147,165,171);
-    background-color: rgb(51,68,84);
+    border-left: 5px solid rgb(147, 165, 171);
+    background-color: rgb(51, 68, 84);
     display: block;
     z-index: 0;
     position: absolute;
 }
 
 .passLogin_Ctn {
-	width: 100%;
+    width: 100%;
     margin-top: 20%;
     position: relative;
     margin-left: -40%;
@@ -704,7 +679,7 @@ ul {
 .passLgLogo {
     position: absolute;
     font-size: 20px;
-    z-index: 1; 
+    z-index: 1;
     margin-top: 4%;
     right: -25%;
 }
@@ -712,8 +687,8 @@ ul {
 .passLogin {
     width: 80%;
     height: 50px;
-    border-left: 5px solid rgb(147,165,171);
-    background-color: rgb(51,68,84);
+    border-left: 5px solid rgb(147, 165, 171);
+    background-color: rgb(51, 68, 84);
     display: inline-block;
     position: absolute;
 }
@@ -723,19 +698,19 @@ ul {
 }
 
 .submitLogin {
-	width: 80%;
+    width: 80%;
     height: 45px;
-	padding: 10px 30px;
-	cursor: pointer;
-	display: block;
-	margin-top: 6%; 
-	margin-right: auto;
-	margin-left: auto;
-	background: transparent;
-	border: 2.5px solid rgb(147,165,171);
-    box-shadow: 0px 0px 10px rgb(35,46,57);
-	font-size: 20px;
-	color: #fff;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin-top: 6%;
+    margin-right: auto;
+    margin-left: auto;
+    background: transparent;
+    border: 2.5px solid rgb(147, 165, 171);
+    box-shadow: 0px 0px 10px rgb(35, 46, 57);
+    font-size: 20px;
+    color: #fff;
     margin-bottom: 4%;
     position: relative;
 }
@@ -747,14 +722,14 @@ ul {
 #check-box {
     margin-right: 10px;
     width: 15px;
-    height: 15px; 
+    height: 15px;
     margin-top: 13%;
     display: inline-block;
     position: relative;
 }
 
 .checkbox_text {
-    color:#fff;
+    color: #fff;
     font-size: 19px;
     position: relative;
 }
@@ -774,11 +749,11 @@ ul {
 }
 
 #error {
-	color: rgb(252, 77, 77); 
-	font-size:18px;
+    color: rgb(252, 77, 77);
+    font-size: 18px;
     margin-top: 15%;
     margin-left: 0px;
-	position:absolute;
+    position: absolute;
 }
 
 /* -------------------------------- */
@@ -790,7 +765,7 @@ ul {
     font-size: 20px;
     font-weight: bold;
     color: #fff;
-} 
+}
 
 .account {
     margin-top: 1%;
@@ -807,7 +782,7 @@ ul {
 }
 
 .yourName_Ctn {
-	width: 100%;
+    width: 100%;
     margin-top: 5%;
     position: relative;
     display: block;
@@ -817,7 +792,7 @@ ul {
 .yNameLogo {
     position: absolute;
     font-size: 20px;
-    z-index: 1; 
+    z-index: 1;
     margin-top: 4%;
     right: 15%;
 }
@@ -826,15 +801,15 @@ ul {
     width: 80%;
     height: 50px;
     margin-left: 10%;
-    border-left: 5px solid rgb(147,165,171);
-    background-color: rgb(51,68,84);
+    border-left: 5px solid rgb(147, 165, 171);
+    background-color: rgb(51, 68, 84);
     display: block;
     z-index: 0;
     position: absolute;
 }
 
 .emailRgt_Ctn {
-	width: 100%;
+    width: 100%;
     margin-top: 12%;
     position: relative;
     display: block;
@@ -844,7 +819,7 @@ ul {
 .emailRgtLogo {
     position: absolute;
     font-size: 20px;
-    z-index: 1; 
+    z-index: 1;
     margin-top: 4%;
     right: 15%;
 }
@@ -853,15 +828,15 @@ ul {
     width: 80%;
     height: 50px;
     margin-left: 10%;
-    border-left: 5px solid rgb(147,165,171);
-    background-color: rgb(51,68,84);
+    border-left: 5px solid rgb(147, 165, 171);
+    background-color: rgb(51, 68, 84);
     display: block;
     z-index: 0;
     position: absolute;
 }
 
 .passRgt_Ctn {
-	width: 100%;
+    width: 100%;
     margin-top: 12%;
     position: relative;
     display: block;
@@ -871,7 +846,7 @@ ul {
 .passRgtLogo {
     position: absolute;
     font-size: 20px;
-    z-index: 1; 
+    z-index: 1;
     margin-top: 4%;
     right: 15%;
 }
@@ -880,15 +855,15 @@ ul {
     width: 80%;
     height: 50px;
     margin-left: 10%;
-    border-left: 5px solid rgb(147,165,171);
-    background-color: rgb(51,68,84);
+    border-left: 5px solid rgb(147, 165, 171);
+    background-color: rgb(51, 68, 84);
     display: block;
     z-index: 0;
     position: absolute;
 }
 
 .passRgtConfirm_Ctn {
-	width: 100%;
+    width: 100%;
     margin-top: 12%;
     position: relative;
     display: block;
@@ -898,7 +873,7 @@ ul {
 .passCfLogo {
     position: absolute;
     font-size: 20px;
-    z-index: 1; 
+    z-index: 1;
     margin-top: 4%;
     right: 15%;
 }
@@ -907,34 +882,34 @@ ul {
     width: 80%;
     height: 50px;
     margin-left: 10%;
-    border-left: 5px solid rgb(147,165,171);
-    background-color: rgb(51,68,84);
+    border-left: 5px solid rgb(147, 165, 171);
+    background-color: rgb(51, 68, 84);
     display: block;
     z-index: 0;
     position: absolute;
 }
 
 .submitRgt {
-	width: 80%;
+    width: 80%;
     height: 45px;
-	padding: 10px 30px;
-	cursor: pointer;
-	display: block;
-	margin-top: 12%; 
-	margin-right: auto;
-	margin-left: auto;
-	background: transparent;
-	border: 2.5px solid rgb(147,165,171);
-    box-shadow: 0px 0px 10px rgb(35,46,57);
-	font-size: 20px;
-	color: #fff;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin-top: 12%;
+    margin-right: auto;
+    margin-left: auto;
+    background: transparent;
+    border: 2.5px solid rgb(147, 165, 171);
+    box-shadow: 0px 0px 10px rgb(35, 46, 57);
+    font-size: 20px;
+    color: #fff;
     margin-bottom: 4%;
     position: relative;
 }
 
 .submitRgt:hover {
     background-color: var(--main-color);
-} 
+}
 
 .mainFormLogin input {
     font-size: 19px;
@@ -946,7 +921,7 @@ ul {
 .mainFormRgt input {
     font-size: 19px;
     text-decoration-line: none;
-    color:#fff;
+    color: #fff;
     padding-left: 20px;
     padding-right: 50px;
 }
@@ -959,7 +934,7 @@ ul {
         top: 10%;
     }
 
-    .mainFormRgt { 
+    .mainFormRgt {
         width: 38%;
         top: 7%;
     }
@@ -968,7 +943,7 @@ ul {
         margin-top: 4%;
     }
 
-    .emailRgt_Ctn, 
+    .emailRgt_Ctn,
     .passRgt_Ctn,
     .passRgtConfirm_Ctn,
     .submitRgt {
@@ -1000,7 +975,7 @@ ul {
     }
 
     .mainFormLogin,
-    .mainFormRgt { 
+    .mainFormRgt {
         width: 60%;
         top: 10%;
         margin-left: auto;
@@ -1011,7 +986,7 @@ ul {
     .welcomeLogin {
         margin-top: 13%;
     }
-    
+
 
     .emailLogin_Ctn {
         margin-top: 6%;
@@ -1034,7 +1009,7 @@ ul {
         margin-top: 3.5%;
     }
 
-    .emailRgt_Ctn, 
+    .emailRgt_Ctn,
     .passRgt_Ctn,
     .passRgtConfirm_Ctn,
     .submitRgt {
@@ -1055,8 +1030,8 @@ ul {
     .menu-item {
         width: 100%;
     }
-    
-    .mainFormLogin { 
+
+    .mainFormLogin {
         width: 80%;
         top: 10%;
         overflow: auto;
@@ -1075,7 +1050,7 @@ ul {
         margin-top: 5%;
     }
 
-    .mainFormRgt {  
+    .mainFormRgt {
         width: 80%;
         top: 4%;
         overflow: auto;
@@ -1089,11 +1064,11 @@ ul {
         margin-top: 3%;
     }
 
-    .emailRgt_Ctn, 
+    .emailRgt_Ctn,
     .passRgt_Ctn {
         margin-top: 10%;
     }
-    
+
     .passRgtConfirm_Ctn {
         margin-top: 10%;
     }
@@ -1102,6 +1077,7 @@ ul {
         margin-top: 10%;
     }
 }
+
 /* ---------------Cart-------------- */
 
 .cart {
@@ -1137,11 +1113,15 @@ ul {
     position: fixed;
     height: 100vh;
     width: 500px;
-    left: 0;
+    right: 0;
     top: 68px;
     background-color: var(--dark-light);
     padding: 12px 20px;
     overflow-y: scroll;
-    left: -100%;
+    right: -100%;
     transition: all 0.5s ease;
+}
+
+.nav i {
+    cursor: pointer;
 }
