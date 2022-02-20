@@ -185,6 +185,8 @@ function thanhtoan() {
 //--------------------------------Login Form-------------------------------------------///
 
 const bgLogin = document.querySelector("#bg-login");
+const LoginForm = document.querySelector(".LoginForm")
+const RgtForm = document.querySelector(".RgtForm")
 const mainFormLogin = document.querySelector(".mainFormLogin")
 const mainFormRgt = document.querySelector(".mainFormRgt")
 const emailLogin = document.querySelector(".emailLogin")
@@ -219,28 +221,26 @@ function clear() {
 closeIcon1.onclick = (e) => {
     e.preventDefault();
     bgLogin.style.display = "none";
-    document.getElementById("cartIcon").style.display = "inline-block";
     clear()
 }
 
 closeIcon2.onclick = (e) => {
     e.preventDefault();
     bgLogin.style.display = "none";
-    document.getElementById("cartIcon").style.display = "inline-block";
     clear()
 }
 
 iqsLogin.addEventListener("click", (e) => {
     e.preventDefault();
-    mainFormRgt.style.display = "block";
-    mainFormLogin.style.display = "none";
+    RgtForm.style.display = "block";
+    LoginForm.style.display = "none";
     clear();
 })
 
 iAccount.addEventListener("click", (e) => {
     e.preventDefault();
-    mainFormRgt.style.display = "none";
-    mainFormLogin.style.display = "inline-block";
+    RgtForm.style.display = "none";
+    LoginForm.style.display = "inline-block";
     clear();
 })
 
