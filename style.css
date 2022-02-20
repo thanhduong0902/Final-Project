@@ -560,7 +560,7 @@ ul {
     top: 0px;
     z-index: 1000;
     text-align: center; 
-    background-image: url("./bg3.jpg");
+    background-image: url("../bg3.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
