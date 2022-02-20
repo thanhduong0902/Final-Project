@@ -526,87 +526,62 @@ ul {
 
 /* Login - Logout Form */
 
-#bg-login {
+.LoginForm{
     width: 100%;
     height: 100%;
-    display: none;
     position: fixed;
-    background-color: #fff;
     top: 0px;
     z-index: 1000;
-    text-align: center;
-    background-image: url("../bg3.jpg");
+    background-image: url("./bglogin.jpg"); 
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
     width: 100%;
-    background-position: center;
+    background-position: top left;
+    z-index: 1001;
 }
 
-.mainFormLogin {
-    background-color: rgb(90, 117, 138);
-    height: 66%;
-    width: 28%;
-    display: inline-block;
-    margin-top: 8%;
-    text-align: center;
-    position: relative;
-    box-shadow: 10px 10px 15px 5px rgb(35, 46, 57);
-    border-radius: 5px 3px 0px 5px;
-}
-
-.logoLogin {
-    width: 95px;
-    height: 95px;
-    border-radius: 50%;
-    background-color: rgb(52, 68, 85);
-    position: absolute;
-    top: -12%;
-    font-size: 40px;
-    text-align: center;
-    padding-top: 25px;
-    left: 36%;
-    z-index: 10;
-    box-shadow: 3px 3px 15px;
-}
-
-.mainFormRgt {
-    background-color: rgb(90, 117, 138);
-    height: 70%;
-    width: 28%;
-    display: inline-block;
-    margin-top: 8%;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    position: relative;
-    box-shadow: 10px 10px 15px 5px rgb(35, 46, 57);
-    border-radius: 5px 3px 0px 5px;
+.RgtForm {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    z-index: 1000;
+    background-image: url("./bgrgt.jpg"); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    background-position: top left;
+    z-index: 1001;
     display: none;
 }
 
-.logoRgt {
-    width: 95px;
-    height: 95px;
-    border-radius: 50%;
-    background-color: rgb(52, 68, 85);
-    position: absolute;
-    top: -12%;
-    font-size: 40px;
+.mainFormLogin { 
+    width: 30%;
+    height: 70%;
+    display: inline-block;
+    margin-top: 20%;
+    margin-left: 15%;
     text-align: center;
-    padding-top: 25px;
-    left: 38%;
-    z-index: 10;
-    box-shadow: 3px 3px 15px;
 }
 
+.mainFormRgt { 
+    width: 30%;
+    height: 70%;
+    display: inline-block;
+    margin-top: 15%;
+    margin-left: 20%;
+    text-align: center;
+}
+     
 .close2 {
-    color: rgb(52, 68, 85);
+    color:rgb(222,222,223);
     font-size: 60px;
     text-transform: uppercase;
     position: absolute;
-    left: 88%;
-    top: -2%;
+    right: 39%;
+    top: 0%;
     transform: rotate(45deg);
     cursor: pointer;
     z-index: 3;
@@ -617,12 +592,12 @@ ul {
 }
 
 .close1 {
-    color: rgb(52, 68, 85);
+    color:rgb(222,222,223);
     font-size: 60px;
     text-transform: uppercase;
     position: absolute;
-    left: 88%;
-    top: -2%;
+    right: 39%;
+    top: 0%;
     transform: rotate(45deg);
     cursor: pointer;
     z-index: 3;
@@ -633,17 +608,9 @@ ul {
 }
 
 /* ------------------------------  */
-.welcomeLogin {
-    position: static;
-    margin-top: 15%;
-    font-size: 20px;
-    font-weight: bold;
-    color: #fff;
-}
 
 .emailLogin_Ctn {
-    width: 100%;
-    margin-top: 10%;
+	width: 100%;
     position: relative;
     display: block;
     z-index: 0;
@@ -652,45 +619,51 @@ ul {
 .emailLgLogo {
     position: absolute;
     font-size: 20px;
-    z-index: 1;
+    z-index: 1; 
     margin-top: 4%;
-    right: 15%;
+    left: 6%;
+    color:var(--main-color)
 }
 
 .emailLogin {
-    width: 80%;
+    width: 90%;
     height: 50px;
-    margin-left: 10%;
-    border-left: 5px solid rgb(147, 165, 171);
-    background-color: rgb(51, 68, 84);
+    background-color: #fff;
     display: block;
     z-index: 0;
     position: absolute;
+    border: 0.5px solid #fff;
+    border-radius: 25px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .passLogin_Ctn {
-    width: 100%;
-    margin-top: 20%;
+	width: 100%;
+    margin-top: 15%;
     position: relative;
-    margin-left: -40%;
     display: block;
 }
 
 .passLgLogo {
     position: absolute;
     font-size: 20px;
-    z-index: 1;
+    z-index: 1; 
     margin-top: 4%;
-    right: -25%;
+    left: 6%;
+    color: var(--main-color)
 }
 
 .passLogin {
-    width: 80%;
+    width: 90%;
     height: 50px;
-    border-left: 5px solid rgb(147, 165, 171);
-    background-color: rgb(51, 68, 84);
-    display: inline-block;
+    background-color: #fff;
+    display: block;
     position: absolute;
+    border: 0.5px solid #fff;
+    border-radius: 25px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 ::placeholder {
@@ -698,38 +671,32 @@ ul {
 }
 
 .submitLogin {
-    width: 80%;
-    height: 45px;
-    padding: 10px 30px;
-    cursor: pointer;
-    display: block;
-    margin-top: 6%;
-    margin-right: auto;
-    margin-left: auto;
-    background: transparent;
-    border: 2.5px solid rgb(147, 165, 171);
-    box-shadow: 0px 0px 10px rgb(35, 46, 57);
-    font-size: 20px;
-    color: #fff;
-    margin-bottom: 4%;
+	width: 90%;
+    height: 50px;
+	padding: 10px 30px;
+	cursor: pointer;
+	display: block;
+	margin-top: 5%; 
+	background-color: var(--main-color);
+	font-size: 20px;
+    color: rgb(222,222,223);
+    margin-bottom: 5%;
     position: relative;
-}
-
-.submitLogin:hover {
-    background-color: var(--main-color);
+    border-radius: 25px;
 }
 
 #check-box {
     margin-right: 10px;
     width: 15px;
-    height: 15px;
-    margin-top: 13%;
+    height: 15px; 
+    margin-top: 15%;
     display: inline-block;
     position: relative;
+    margin-left: -10%;
 }
 
 .checkbox_text {
-    color: #fff;
+    color: rgb(222,222,223);
     font-size: 19px;
     position: relative;
 }
@@ -737,11 +704,14 @@ ul {
 .qsLogin {
     font-size: 18px;
     position: relative;
+    color: rgb(222,222,223);
+    margin-left: -10%;
 }
 
 .iqsLogin {
     font-size: 19px;
     cursor: pointer;
+    color: rgb(222,222,223);
 }
 
 .iqsLogin:hover {
@@ -749,32 +719,26 @@ ul {
 }
 
 #error {
-    color: rgb(252, 77, 77);
-    font-size: 18px;
+	color: rgb(252, 77, 77); 
+	font-size:18px;
     margin-top: 15%;
     margin-left: 0px;
-    position: absolute;
+	position:absolute;
 }
 
 /* -------------------------------- */
 
-.welcomeRgt {
-    position: static;
-    margin-top: 15%;
-    padding-top: 15%;
-    font-size: 20px;
-    font-weight: bold;
-    color: #fff;
-}
-
 .account {
     margin-top: 1%;
-    font-size: 16px;
+    font-size: 18px;
+    color: rgb(222,222,223);
+    margin-left: -12%;
 }
 
 .iAccount {
-    font-size: 17px;
+    font-size: 19px;
     cursor: pointer;
+    color: rgb(222,222,223);
 }
 
 .iAccount:hover {
@@ -782,34 +746,34 @@ ul {
 }
 
 .yourName_Ctn {
-    width: 100%;
+	width: 100%;
     margin-top: 5%;
     position: relative;
     display: block;
-    z-index: 0;
 }
 
 .yNameLogo {
     position: absolute;
     font-size: 20px;
-    z-index: 1;
+    z-index: 1; 
     margin-top: 4%;
-    right: 15%;
+    left: 6%;
+    color:var(--main-color)
 }
 
 .yourName {
-    width: 80%;
+    width: 90%;
     height: 50px;
-    margin-left: 10%;
-    border-left: 5px solid rgb(147, 165, 171);
-    background-color: rgb(51, 68, 84);
+    background-color: #fff;
     display: block;
     z-index: 0;
     position: absolute;
+    border: 0.5px solid #fff;
+    border-radius: 25px;
 }
 
 .emailRgt_Ctn {
-    width: 100%;
+	width: 100%;
     margin-top: 12%;
     position: relative;
     display: block;
@@ -819,24 +783,25 @@ ul {
 .emailRgtLogo {
     position: absolute;
     font-size: 20px;
-    z-index: 1;
+    z-index: 1; 
     margin-top: 4%;
-    right: 15%;
+    left: 6%;
+    color:var(--main-color)
 }
 
 .emailRgt {
-    width: 80%;
+    width: 90%;
     height: 50px;
-    margin-left: 10%;
-    border-left: 5px solid rgb(147, 165, 171);
-    background-color: rgb(51, 68, 84);
+    background-color: #fff;
     display: block;
     z-index: 0;
     position: absolute;
+    border: 0.5px solid #fff;
+    border-radius: 25px;
 }
 
 .passRgt_Ctn {
-    width: 100%;
+	width: 100%;
     margin-top: 12%;
     position: relative;
     display: block;
@@ -846,24 +811,25 @@ ul {
 .passRgtLogo {
     position: absolute;
     font-size: 20px;
-    z-index: 1;
+    z-index: 1; 
     margin-top: 4%;
-    right: 15%;
+    left: 6%;
+    color:var(--main-color)
 }
 
 .passRgt {
-    width: 80%;
+    width: 90%;
     height: 50px;
-    margin-left: 10%;
-    border-left: 5px solid rgb(147, 165, 171);
-    background-color: rgb(51, 68, 84);
+    background-color: #fff;
     display: block;
     z-index: 0;
     position: absolute;
+    border: 0.5px solid #fff;
+    border-radius: 25px;
 }
 
 .passRgtConfirm_Ctn {
-    width: 100%;
+	width: 100%;
     margin-top: 12%;
     position: relative;
     display: block;
@@ -873,81 +839,85 @@ ul {
 .passCfLogo {
     position: absolute;
     font-size: 20px;
-    z-index: 1;
+    z-index: 1; 
     margin-top: 4%;
-    right: 15%;
+    left: 6%;
+    color:var(--main-color)
 }
 
 .passRgtConfirm {
-    width: 80%;
+    width: 90%;
     height: 50px;
-    margin-left: 10%;
-    border-left: 5px solid rgb(147, 165, 171);
-    background-color: rgb(51, 68, 84);
+    background-color: #fff;
     display: block;
     z-index: 0;
     position: absolute;
+    border: 0.5px solid #fff;
+    border-radius: 25px;
 }
 
 .submitRgt {
-    width: 80%;
-    height: 45px;
-    padding: 10px 30px;
-    cursor: pointer;
-    display: block;
-    margin-top: 12%;
-    margin-right: auto;
-    margin-left: auto;
-    background: transparent;
-    border: 2.5px solid rgb(147, 165, 171);
-    box-shadow: 0px 0px 10px rgb(35, 46, 57);
-    font-size: 20px;
-    color: #fff;
-    margin-bottom: 4%;
+	width: 90%;
+    height: 50px;
+	padding: 10px 30px;
+	cursor: pointer;
+	display: block;
+	margin-top: 12%; 
+	background-color: var(--main-color);
+	font-size: 20px;
+    color: rgb(222,222,223);
+    margin-bottom: 5%;
     position: relative;
+    border-radius: 25px;
 }
 
 .submitRgt:hover {
     background-color: var(--main-color);
-}
+} 
 
 .mainFormLogin input {
     font-size: 19px;
-    color: #fff;
-    padding-left: 20px;
+    color: black;
+    padding-left: 60px;
     padding-right: 50px;
 }
 
 .mainFormRgt input {
     font-size: 19px;
     text-decoration-line: none;
-    color: #fff;
-    padding-left: 20px;
+    color: black;
+    padding-left: 60px;
     padding-right: 50px;
 }
+
 
 /* Responsive */
 
 @media(max-width: 1024px) {
     .mainFormLogin {
-        width: 38%;
-        top: 10%;
+        width: 45%;
+        margin-top: 30%;
+        margin-left: 20%;
     }
 
-    .mainFormRgt {
-        width: 38%;
-        top: 7%;
+    .mainFormRgt { 
+        width: 45%;
+        margin-top: 25%;
     }
 
     .yourName_Ctn {
         margin-top: 4%;
     }
 
-    .emailRgt_Ctn,
+    .emailRgt_Ctn, 
     .passRgt_Ctn,
     .passRgtConfirm_Ctn,
     .submitRgt {
         margin-top: 13%;
+    }
+
+    .close1,.close2 {
+        right: 60px;
     }
 }
 
@@ -975,18 +945,16 @@ ul {
     }
 
     .mainFormLogin,
-    .mainFormRgt {
-        width: 60%;
-        top: 10%;
-        margin-left: auto;
-        margin-right: auto;
+    .mainFormRgt { 
+        width: 65%;
+        margin-top: 40%;
         overflow: auto;
     }
 
     .welcomeLogin {
         margin-top: 13%;
     }
-
+    
 
     .emailLogin_Ctn {
         margin-top: 6%;
@@ -1009,11 +977,17 @@ ul {
         margin-top: 3.5%;
     }
 
-    .emailRgt_Ctn,
+    .emailRgt_Ctn, 
     .passRgt_Ctn,
     .passRgtConfirm_Ctn,
     .submitRgt {
         margin-top: 10.5%;
+    }
+
+    .close2,
+    .close1 {
+        right: 0px;
+        top: 0%
     }
 }
 
@@ -1030,10 +1004,12 @@ ul {
     .menu-item {
         width: 100%;
     }
-
-    .mainFormLogin {
+    
+    .mainFormLogin { 
         width: 80%;
-        top: 10%;
+        height: 50%;
+        margin-top: 50%;
+        margin-left: 15%;
         overflow: auto;
     }
 
@@ -1050,31 +1026,55 @@ ul {
         margin-top: 5%;
     }
 
-    .mainFormRgt {
+    .mainFormRgt {  
         width: 80%;
-        top: 4%;
+        height: 80%;
+        margin-top: 50%;
         overflow: auto;
     }
 
-    .welcomeRgt {
-        padding-top: 15%;
-    }
-
-    .yourName_Ctn {
-        margin-top: 3%;
-    }
-
-    .emailRgt_Ctn,
-    .passRgt_Ctn {
-        margin-top: 10%;
-    }
-
-    .passRgtConfirm_Ctn {
-        margin-top: 10%;
-    }
-
+    .emailRgt_Ctn, 
+    .passRgt_Ctn,
+    .passRgtConfirm_Ctn,
     .submitRgt {
-        margin-top: 10%;
+        margin-top: 13%;
+    }
+}
+
+@media(max-width: 480px) {
+    .mainFormLogin { 
+        width: 80%;
+        height: 50%;
+        margin-top: 70%;
+        margin-left: 15%;
+        overflow: auto;
+    }
+
+    .emailLogin_Ctn {
+        margin-top: 8%;
+    }
+
+    .passLogin_Ctn {
+        margin-top: 16%;
+        margin-bottom: 0%;
+    }
+
+    .submitLogin {
+        margin-top: 5%;
+    }
+
+    .mainFormRgt {  
+        width: 80%;
+        height: 80%;
+        margin-top: 70%;
+        overflow: auto;
+    }
+
+    .emailRgt_Ctn, 
+    .passRgt_Ctn,
+    .passRgtConfirm_Ctn,
+    .submitRgt {
+        margin-top: 13%;
     }
 }
 
