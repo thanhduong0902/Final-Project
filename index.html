@@ -8,7 +8,6 @@
     <script src="https://kit.fontawesome.com/54f0cb7e4a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://kit.fontawesome.com/2690ba4fab.js" crossorigin="anonymous"></script>
 
     <title>Hugo's Restaurant</title>
 </head>
@@ -18,37 +17,44 @@
     <header class="header">
         <div class="container">
             <div class="row justify-content-between ">
+                <button class="nav-toggler">
+                    <span></span>
+                </button>
+                <nav class="nav">
+                    <div style="font-size:30px; margin-bottom:20px; justify-content: center;text-align: center;"><i
+                            class="fas fa-window-close"></i></div>
+                    <ul>
+                        <li class="nav-item"><a href="#Home"><span style="margin-right:3px"><i
+                                        class="fas fa-home"></i></span> Trang chủ</a></li>
+                        <li class="nav-item"><a href="#About"><span style="margin-right:5px"><i
+                                        class="fas fa-search-plus"></i></span> Hugo's</a></li>
+                        <li class="nav-item"><a href="#Menu"><span style="margin-right:10px"><i
+                                        class="fas fa-clipboard-list"></i></span> Menu</a></li>
+                        <li class="nav-item"><a href="#Testimonial"><span style="margin-right:2px"><i
+                                        class="fas fa-comments"></i></span> Phản hồi</a></li>
+                        <li class="nav-item"><a onclick=Redirect() id="Login"><span style="margin-right:3px"><i
+                                        class="fas fa-key"></i></span> Đăng nhập/Đăng
+                                kí</a></li>
+                        <li class="nav-item"><a href="#Contact"><span style="margin-right:8px"><i
+                                        class="fas fa-phone-volume"></i></span> Liên hệ</a></li>
+                        <li class="nav-item"><a id="Logout" onclick=Logout() style="display:none"><span
+                                    style="margin-right:2px"><i class="fas fas fa-sign-out-alt"></i></span> Đăng
+                                xuất</i></a></li>
+                    </ul>
+                </nav>
+                <span id="welcome" style="position: fixed; margin-left: 30%;"></span>
                 <div style="display: flex">
-                    <div id="cartIcon" style=" font-size: 50px;cursor: pointer;"><i class="fas fa-concierge-bell" style="color: burlywood;"></i><span><sup
-                                id="count" style="color: coral;">0</sup></span></div>
+                    <div id="cartIcon" style=" font-size: 50px;cursor: pointer;"><i class="fas fa-concierge-bell"
+                            style="color: burlywood;"></i><span><sup id="count" style="color: coral;">0</sup></span>
+                    </div>
                     <div class="logo">
                         <a href="#"><img width="80px"
                                 src="https://www.designyourway.net/blog/wp-content/uploads/2017/10/hugo.jpg"
                                 alt="Ảnh Logo"></a>
                     </div>
                 </div>
-                <span id="welcome" style="position: fixed; margin-left: 30%;"></span>
-                <button class="nav-toggler">
-                    <span></span>
-                </button>
-                <nav class="nav">
-                    <ul>
-                        <li class="nav-item"><a href="#Home"><span style="margin-right:3px"><i
-                                        class="fas fa-home"></i></span> Home</a></li>
-                        <li class="nav-item"><a href="#About"><span style="margin-right:5px"><i
-                                        class="fas fa-search-plus"></i></span> Hugo's</a></li>
-                        <li class="nav-item"><a href="#Menu"><span style="margin-right:10px"><i
-                                        class="fas fa-clipboard-list"></i></span> Menu</a></li>
-                        <li class="nav-item"><a href="#Testimonial"><span style="margin-right:2px"><i
-                                        class="fas fa-comments"></i></span> Feedback</a></li>
-                        <li class="nav-item"><a onclick=Redirect() id="Login"><span style="margin-right:3px"><i
-                                        class="fas fa-key"></i></span> Login</a></li>
-                        <li class="nav-item"><a href="#Contact"><span style="margin-right:8px"><i
-                                        class="fas fa-phone-volume"></i></span> Contact</a></li>
-                        <li class="nav-item"><a id="Logout" onclick=Logout() style="display:none"><span
-                                    style="margin-right:2px"><i class="fas fas fa-sign-out-alt"></i></span> Logout</i></a></li>
-                    </ul>
-                </nav>
+
+
             </div>
         </div>
     </header>
@@ -116,10 +122,10 @@
             <div class="row">
 
                 <div class="menu-taps">
-                    <button class="menu-tap-item active" data-title="#Lunch">Main courses</button>
-                    <button class="menu-tap-item" data-title="#Dinner">Starter</button>
-                    <button class="menu-tap-item" data-title="#Drinks">Drinks</button>
-                    <button class="menu-tap-item" data-title="#Desserts">Desserts</button>
+                    <button class="menu-tap-item active" data-title="#Lunch">Sáng</button>
+                    <button class="menu-tap-item" data-title="#Dinner">Tối</button>
+                    <button class="menu-tap-item" data-title="#Drinks">Đồ uống</button>
+                    <button class="menu-tap-item" data-title="#Desserts">Tráng miệng</button>
                 </div>
 
             </div>
@@ -136,7 +142,8 @@
                 </div>
                 <div class="menu-item">
                     <div class="menu-item-title">
-                        <img src="https://img.taste.com.au/BwF9MGmp/w316-h210-cfill-q80/taste/2013/02/pork-ribs-with-spiced-barbecue-glaze-130279-1.jpg" alt="">
+                        <img src="https://img.taste.com.au/BwF9MGmp/w316-h210-cfill-q80/taste/2013/02/pork-ribs-with-spiced-barbecue-glaze-130279-1.jpg"
+                            alt="">
                         <h3>Barbecued Pork Ribs</h3>
                     </div>
                     <div class="menu-item-price">
@@ -146,7 +153,8 @@
                 </div>
                 <div class="menu-item">
                     <div class="menu-item-title">
-                        <img src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F9%2F2021%2F02%2F12%2Fgarlic-butter-steak-bites-FT-RECIPE0221.jpg" alt="">
+                        <img src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F9%2F2021%2F02%2F12%2Fgarlic-butter-steak-bites-FT-RECIPE0221.jpg"
+                            alt="">
                         <h3> Garlic-Butter Steak Bites</h3>
                     </div>
                     <div class="menu-item-price">
@@ -224,8 +232,7 @@
                 </div>
                 <div class="menu-item">
                     <div class="menu-item-title">
-                        <img src="https://static.onecms.io/wp-content/uploads/sites/44/2016/06/03/8458650.jpg"
-                            alt="">
+                        <img src="https://static.onecms.io/wp-content/uploads/sites/44/2016/06/03/8458650.jpg" alt="">
                         <h3>Mushroom Soup</h3>
                     </div>
                     <div class="menu-item-price">
@@ -403,10 +410,11 @@
                         <button class="btn order">Add to Card</button>
                     </div>
                 </div>
+
+
+
+
             </div>
-
-
-        </div>
     </section>
     <!-- Menu-Section-end -->
     <!-- Testimonis-Section -->
@@ -428,8 +436,9 @@
                             <img src="image/Test1.jpg" alt="">
                         </div>
                     </div>
-                    <p>It’s a great experience. The food is absolutely amazing – everything we tasted melted in other mouths. 
-                        Absolutely the best meal we had while in Hugo's Restaurant. Highly recommend!</p>
+                    <p>Thật tuyệt khi trải nghiệm những món ăn hấp dẫn tại nhà hàng, hương vị đậm đà, vị ngon tròn vị,
+                        những món ăn thật sự rất bắt mắt và tôi rất vui
+                        khi được trải nghiệm tại nhà hàng</p>
                     <div class="rating">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -448,9 +457,9 @@
                             <img src="image/Test2.jpg" alt="">
                         </div>
                     </div>
-                    <p>This is my absolute favorite restaurant. 
-                        The food is always fantastic and no matter what I order I am always delighted with my meal!
-                        Can’t wait to return Hugo's Restaurant. Highly recommend! </p>
+                    <p>Thật tuyệt khi trải nghiệm những món ăn hấp dẫn tại nhà hàng, hương vị đậm đà, vị ngon tròn vị,
+                        những món ăn thật sự rất bắt mắt và tôi rất vui
+                        khi được trải nghiệm tại nhà hàng.</p>
                     <div class="rating">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -469,9 +478,9 @@
                             <img src="image/Test3.jpg" alt="">
                         </div>
                     </div>
-                    <p>Excellent food. From the starter to the dessert the quality and tastes of everything was outstanding.
-                        Can’t wait to return and wouldn’t hesitate to recommend to anyone looking for somewhere to order.
-                    </p>
+                    <p>LThật tuyệt khi trải nghiệm những món ăn hấp dẫn tại nhà hàng, hương vị đậm đà, vị ngon tròn vị,
+                        những món ăn thật sự rất bắt mắt và tôi rất vui
+                        khi được trải nghiệm tại nhà hàng.</p>
                     <div class="rating">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -524,21 +533,23 @@
                         <th>Món</th>
                         <th>Số lượng</th>
                         <th>Đơn giá</th>
-                        <th>Chọn</th>
+                        <th>Xóa</th>
                     </tr>
                 </thead>
                 <tbody>
-                   
+
                 </tbody>
             </table>
             <div class="price-total" style="text-align: right;">
                 <p style="font-weight: bold;">Tổng tiền:<span></span></p>
 
             </div>
-            <button class="btn"> <a href="https://thanhduong0902.github.io/Final-Project/thanhtoan/giohang.html" onclick="thanhtoan()" style="cursor:pointer"> Thanh Toán </a> </button>
+            <button class="btn"> <a href="https://thanhduong0902.github.io/Final-Project/thanhtoan/giohang.html"
+                    onclick="thanhtoan()" style="cursor:pointer"> Thanh Toán </a> </button>
         </form>
     </section>
-        <!----------------Login/Logout Form -------------->
+
+    <!----------------Login/Logout Form -------------->
     <div id="bg-login">
         <form class="mainFormLogin">
             <div class="logoLogin">
@@ -549,53 +560,54 @@
 
             <div class="welcomeLogin">Welcome, please Login!</div>
             <div class="emailLogin_Ctn">
-                <input class="emailLogin" type="text" placeholder="Email"  />
-                <i class="emailLgLogo fa-solid fa-user"></i>
+                <input class="emailLogin" type="text" placeholder="Email" />
+                <i class="fas fa-user emailLgLogo"></i>
                 <br />
                 <!-- <span id="error"></span> -->
             </div>
             <div class="passLogin_Ctn">
                 <input class="passLogin" type="password" placeholder="Password" />
-                <i class="passLgLogo fa-solid fa-key"></i>
+
+                <i class="fas fa-key passLgLogo"></i>
                 <br />
                 <!-- <span id="error"></span> -->
             </div>
             <input type="checkbox" id="check-box" value="1" />
             <span class="checkbox_text">Remember me</span>
             <button class="submitLogin" type="submit" value="submit">Log in</button>
-            <span class="qsLogin">Don't have an account? <strong class="iqsLogin">Sign up</strong></span> 
+            <span class="qsLogin">Don't have an account? <strong class="iqsLogin">Sign up</strong></span>
         </form>
 
         <form class="mainFormRgt">
             <div class="logoRgt">
-                <i class="fa-solid fa-user-plus"></i>
+                <i class="fas fa-user-plus"></i>
             </div>
-            
+
             <div class="close2">+</div>
-            
+
             <div class="welcomeRgt">Welcome, please Register</div>
             <div class="account">Already a member? <strong class="iAccount">Log in</strong></div>
             <div class="yourName_Ctn">
                 <input class="yourName" type="text" placeholder="Name" />
-                <i class="yNameLogo fa-solid fa-user"></i>
+                <i class="yNameLogo fas fa-user"></i>
                 <br />
                 <!-- <span id="error"></span> -->
             </div>
             <div class="emailRgt_Ctn">
                 <input class="emailRgt" type="text" placeholder="Email" />
-                <i class="emailRgtLogo fa-solid fa-envelope"></i>
+                <i class="emailRgtLogo fas fa-at"></i>
                 <br />
                 <!-- <span id="error"></span> -->
             </div>
             <div class="passRgt_Ctn">
-                <input class="passRgt" type="password" placeholder="Password"  />
-                <i class="passRgtLogo fa-solid fa-lock"></i>
+                <input class="passRgt" type="password" placeholder="Password" />
+                <i class="passRgtLogo fas fa-key"></i>
                 <br />
                 <!-- <span id="error"></span> -->
             </div>
             <div class="passRgtConfirm_Ctn">
                 <input class="passRgtConfirm" type="password" placeholder="Confirm Password" />
-                <i class="passCfLogo fa-solid fa-lock"></i>
+                <i class="fas fa-check passCfLogo"></i>
                 <br />
                 <!-- <span id="error"></span> -->
             </div>
