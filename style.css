@@ -624,7 +624,7 @@ ul {
     box-shadow: 3px 3px 15px;
 }
 
-.close {
+.close2 {
     color:rgb(52,68,85);
     font-size: 60px;
     text-transform: uppercase;
@@ -636,7 +636,23 @@ ul {
     z-index: 3;
 }
 
-.close:hover {
+.close2:hover {
+    color: var(--main-color);
+}
+
+.close1 {
+    color:rgb(52,68,85);
+    font-size: 60px;
+    text-transform: uppercase;
+    position: absolute;
+    left: 88%;
+    top: -2%;
+    transform: rotate(45deg);
+    cursor: pointer;
+    z-index: 3;
+}
+
+.close1:hover {
     color: var(--main-color);
 }
      
