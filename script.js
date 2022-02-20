@@ -255,11 +255,9 @@ function isEmail(email) {
 
 function setError(input, message) {
     input.setCustomValidity(message);
-    // input.classList.add("wrongInput");
 }
 
 function setBlur(input) {
-    // input.classList.add("wrongInput");
     input.nextElementSibling.style.color = "rgb(247, 75, 75)"
 }
 
