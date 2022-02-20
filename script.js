@@ -34,7 +34,6 @@ menuTabs.addEventListener("click", function (e) {
 
 function Redirect() {
     bgLogin.style.display = "block";
-    document.getElementById("cartIcon").style.display = "none"
 }
 
 
@@ -207,14 +206,12 @@ function clear() {
 closeIcon1.onclick = (e) => {
     e.preventDefault();
     bgLogin.style.display = "none";
-    document.getElementById("cartIcon").style.display = "inline-block";
     clear()
 }
 
 closeIcon2.onclick = (e) => {
     e.preventDefault();
     bgLogin.style.display = "none";
-    document.getElementById("cartIcon").style.display = "inline-block";
     clear()
 }
 
@@ -530,7 +527,6 @@ const userActionLogin = async () => {
                 }
                 
                 clear()
-                 document.getElementById("cartIcon").style.display = "inline-block";
             }
         }
     }
