@@ -548,6 +548,7 @@ ul {
 
 
 
+
 /* Login - Logout Form */
 
 #bg-login {
@@ -557,7 +558,7 @@ ul {
     position: fixed;
     background-color: #fff;
     top: 0px;
-    z-index: 1;
+    z-index: 1000;
     text-align: center; 
     background-image: url("./bg3.jpg");
     background-repeat: no-repeat;
@@ -623,7 +624,7 @@ ul {
     z-index: 10;
     box-shadow: 3px 3px 15px;
 }
-
+     
 .close2 {
     color:rgb(52,68,85);
     font-size: 60px;
@@ -655,7 +656,7 @@ ul {
 .close1:hover {
     color: var(--main-color);
 }
-     
+
 /* ------------------------------  */
 .welcomeLogin {
     position: static;
@@ -1004,7 +1005,7 @@ ul {
         top: 10%;
         margin-left: auto;
         margin-right: auto;
-	overflow: auto;
+        overflow: auto;
     }
 
     .welcomeLogin {
@@ -1058,7 +1059,7 @@ ul {
     .mainFormLogin { 
         width: 80%;
         top: 10%;
-	overflow: auto;
+        overflow: auto;
     }
 
     .emailLogin_Ctn {
@@ -1077,7 +1078,7 @@ ul {
     .mainFormRgt {  
         width: 80%;
         top: 4%;
-	overflow: auto;
+        overflow: auto;
     }
 
     .welcomeRgt {
