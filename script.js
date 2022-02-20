@@ -173,11 +173,6 @@ function thanhtoan() {
 //--------------------------------Login Form-------------------------------------------///
 
 const bgLogin = document.querySelector("#bg-login");
-const loginForm = document.getElementById("loginForm")
-const btnLogin1 = document.querySelector(".btnLogin1")
-const btnRegister1 = document.querySelector(".btnRegister1")
-const btnLogin2 = document.querySelector(".btnLogin2")
-const btnRegister2 = document.querySelector(".btnRegister2")
 const mainFormLogin = document.querySelector(".mainFormLogin")
 const mainFormRgt = document.querySelector(".mainFormRgt")
 const emailLogin = document.querySelector(".emailLogin")
@@ -186,19 +181,19 @@ const emailRgt = document.querySelector(".emailRgt")
 const passRgt = document.querySelector(".passRgt")
 const passRgtConfirm = document.querySelector(".passRgtConfirm")
 const yourName = document.querySelector(".yourName")
-const errorMess = document.getElementById("error")
 const submitLogin = document.querySelector(".submitLogin")
 const submitRgt = document.querySelector(".submitRgt")
-const close = document.querySelector(".close")
 const check_boxLogin = document.querySelector(".check-box")
+const iqsLogin = document.querySelector(".iqsLogin")
+const iAccount = document.querySelector(".iAccount")
 
 function clear() {
-    rightInputs(passLogin);
-    rightInputs(yourName);
-    rightInputs(emailRgt);
-    rightInputs(passRgt);
-    rightInputs(passRgtConfirm);
-    rightInputs(emailLogin);
+    removeErrorMess(passLogin);
+    removeErrorMess(yourName);
+    removeErrorMess(emailRgt);
+    removeErrorMess(passRgt);
+    removeErrorMess(passRgtConfirm);
+    removeErrorMess(emailLogin);
     removeInputValue(passLogin);
     removeInputValue(yourName);
     removeInputValue(emailRgt);
@@ -207,12 +202,20 @@ function clear() {
     removeInputValue(emailLogin);
 }
 
-close.onclick = (e) => {
+
+iqsLogin.addEventListener("click", (e) => {
     e.preventDefault();
-    bgLogin.style.display = "none";
-    document.getElementById("cartIcon").style.display = "block"
-    clear()
-}
+    mainFormRgt.style.display = "block";
+    mainFormLogin.style.display = "none";
+    clear();
+})
+
+iAccount.addEventListener("click", (e) => {
+    e.preventDefault();
+    mainFormRgt.style.display = "none";
+    mainFormLogin.style.display = "inline-block";
+    clear();
+})
 
 function removeInputValue(input) {
     if (input.value.trim() !== "") {
@@ -220,31 +223,7 @@ function removeInputValue(input) {
     }
 }
 
-btnLogin2.onclick = ((e) => {
-    e.preventDefault();
-    mainFormLogin.style.display = "inline-block";
-    mainFormRgt.style.display = "none";
-})
-
-btnRegister1.onclick = ((e) => {
-    e.preventDefault();
-    mainFormRgt.style.display = "inline-block";
-    mainFormLogin.style.display = "none";
-})
-
-btnLogin1.onclick = ((e) => {
-    e.preventDefault();
-    mainFormLogin.style.display = "inline-block";
-    mainFormRgt.style.display = "none";
-})
-
-btnRegister2.onclick = ((e) => {
-    e.preventDefault();
-    mainFormRgt.style.display = "inline-block";
-    mainFormLogin.style.display = "none";
-})
-
-mainFormLogin.onsubmit = function (e) {
+mainFormLogin.onsubmit = function(e) {
     e.preventDefault();
     checkLoginInputs();
     userActionLogin();
@@ -255,45 +234,66 @@ mainFormRgt.onsubmit = (e) => {
     checkRgtInputs();
 }
 
-function setError(input, message) {
-    const errorMess = input.parentNode.querySelector("#error");
-    errorMess.innerHTML = message;
-}
-
 function isEmail(email) {
     return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
 }
 
+function setError(input, message) {
+    input.setCustomValidity(message);
+    // input.classList.add("wrongInput");
+}
+
 function setBlur(input) {
-    input.style.border = "2px solid rgb(252, 77, 77)"
-    input.style.borderRadius = "5px";
+    // input.classList.add("wrongInput");
+    input.nextElementSibling.style.color = "rgb(247, 75, 75)"
 }
 
 function removeErrorMess(input) {
-    const removeErrorMess = input.parentNode.querySelector("#error");
-    removeErrorMess.innerHTML = "";
-    input.style.border = "none";
-    input.style.borderBottom = "2px solid black";
-    input.style.borderRadius = "0px";
+    input.setCustomValidity("");
+    // input.style.border = "none";
+    // input.style.borderLeft = "5px solid rgb(147, 165,171)";
+    input.nextElementSibling.style.color = "rgb(200, 200, 200)";
 }
 
-function rightInputs(input) {
-    const rightInputs = input.parentNode.querySelector("#error");
-    rightInputs.innerHTML = "";
-    input.style.border = "none";
-    input.style.borderBottom = "2px solid black";
-    input.style.borderRadius = "0px";
+const checkRgtEmail = async () => {
+    const response = await fetch('https://61ec15037ec58900177cde6c.mockapi.io/api/login/users');
+    const myJson = await response.json();
+    for (let i = 0; i < myJson.length; i++) {
+        if(emailRgt.value.trim() == myJson[i].email) {
+            setError(emailRgt, "Email is already registered!")
+        }
+    }
 }
+
+/*---------------------------API---------------------------*/
+const userAction = async () => {
+    const currentUser = {
+        yourName : yourName.value.trim(),
+        password : passRgt.value.trim(),
+        email : emailRgt.value.trim(),
+    }
+    
+    const response = await fetch('https://61ec15037ec58900177cde6c.mockapi.io/api/login/users', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(currentUser),
+    });
+    const myJson = await response.json();
+}
+
+
 
 // ---------------------------------- //
 
 
 //Check Name Register
 yourName.onblur = (e) => {
-    if (yourName.value.trim() === "") {
+    if(yourName.value.trim() === "") {
         setError(yourName, "Please enter your Name!")
         setBlur(yourName)
-    }
+    } 
 }
 
 yourName.oninput = (e) => {
@@ -302,10 +302,13 @@ yourName.oninput = (e) => {
 
 // Check Email Register
 emailRgt.onblur = (e) => {
-    if (emailRgt.value.trim() === "") {
+    if(emailRgt.value.trim() === "") {
         setError(emailRgt, "Please enter your Email!")
         setBlur(emailRgt)
-    } else if (!isEmail(emailRgt.value.trim())) {
+    } else if(emailRgt.value.trim() !== "") {
+        checkRgtEmail()
+        setBlur(emailRgt)
+    } else if(!isEmail(emailRgt.value.trim())) {
         setError(emailRgt, "Email is not valid")
         setBlur(emailRgt)
     } 
@@ -317,13 +320,13 @@ emailRgt.oninput = (e) => {
 
 // Check Password Register
 passRgt.onblur = (e) => {
-    if (passRgt.value.trim() === "") {
+    if(passRgt.value.trim() === "") {
         setError(passRgt, "Please enter your Password!")
         setBlur(passRgt)
-    } else if (passRgt.value.trim().length <= 7) {
+    } else if(passRgt.value.trim().length <= 7) {
         setError(passRgt, "At least 7 characters!")
         setBlur(passRgt)
-    }
+    } 
 }
 
 passRgt.oninput = (e) => {
@@ -332,13 +335,13 @@ passRgt.oninput = (e) => {
 
 // Check Password Register Confirm
 passRgtConfirm.onblur = (e) => {
-    if (passRgtConfirm.value.trim() === "") {
+    if(passRgtConfirm.value.trim() === "") {
         setError(passRgtConfirm, "Please enter your Password Confirm!")
         setBlur(passRgtConfirm)
-    } else if (passRgtConfirm.value.trim() !== passRgt.value.trim()) {
+    } else if(passRgtConfirm.value.trim() !== passRgt.value.trim()) {
         setError(passRgtConfirm, "Passwords do not match!")
         setBlur(passRgtConfirm)
-    }
+    } 
 }
 
 passRgtConfirm.oninput = (e) => {
@@ -347,57 +350,61 @@ passRgtConfirm.oninput = (e) => {
 
 //Check Register submit
 function checkRgtInputs() {
-    if (yourName.value.trim() === "") {
+    if(yourName.value.trim() === "") {
         setError(yourName, "Please enter your Name!")
         setBlur(yourName)
-    } else rightInputs(yourName)
+    } else removeErrorMess(yourName)
 
-    if (emailRgt.value.trim() === "") {
+    if(emailRgt.value.trim() === "") {
         setError(emailRgt, "Please enter your Email!")
         setBlur(emailRgt)
-    } else if (!isEmail(emailRgt.value.trim())) {
+    } else if(!isEmail(emailRgt.value.trim())) {
         setError(emailRgt, "Email is not valid")
         setBlur(emailRgt)
-    } else rightInputs(emailRgt)
+    } else if(emailRgt.value.trim() !== "") {
+        checkRgtEmail()
+        setBlur(emailRgt)
+    } else removeErrorMess(emailRgt)
 
-    if (passRgt.value.trim() === "") {
+    if(passRgt.value.trim() === "") {
         setError(passRgt, "Please enter your Password!")
         setBlur(passRgt)
-    } else if (passRgt.value.trim().length <= 7) {
+    } else if(passRgt.value.trim().length <= 7) {
         setError(passRgt, "At least 7 characters!")
         setBlur(passRgt)
-    } else rightInputs(passRgt)
+    } else removeErrorMess(passRgt)
 
-    if (passRgtConfirm.value.trim() === "") {
+    if(passRgtConfirm.value.trim() === "") {
         setError(passRgtConfirm, "Please enter Password Confirm!")
         setBlur(passRgtConfirm)
-    } else if (passRgtConfirm.value.trim() !== passRgt.value.trim()) {
+    } else if(passRgtConfirm.value.trim() !== passRgt.value.trim()) {
         setError(passRgtConfirm, "Passwords do not match!")
         setBlur(passRgtConfirm)
-    } else rightInputs(passRgtConfirm)
+    } else removeErrorMess(passRgtConfirm)
 
 
-    if (yourName.value.trim() !== "" &&
+    if (yourName.value.trim() !== "" && 
         emailRgt.value.trim() !== "" && isEmail(emailRgt.value.trim()) &&
-        passRgt.value.trim() !== "" && passRgt.value.trim().length > 7 ||
-        passRgtConfirm.value.trim() !== "" &&
+        passRgt.value.trim() !== "" && passRgt.value.trim().length > 7 || 
+        passRgtConfirm.value.trim() !== "" && 
         passRgtConfirm.value.trim() === passRgt.value.trim()) {
+            
+            userAction()
+            if(mainFormRgt.onsubmit) {
+                mainFormRgt.style.display = "none"
+                mainFormLogin.style.display = "inline-block"
+                
+                Swal.fire({
+                    title: 'Successfully register!',
+                    icon: "success",
+                    padding: '1.5em',
+                    color: '#eaa023',
+                    iconColor: 'green',
+                    confirmButtonColor:  '#eaa023',
+                })
 
-        if (mainFormRgt.onsubmit) {
-            mainFormRgt.style.display = "none"
-            mainFormLogin.style.display = "inline-block"
-
-            Swal.fire({
-                title: 'Successfully register!',
-                icon: "success",
-                padding: '1.5em',
-                color: '#eaa023',
-                iconColor: 'green',
-                confirmButtonColor: '#eaa023',
-            })
-
-            clear()
-        }
+                clear()
+            }
     }
 
 }
@@ -405,29 +412,35 @@ function checkRgtInputs() {
 
 
 // Check Email Login---------------------------------------
-emailLogin.onblur = (e) => {
-    if (emailLogin.value.trim() === "") {
-        setError(emailLogin, "Please enter your Email!")
-        setBlur(emailLogin)
-    } else if (!isEmail(emailLogin.value.trim())) {
-        setError(emailLogin, "Email is not valid")
-        setBlur(emailLogin)
-    }
-}
 
 emailLogin.oninput = (e) => {
     removeErrorMess(emailLogin)
 }
 
+emailLogin.onblur = (e) => {
+    if(emailLogin.value.trim() === "") {
+        setError(emailLogin, "Please enter your Email!")
+        setBlur(emailLogin)
+
+    } else if(!isEmail(emailLogin.value.trim())) {
+        setError(emailLogin, "Email is not valid")
+        setBlur(emailLogin)
+    } 
+}
+
+// emailLogin.oninput = (e) => {
+//     removeErrorMess(emailLogin)
+// }
+
 //Check Password Login
 passLogin.onblur = (e) => {
-    if (passLogin.value.trim() === "") {
+    if(passLogin.value.trim() === "") {
         setError(passLogin, "Please enter your Password!")
         setBlur(passLogin)
-    } else if (passLogin.value.trim().length <= 7) {
+    } else if(passLogin.value.trim().length <= 7) {
         setError(passLogin, "Password must be longer than 7 characters")
         setBlur(passLogin)
-    }
+    } 
 }
 
 passLogin.oninput = (e) => {
@@ -442,7 +455,7 @@ function checkLoginInputs() {
     } else if(!isEmail(emailLogin.value.trim())) {
         setError(emailLogin, "Email is not valid")
         setBlur(emailLogin)
-    } else rightInputs(emailLogin)
+    } else removeErrorMess(emailLogin)
     
 
     if(passLogin.value.trim() === "") {
@@ -451,47 +464,92 @@ function checkLoginInputs() {
     } else if(passLogin.value.trim().length <= 7) {
         setError(passLogin, "Password must be longer than 7 characters")
         setBlur(passLogin)
-    } else rightInputs(passLogin)
+    } else removeErrorMess(passLogin)
 
-    if(emailLogin.value.trim() !== "" 
-       && passLogin.value.trim() !== "") {
-        removeErrorMess(passLogin)
-
-        let checked = document.getElementById('check-box').checked; 
-        if (checked){
-            localStorage.setItem('user', emailLogin.value.trim())
-        } else {
-            sessionStorage.setItem('user', emailLogin.value.trim())
-        }
-
-        bgLogin.style.display = "none";
-        Swal.fire({
-            title: 'Successfully login!',
-            icon: "success",
-            padding: '1.5em',
-            color: '#eaa023',
-            iconColor: 'green',
-            confirmButtonColor:  '#eaa023',
-        })
-        
-        document.getElementById("Login").innerHTML = ""
-        document.getElementById("Logout").style.display = "inline-block"
-        document.getElementById("cartIcon").style.display = "block"
-        const welcome = document.getElementById("welcome")
-        welcome.innerHTML = "Chào mừng đến với Hugo's Restaurant!"
-    }
-        
-        clear()
+    userActionLogin()
 }
 
+
+const userActionLogin = async () => {
+    const response = await fetch('https://61ec15037ec58900177cde6c.mockapi.io/api/login/users');
+    const myJson = await response.json();
+
+    if (emailLogin.value.trim() !== "" && isEmail(emailLogin.value.trim())
+        && passLogin.value.trim().length > 7) {
+        for (let i = 0; i < myJson.length; i++) {
+            if(emailLogin.value.trim() !== myJson[i].email 
+                || passLogin.value.trim() !== myJson[i].password) {
+                setError(passLogin, "Wrong email or password")
+                setBlur(emailLogin)
+                setBlur(passLogin)
+                emailLogin.oninput = (e) => {
+                    removeErrorMess(emailLogin)
+                }
+                passLogin.oninput = (e) => {
+                    removeErrorMess(passLogin);
+                }
+            } else {
+                removeErrorMess(passLogin)
+                removeErrorMess(emailLogin)
+
+                let checked = document.getElementById('check-box').checked; 
+                if (checked){
+                    localStorage.setItem('user', JSON.stringify(emailLogin.value.trim()))
+                } else {
+                    sessionStorage.setItem('user', JSON.stringify(emailLogin.value.trim()))
+                }
+
+                bgLogin.style.display = "none";
+                
+                document.getElementById("Login").innerHTML = "";
+                document.getElementById("Logout").style.display = "inline-block";
+                if(emailLogin.value.trim() === myJson[i].email) {
+                    const userName = myJson[i].yourName
+                    console.log(userName)
+                    Swal.fire({
+                        title: `Chào mừng ${userName} đến với Hugo's Restaurant!`,
+                        icon: "success",
+                        padding: '1.5em',
+                        color: '#eaa023',
+                        iconColor: 'green',
+                        confirmButtonColor:  '#eaa023',
+                    })
+                }
+                
+                clear()
+            }
+        }
+    }
+}
 
 const user = localStorage.getItem("user")
-if (user) {
-    const welcome = document.getElementById("welcome")
-    welcome.innerHTML = "Chào mừng đến với Hugo's Restaurant!"
-    document.getElementById("Login").innerHTML = ""
-    document.getElementById("Logout").style.display = "inline-block"
+const checkLogin = async () => {
+    const response = await fetch('https://61ec15037ec58900177cde6c.mockapi.io/api/login/users');
+    const myJson = await response.json();
+    for (let i = 0; i < myJson.length; i++) {
+        const userName = myJson[i].yourName
+        if (user) {
+            console.log(localStorage.getItem("user"))
+            if(user == myJson[i].email) {
+                const userName = myJson[i].yourName
+                console.log(userName)
+                Swal.fire({
+                    title: `Chào mừng ${userName} đến với Hugo's Restaurant!`,
+                    icon: "success",
+                    padding: '1.5em',
+                    color: '#eaa023',
+                    iconColor: 'green',
+                    confirmButtonColor:  '#eaa023',
+                })
+            }
+            document.getElementById("Login").innerHTML = "";
+            document.getElementById("Logout").style.display = "inline-block";
+    }
 }
+}
+
+checkLogin()
+
 
 /*---------------------Logout------------------*/
 
