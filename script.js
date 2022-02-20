@@ -186,7 +186,8 @@ const submitRgt = document.querySelector(".submitRgt")
 const check_boxLogin = document.querySelector(".check-box")
 const iqsLogin = document.querySelector(".iqsLogin")
 const iAccount = document.querySelector(".iAccount")
-const close = document.querySelector(".close")
+const closeIcon1 = document.querySelector(".close1")
+const closeIcon2 = document.querySelector(".close2")
 
 function clear() {
     removeErrorMess(passLogin);
@@ -203,10 +204,17 @@ function clear() {
     removeInputValue(emailLogin);
 }
 
-close.onclick = (e) => {
+closeIcon1.onclick = (e) => {
     e.preventDefault();
     bgLogin.style.display = "none";
-    document.getElementById("cartIcon").style.display = "block"
+    document.getElementById("cartIcon").style.display = "block";
+    clear()
+}
+
+closeIcon2.onclick = (e) => {
+    e.preventDefault();
+    bgLogin.style.display = "none";
+    document.getElementById("cartIcon").style.display = "block";
     clear()
 }
 
