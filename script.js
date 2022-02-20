@@ -186,6 +186,7 @@ const submitRgt = document.querySelector(".submitRgt")
 const check_boxLogin = document.querySelector(".check-box")
 const iqsLogin = document.querySelector(".iqsLogin")
 const iAccount = document.querySelector(".iAccount")
+const close = document.querySelector(".close")
 
 function clear() {
     removeErrorMess(passLogin);
@@ -202,6 +203,12 @@ function clear() {
     removeInputValue(emailLogin);
 }
 
+close.onclick = (e) => {
+    e.preventDefault();
+    bgLogin.style.display = "none";
+    document.getElementById("cartIcon").style.display = "block"
+    clear()
+}
 
 iqsLogin.addEventListener("click", (e) => {
     e.preventDefault();
