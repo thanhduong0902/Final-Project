@@ -523,6 +523,7 @@ const userActionLogin = async () => {
                     console.log(userName)
                     Swal.fire({
                         title: `Chào mừng ${userName} đến với Hugo's Restaurant!`,
+                        icon: "success",
                         padding: '1.5em',
                         color: '#eaa023',
                         iconColor: 'green',
@@ -547,7 +548,7 @@ const checkLogin = async () => {
                 const userName = myJson[i].yourName
                 Swal.fire({
                     title: `Chào mừng ${userName} đến với Hugo's Restaurant!`,
-                    icon: "success",
+                    // icon: "success",
                     padding: '1.5em',
                     color: '#eaa023',
                     iconColor: 'green',
@@ -561,6 +562,7 @@ const checkLogin = async () => {
 }
 
 checkLogin()
+
 
 /*---------------------Logout------------------*/
 
