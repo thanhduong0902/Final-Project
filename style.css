@@ -1004,6 +1004,7 @@ ul {
         top: 10%;
         margin-left: auto;
         margin-right: auto;
+	overflow: auto;
     }
 
     .welcomeLogin {
@@ -1056,7 +1057,8 @@ ul {
     
     .mainFormLogin { 
         width: 80%;
-        top: 10%
+        top: 10%;
+	overflow: auto;
     }
 
     .emailLogin_Ctn {
@@ -1075,6 +1077,7 @@ ul {
     .mainFormRgt {  
         width: 80%;
         top: 4%;
+	overflow: auto;
     }
 
     .welcomeRgt {
