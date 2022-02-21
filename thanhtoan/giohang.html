@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -163,6 +163,174 @@
 
 
 
+    </script>
+
+</body>
+
+</html>
+ -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/54f0cb7e4a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="giohang.css">
+    <title>Website - Giỏ hàng</title>
+</head>
+
+<body>
+    <!-- <secsion class="top">
+        <div class="container">
+            <div class="row">
+
+                <div class="top-menu-icons">
+                    <ul>
+                        <li>
+                            <input type="text" placeholder="tìm kiếm">
+                            <i class="fas fa-search"></i>
+                        </li>
+                        <li>
+                            <i class="fas fa-user-secret"></i>
+                        </li>
+                        <li>
+                            <i class="fas fa-shopping-cart"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </secsion> -->
+    <!-- -------------------------cart---------------- -->
+    <section class="cart">
+        <!-- <div class="container">
+            <div class="cart-top-wrap">
+                <div class="cart-top">
+                    <div class="cart-top-cart cart-top-item">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="cart-top-adress cart-top-item">
+                        <i class="fas fa-map-marker-alt "></i>
+                    </div>
+                    <div class="cart-top-payment cart-top-item">
+                        <i class="fas fa-money-check-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <div class="container">
+            <div class="cart-content row">
+                <div class="cart-content-left">
+                    <table id="cart-body">
+                        <thead>
+                            <tr>
+                                <th>Products</th>
+                                <th>Quantity</th>
+                                <th>SUbtotal</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="cart-content-right">
+                    <div style="text-align: center;" class="price-total">
+                        <p style="font-weight: bold; line-height:50px; font-size: 18px">TOTAL: <span style="font-size: 20px; color: red">0</span><sup style="color: red">đ</sup></p>
+                    </div>
+                    <div class="cart-content-right-button">
+                        <!-- <button>CONTINUE SHOPPING</button> -->
+                        <button style="width: 180px"onclick="redirect()">NEXT >></button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- -------------------------Footer -->
+    <!-- <section class="footer">
+        <div class="footer-container">
+
+            <div class="input-email">
+                <input type="text" placeholder="Nhập email của bạn">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+            <div class="footer-items">
+                <li><a href=""><img src="image/dathongbao.png" alt=""></a></li>
+                <li><a href="">Liên hệ</a></li>
+                <li><a href="">Tuyển dụng</a></li>
+                <li><a href="">Giới thiệu</a></li>
+                <li><a href=""><i class="fab fa-facebook-f"></i></a><a href=""><i class="fab fa-youtube"></i></a></li>
+            </div>
+            <div class="footer-text">
+
+                Địa chỉ kinh doanh: Q.Bắc Từ Liêm, TP.Hà Nội, Việt Nam - 0000000000 <br>
+                Đặt hàng online : 1111111111 .
+            </div>
+
+        </div>
+    </section> -->
+    <script>
+        function redirect() {
+            window.location = "/Final-Project/thanhtoan/giaohang.html"
+            
+        }
+        let list = localStorage.getItem('listSP');
+        list = JSON.parse(list);
+
+        for (let i = 0; i < list.length; i++) {
+            var addtr = document.createElement("tr");
+            var cartItem = document.querySelectorAll("tbody tr");
+            var trcontent = '<tr><td style="display: flex; align - items: center; "><img style="width: 70px; height: 50px" src="' + list[i].Img + '" alt=""><span class="title" style="margin-left:10px;margin-top: 15px">' + list[i].Name + '</span></td><td><span class="count">' + list[i].Count + '</span></td><td><p><span class="prices">' + list[i].Price + '</span><sup>đ</sup></p></td><td style="cursor: pointer; "><span class="delete">Xóa</span></td></tr>'
+            addtr.innerHTML = trcontent;
+            var cartTable = document.querySelector("tbody")
+
+            cartTable.append(addtr)
+            carttotal()
+            deleteCart()
+        }
+        function carttotal() {
+            var cartItem = document.querySelectorAll("tbody tr")
+            var totalC = 0
+            for (var i = 0; i < cartItem.length; i++) {
+                var inputValue = cartItem[i].querySelector(".count").innerHTML
+                
+                var productPrice = cartItem[i].querySelector(".prices").innerHTML
+                
+                totalA = inputValue * productPrice * 1000
+
+                totalC = totalC + totalA
+
+
+            }
+            var cartTotalA = document.querySelector(".price-total span")
+            cartTotalA.innerHTML = totalC
+
+
+
+        }
+        //---------------------Deletet cart----------------------------
+        function deleteCart() {
+            var cartItem = document.querySelectorAll("tbody tr")
+            for (var i = 0; i < cartItem.length; i++) {
+                var productT = document.querySelectorAll(".delete")
+                productT[i].addEventListener("click", function (event) {
+                    var cartDelete = event.target
+                    var cartitemR = cartDelete.parentElement.parentElement
+                    cartitemR.remove()
+                    carttotal()
+                    
+                })
+            }
+        }
+      
     </script>
 
 </body>
