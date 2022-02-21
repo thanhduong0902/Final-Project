@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -117,6 +117,183 @@
     <script>
         function redirect() {
             window.location = "/Final-Project/thanhtoan/thanhtoan.html"
+        }
+    </script>
+
+
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/54f0cb7e4a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="giaohang.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Website - Giao hàng</title>
+</head>
+
+<body>
+    <!-- <secsion class="top">
+        <div class="container">
+
+            <div class="top-menu-icons">
+                <ul>
+                    <li>
+                        <input type="text" placeholder="tìm kiếm">
+                        <i class="fas fa-search"></i>
+                    </li>
+                    <li>
+                        <i class="fas fa-user-secret"></i>
+                    </li>
+                    <li>
+                        <i class="fas fa-shopping-cart"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        </div>
+    </secsion> -->
+    <!-- -------------------------Delivery---------------- -->
+    <section class="delivery">
+        <!-- <div class="container">
+            <div class="delivery-top-wrap">
+                <div class="delivery-top">
+                    <div class="delivery-top-delivery delivery-top-item">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="delivery-top-adress delivery-top-item">
+                        <i class="fas fa-map-marker-alt "></i>
+                    </div>
+                    <div class="delivery-top-payment delivery-top-item">
+                        <i class="fas fa-money-check-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <div class="container">
+            <div class="delivery-content row">
+                <div class="delivery-content-left">
+                    <p style="font-weight: bold; line-height: 50px; font-size: 18px">Delivery Address</p>
+                 
+                    <div class="delivery-content-left-input-top row">
+                        <div class="delivery-content-left-input-top-item">
+                            <label for="" style="font-size: 15px; line-height: 30px;">Full Name <span style="color: red;">*</span></label>
+                            <input type="text">
+                        </div>
+                        <div class="delivery-content-left-input-top-item">
+                            <label for="" style="font-size: 15px; line-height: 30px;">Phone Number <span style="color: red;">*</span></label>
+                            <input type="text">
+                        </div>
+                        <div class="delivery-content-left-input-top-item">
+                            <label for="" style="font-size: 15px; line-height: 30px;">Town/City <span style="color: red;">*</span></label>
+                            <input type="text">
+                        </div>
+                        <div class="delivery-content-left-input-top-item">
+                            <label for="" style="font-size: 15px; line-height: 30px;">District <span style="color: red;">*</span></label>
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="delivery-content-left-input-bottom">
+                        <label for="" style="font-size: 15px; line-height: 30px;">Detail Address <span style="color: red;">*</span></label>
+                        <input type="text">
+                    </div>
+                    <div class="delivery-content-left-button row">
+                        <a href="http://127.0.0.1:5500/thanhtoan/giohang.html"><span>«</span>
+                            <p>Back to Cart</p>
+                        </a>
+                        <button onclick="redirect()">
+                            <p style="font-weight: bold;">PLACE ORDER</p>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="delivery-content-right">
+                    <!-- <div class="payment-content-left-method-delivery">
+                        <p style="font-weight: bold;">Delivery Methods</p>
+                        <div class="payment-content-left-method-delivery-item">
+                            <input checked type="radio">
+                            <label for="">Giao hàng chuyển phát nhanh</label>
+                        </div>
+                    </div> -->
+                    <div class="payment-content-left-method-payment">
+                        <p style="font-weight: bold; line-height: 60px; font-size: 20px">Payment Options</p>
+                        <p style="color: red; font-size: 17px; margin-bottom: 20px;">Note: All transactions are secure and encrypted.</p>
+                        <div class="payment-content-left-method-payment-item">
+                            <input name="method-payment" type="radio">
+                            <label for="">Cash on Delivery</label>
+                        </div>
+                        <div class="payment-content-left-method-payment-item-img">
+                            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/250903352_561688394917111_7988906008716373052_n.png?_nc_cat=101&ccb=1-5&_nc_sid=aee45a&_nc_ohc=ANVTDpS8tNwAX-dRgPw&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVLQZ-FVD43GgzWDaItQbAtcDxcgWkwz58oGLsCyWCs-BA&oe=62101251"
+                                alt="">
+                        </div>
+                        <div class="payment-content-left-method-payment-item">
+                            <input checked name="method-payment" type="radio">
+                            <label for="">Domestic ATM Card</label>
+                        </div>
+                        <div class="payment-content-left-method-payment-item-img">
+                            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/250999800_3078627479083283_5417128007279855871_n.png?_nc_cat=106&ccb=1-5&_nc_sid=aee45a&_nc_ohc=7prehx0zgaAAX9PY717&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVJRe3_b5MXcRmGVjH44dffyUl3YS-S7eD67Ra4vhvoe2w&oe=620ECE2F"
+                                alt="">
+                        </div>
+                        <div class="payment-content-left-method-payment-item">
+                            <input name="method-payment" type="radio">
+                            <label for="">Momo</label>
+                        </div>
+                        <div class="payment-content-left-method-payment-item-img">
+                            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/cp0/250690735_311632810431250_2394232079684654082_n.png?_nc_cat=104&ccb=1-5&_nc_sid=aee45a&_nc_ohc=EZtKZ-7c-zcAX9kvPRo&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVJ8S85vNWlGA8HzujI2jGd-nrHnbVpIufARDud04iI-NQ&oe=620EB6EF"
+                                alt="">
+                        </div>
+                        <div class="payment-content-left-method-payment-item">
+                            <input name="method-payment" type="radio">
+                            <label for="">Credit Card/Debit Card</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- -------------------------Footer -->
+    <!-- <section class="footer">
+        <div class="footer-container">
+
+            <div class="input-email">
+                <input type="text" placeholder="Nhập email của bạn">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+            <div class="footer-items">
+                <li><a href=""><img src="image/dathongbao.png" alt=""></a></li>
+                <li><a href="">Liên hệ</a></li>
+                <li><a href="">Tuyển dụng</a></li>
+                <li><a href="">Giới thiệu</a></li>
+                <li><a href=""><i class="fab fa-facebook-f"></i></a><a href=""><i class="fab fa-youtube"></i></a></li>
+            </div>
+
+
+            Địa chỉ kinh doanh: Q.Bắc Từ Liêm, TP.Hà Nội, Việt Nam - 0000000000 <br>
+            Đặt hàng online : 1111111111 .
+        </div>
+
+        </div>
+    </section> -->
+    <script>
+        function redirect() {
+            Swal.fire({
+                title: 'Thank you for your order!',
+                icon: "success",
+                padding: '1.5em',
+                color: '#eaa023',
+                iconColor: 'green',
+                confirmButtonColor: '#eaa023',
+            })
+            localStorage.removeItem("listSP");
+            window.location = "https://thanhduong0902.github.io/Final-Project/";
         }
     </script>
 
