@@ -268,16 +268,11 @@ function isEmail(email) {
 
 function setError(input, message) {
     input.setCustomValidity(message);
-}
-
-function setBlur(input) {
     input.nextElementSibling.style.color = "rgb(247, 75, 75)"
 }
 
 function removeErrorMess(input) {
     input.setCustomValidity("");
-    // input.style.border = "none";
-    // input.style.borderLeft = "5px solid rgb(147, 165,171)";
     input.nextElementSibling.style.color = "rgb(200, 200, 200)";
 }
 
@@ -318,7 +313,6 @@ const userAction = async () => {
 yourName.onblur = (e) => {
     if (yourName.value.trim() === "") {
         setError(yourName, "Please enter your Name!")
-        setBlur(yourName)
     }
 }
 
@@ -330,13 +324,10 @@ yourName.oninput = (e) => {
 emailRgt.onblur = (e) => {
     if (emailRgt.value.trim() === "") {
         setError(emailRgt, "Please enter your Email!")
-        setBlur(emailRgt)
     } else if (emailRgt.value.trim() !== "") {
         checkRgtEmail()
-        setBlur(emailRgt)
     } else if (!isEmail(emailRgt.value.trim())) {
         setError(emailRgt, "Email is not valid")
-        setBlur(emailRgt)
     }
 }
 
@@ -348,10 +339,8 @@ emailRgt.oninput = (e) => {
 passRgt.onblur = (e) => {
     if (passRgt.value.trim() === "") {
         setError(passRgt, "Please enter your Password!")
-        setBlur(passRgt)
     } else if (passRgt.value.trim().length <= 7) {
         setError(passRgt, "At least 7 characters!")
-        setBlur(passRgt)
     }
 }
 
@@ -363,10 +352,8 @@ passRgt.oninput = (e) => {
 passRgtConfirm.onblur = (e) => {
     if (passRgtConfirm.value.trim() === "") {
         setError(passRgtConfirm, "Please enter your Password Confirm!")
-        setBlur(passRgtConfirm)
     } else if (passRgtConfirm.value.trim() !== passRgt.value.trim()) {
         setError(passRgtConfirm, "Passwords do not match!")
-        setBlur(passRgtConfirm)
     }
 }
 
@@ -376,60 +363,62 @@ passRgtConfirm.oninput = (e) => {
 
 //Check Register submit
 function checkRgtInputs() {
+    if(yourName.value.trim() === "" && 
+    emailRgt.value.trim() === "" &&
+    passRgt.value.trim() === "" &&  
+    passRgtConfirm.value.trim() === "") {
+        yourName.nextElementSibling.style.color = "rgb(247, 75, 75)";
+        emailRgt.nextElementSibling.style.color = "rgb(247, 75, 75)";
+        passRgt.nextElementSibling.style.color = "rgb(247, 75, 75)";
+        passRgtConfirm.nextElementSibling.style.color = "rgb(247, 75, 75)";
+    }
+    
     if (yourName.value.trim() === "") {
         setError(yourName, "Please enter your Name!")
-        setBlur(yourName)
     } else removeErrorMess(yourName)
 
     if (emailRgt.value.trim() === "") {
         setError(emailRgt, "Please enter your Email!")
-        setBlur(emailRgt)
     } else if (!isEmail(emailRgt.value.trim())) {
         setError(emailRgt, "Email is not valid")
-        setBlur(emailRgt)
     } else if (emailRgt.value.trim() !== "") {
         checkRgtEmail()
-        setBlur(emailRgt)
     } else removeErrorMess(emailRgt)
 
     if (passRgt.value.trim() === "") {
         setError(passRgt, "Please enter your Password!")
-        setBlur(passRgt)
     } else if (passRgt.value.trim().length <= 7) {
         setError(passRgt, "At least 7 characters!")
-        setBlur(passRgt)
     } else removeErrorMess(passRgt)
 
     if (passRgtConfirm.value.trim() === "") {
         setError(passRgtConfirm, "Please enter Password Confirm!")
-        setBlur(passRgtConfirm)
     } else if (passRgtConfirm.value.trim() !== passRgt.value.trim()) {
         setError(passRgtConfirm, "Passwords do not match!")
-        setBlur(passRgtConfirm)
     } else removeErrorMess(passRgtConfirm)
 
 
     if (yourName.value.trim() !== "" &&
         emailRgt.value.trim() !== "" && isEmail(emailRgt.value.trim()) &&
-        passRgt.value.trim() !== "" && passRgt.value.trim().length > 7 ||
+        passRgt.value.trim() !== "" && passRgt.value.trim().length > 7 &&
         passRgtConfirm.value.trim() !== "" &&
         passRgtConfirm.value.trim() === passRgt.value.trim()) {
 
         userAction()
-        if (mainFormRgt.onsubmit) {
-            mainFormRgt.style.display = "none"
-            mainFormLogin.style.display = "inline-block"
+        if(mainFormRgt.onsubmit) {
+                Swal.fire({
+                    title: 'Successfully register!',
+                    icon: "success",
+                    padding: '1.5em',
+                    color: '#eaa023',
+                    iconColor: 'green',
+                    confirmButtonColor:  '#eaa023',
+                })
 
-            Swal.fire({
-                title: 'Successfully register!',
-                icon: "success",
-                padding: '1.5em',
-                color: '#eaa023',
-                iconColor: 'green',
-                confirmButtonColor: '#eaa023',
-            })
+           RgtForm.style.display = "none"
+           LoginForm.style.display = "inline-block"
 
-            clear()
+           clear()
         }
     }
 
@@ -446,26 +435,18 @@ emailLogin.oninput = (e) => {
 emailLogin.onblur = (e) => {
     if (emailLogin.value.trim() === "") {
         setError(emailLogin, "Please enter your Email!")
-        setBlur(emailLogin)
 
     } else if (!isEmail(emailLogin.value.trim())) {
         setError(emailLogin, "Email is not valid")
-        setBlur(emailLogin)
     }
 }
-
-// emailLogin.oninput = (e) => {
-//     removeErrorMess(emailLogin)
-// }
 
 //Check Password Login
 passLogin.onblur = (e) => {
     if (passLogin.value.trim() === "") {
         setError(passLogin, "Please enter your Password!")
-        setBlur(passLogin)
     } else if (passLogin.value.trim().length <= 7) {
         setError(passLogin, "Password must be longer than 7 characters")
-        setBlur(passLogin)
     }
 }
 
@@ -477,19 +458,15 @@ passLogin.oninput = (e) => {
 function checkLoginInputs() {
     if (emailLogin.value.trim() === "") {
         setError(emailLogin, "Please enter your Email!")
-        setBlur(emailLogin)
     } else if (!isEmail(emailLogin.value.trim())) {
         setError(emailLogin, "Email is not valid")
-        setBlur(emailLogin)
     } else removeErrorMess(emailLogin)
 
 
     if (passLogin.value.trim() === "") {
         setError(passLogin, "Please enter your Password!")
-        setBlur(passLogin)
     } else if (passLogin.value.trim().length <= 7) {
         setError(passLogin, "Password must be longer than 7 characters")
-        setBlur(passLogin)
     } else removeErrorMess(passLogin)
 
     userActionLogin()
@@ -506,13 +483,14 @@ const userActionLogin = async () => {
             if (emailLogin.value.trim() !== myJson[i].email
                 || passLogin.value.trim() !== myJson[i].password) {
                 setError(passLogin, "Wrong email or password")
-                setBlur(emailLogin)
-                setBlur(passLogin)
+                emailLogin.nextElementSibling.style.color = "rgb(247, 75, 75)"
                 emailLogin.oninput = (e) => {
-                    removeErrorMess(emailLogin)
+                    removeErrorMess(emailLogin);
+                    removeErrorMess(passLogin);
                 }
                 passLogin.oninput = (e) => {
                     removeErrorMess(passLogin);
+                    removeErrorMess(emailLogin);
                 }
             } else {
                 removeErrorMess(passLogin)
@@ -525,11 +503,7 @@ const userActionLogin = async () => {
                     sessionStorage.setItem('user', JSON.stringify(emailLogin.value.trim()))
                 }
 
-                bgLogin.style.display = "none";
-
-                document.getElementById("Login").innerHTML = "";
-                document.getElementById("Logout").style.display = "inline-block";
-                if (emailLogin.value.trim() === myJson[i].email) {
+                if(emailLogin.value.trim() === myJson[i].email) {
                     const userName = myJson[i].yourName
                     console.log(userName)
                     Swal.fire({
@@ -538,10 +512,15 @@ const userActionLogin = async () => {
                         padding: '1.5em',
                         color: '#eaa023',
                         iconColor: 'green',
-                        confirmButtonColor: '#eaa023',
+                        confirmButtonColor:  '#eaa023',
                     })
                 }
-
+                
+                bgLogin.style.display = "none";
+                
+                document.getElementById("Login").innerHTML = "";
+                document.getElementById("Logout").style.display = "inline-block";
+                
                 clear()
             }
         }
