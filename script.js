@@ -63,9 +63,8 @@ if (listSP == null) {
 }
 
 let count = 0;
-btn.forEach(function (button, index) {
+bbtn.forEach(function (button, index) {
     button.addEventListener("click", function (event) {
-        if(user || user2) {
             var btnItem = event.target
             var product = btnItem.parentElement.parentElement
             var productImg = product.querySelector("img").src
@@ -76,15 +75,9 @@ btn.forEach(function (button, index) {
                 title: 'The dish was added to the cart!', 
             })
             addCart(productPrice, productImg, productName)
-        } else {
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Login to continue',
-            })
-        }
     })
 })
+
 function addCart(productPrice, productImg, productName) {
     var addtr = document.createElement("tr");
     var cartItem = document.querySelectorAll("tbody tr");
