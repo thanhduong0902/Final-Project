@@ -76,7 +76,7 @@ btn.forEach(function (button, index) {
             })
             addCart(productPrice, productImg, productName)
     })
-})
+});
 
 function addCart(productPrice, productImg, productName) {
     var addtr = document.createElement("tr");
