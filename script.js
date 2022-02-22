@@ -35,7 +35,8 @@ menuTabs.addEventListener("click", function (e) {
 })
 
 function Redirect() {
-    bgLogin.style.display = "block";
+     let bgLoginz = document.querySelector("#bg-login");
+    bgLoginz.style.display = "block";
     LoginForm.style.display = "block";
     RgtForm.style.display = "none"
 }
