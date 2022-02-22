@@ -63,7 +63,7 @@ if (listSP == null) {
 }
 
 let count = 0;
-bbtn.forEach(function (button, index) {
+btn.forEach(function (button, index) {
     button.addEventListener("click", function (event) {
             var btnItem = event.target
             var product = btnItem.parentElement.parentElement
