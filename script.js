@@ -273,7 +273,7 @@ function setError(input, message) {
 
 function removeErrorMess(input) {
     input.setCustomValidity("");
-    input.nextElementSibling.style.color = "rgb(200, 200, 200)";
+    input.nextElementSibling.style.color = "var(--main-color)";
 }
 
 const checkRgtEmail = async () => {
