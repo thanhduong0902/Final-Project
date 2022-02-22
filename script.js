@@ -36,7 +36,8 @@ menuTabs.addEventListener("click", function (e) {
 
 function Redirect() {
     bgLogin.style.display = "block";
-
+    LoginForm.style.display = "block";
+    RgtForm.style.display = "none"
 }
 
 
