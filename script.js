@@ -532,6 +532,7 @@ const userActionLogin = async () => {
     }
 }
 
+const user2 = JSON.parse(sessionStorage.getItem("user"))
 const user = JSON.parse(localStorage.getItem("user"))
 const checkLogin = async () => {
     const response = await fetch('https://61ec15037ec58900177cde6c.mockapi.io/api/login/users');
