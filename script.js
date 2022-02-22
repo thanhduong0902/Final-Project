@@ -65,19 +65,24 @@ if (listSP == null) {
 let count = 0;
 btn.forEach(function (button, index) {
     button.addEventListener("click", function (event) {
-        var btnItem = event.target
-        var product = btnItem.parentElement.parentElement
-        var productImg = product.querySelector("img").src
-        var productName = product.querySelector("H3").innerText
-        var productPrice = product.querySelector("p").innerText
-        Swal.fire(
-            'Đặt món thành công!',
-            'Mời quý khách!',
-            'success'
-        )
-        addCart(productPrice, productImg, productName)
-
-
+        if(user || user2) {
+            var btnItem = event.target
+            var product = btnItem.parentElement.parentElement
+            var productImg = product.querySelector("img").src
+            var productName = product.querySelector("H3").innerText
+            var productPrice = product.querySelector("p").innerText
+            Swal.fire({
+                icon: 'success',
+                title: 'The dish was added to the cart!', 
+            })
+            addCart(productPrice, productImg, productName)
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Login to continue',
+            })
+        }
     })
 })
 function addCart(productPrice, productImg, productName) {
