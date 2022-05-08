@@ -402,7 +402,6 @@ ul {
     font-size: 16px;
     color: var(--main-color);
     transition: all 0.5s ease;
-    display:
 }
 
 .menu-item .menu-item-title img {
@@ -526,17 +525,13 @@ ul {
 
 /* Login - Logout Form */
 
-#bg-login {
-    display:none
-}
-
 .LoginForm{
     width: 100%;
     height: 100%;
     position: fixed;
     top: 0px;
     z-index: 1000;
-    background-image: url("https://i.imgur.com/pQlOPpW.jpeg"); 
+    background-image: url("./bglogin.jpg"); 
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -551,7 +546,7 @@ ul {
     position: fixed;
     top: 0px;
     z-index: 1000;
-    background-image: url("https://i.imgur.com/yxVPnPK.jpg"); 
+    background-image: url("./bgrgt.jpg"); 
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -563,20 +558,28 @@ ul {
 
 .mainFormLogin { 
     width: 30%;
+    /* max-width: 50%; */
     height: 70%;
     display: inline-block;
     margin-top: 20%;
     margin-left: 15%;
     text-align: center;
+    /* box-shadow: 10px 10px 15px 5px rgb(35,46,57); */
+    /* border-radius: 5px 3px 0px 5px; */
+    /* left: 400px; */
 }
 
 .mainFormRgt { 
+    /* background-color: rgb(90,117,138); */
     width: 30%;
     height: 70%;
     display: inline-block;
     margin-top: 15%;
     margin-left: 20%;
     text-align: center;
+    /* box-shadow: 10px 10px 15px 5px rgb(35,46,57); */
+    /* border-radius: 5px 3px 0px 5px; */
+    /* display: none; */
 }
      
 .close2 {
@@ -612,12 +615,25 @@ ul {
 }
 
 /* ------------------------------  */
+.welcomeLogin {
+    position: static;
+    /* position: relative; */
+    /* top: 14%; */
+    margin-top: 7%;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
 
 .emailLogin_Ctn {
 	width: 100%;
+    /* margin-top: 18%; */
     position: relative;
     display: block;
+    /* display: grid;
+    grid-template-rows: 55% 45%; */
     z-index: 0;
+    /* margin-left: 10%; */
 }
 
 .emailLgLogo {
@@ -632,6 +648,8 @@ ul {
 .emailLogin {
     width: 90%;
     height: 50px;
+    /* border-left: 5px solid rgb(147,165,171); */
+    /* background-color: rgb(51,68,84); */
     background-color: #fff;
     display: block;
     z-index: 0;
@@ -646,7 +664,10 @@ ul {
 	width: 100%;
     margin-top: 15%;
     position: relative;
+    /* margin-left: 13%; */
     display: block;
+    /* display: grid;
+    grid-template-rows: 55% 45%; */
 }
 
 .passLgLogo {
@@ -661,6 +682,10 @@ ul {
 .passLogin {
     width: 90%;
     height: 50px;
+    /* margin-left: 10%; */
+    /* margin-top: 26%; */
+    /* border-left: 5px solid rgb(147,165,171); */
+    /* background-color: rgb(51,68,84); */
     background-color: #fff;
     display: block;
     position: absolute;
@@ -672,6 +697,7 @@ ul {
 
 ::placeholder {
     font-size: 18px;
+    /* padding-left: 5%; */
 }
 
 .submitLogin {
@@ -681,13 +707,23 @@ ul {
 	cursor: pointer;
 	display: block;
 	margin-top: 5%; 
+	/* margin-right: auto;
+    margin-left: auto; */
+	/* margin-left: 19%; */
 	background-color: var(--main-color);
+	/* border: 2.5px solid rgb(147,165,171); */
+    /* box-shadow: 0px 0px 10px rgb(35,46,57); */
 	font-size: 20px;
+	/* color: #fff; */
     color: rgb(222,222,223);
     margin-bottom: 5%;
     position: relative;
     border-radius: 25px;
 }
+/* 
+.submitLogin:hover {
+    background-color: var(--main-color);
+} */
 
 #check-box {
     margin-right: 10px;
@@ -732,6 +768,17 @@ ul {
 
 /* -------------------------------- */
 
+.welcomeRgt {
+    position: static;
+    /* position: relative; */
+    /* top: 14%; */
+    /* margin-top: 5%; */
+    padding-top: 8%;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+} 
+
 .account {
     margin-top: 1%;
     font-size: 18px;
@@ -754,6 +801,9 @@ ul {
     margin-top: 5%;
     position: relative;
     display: block;
+    /* display: grid;
+    grid-template-rows: 55% 45%; */
+    /* z-index: 0; */
 }
 
 .yNameLogo {
@@ -768,12 +818,16 @@ ul {
 .yourName {
     width: 90%;
     height: 50px;
+    /* border-left: 5px solid rgb(147,165,171); */
+    /* background-color: rgb(51,68,84); */
     background-color: #fff;
     display: block;
     z-index: 0;
     position: absolute;
     border: 0.5px solid #fff;
     border-radius: 25px;
+    /* margin-right: auto;
+    margin-left: auto; */
 }
 
 .emailRgt_Ctn {
@@ -781,6 +835,8 @@ ul {
     margin-top: 12%;
     position: relative;
     display: block;
+    /* display: grid;
+    grid-template-rows: 55% 45%; */
     z-index: 0;
 }
 
@@ -796,12 +852,16 @@ ul {
 .emailRgt {
     width: 90%;
     height: 50px;
+    /* border-left: 5px solid rgb(147,165,171); */
+    /* background-color: rgb(51,68,84); */
     background-color: #fff;
     display: block;
     z-index: 0;
     position: absolute;
     border: 0.5px solid #fff;
     border-radius: 25px;
+    /* margin-right: auto;
+    margin-left: auto; */
 }
 
 .passRgt_Ctn {
@@ -809,6 +869,8 @@ ul {
     margin-top: 12%;
     position: relative;
     display: block;
+    /* display: grid;
+    grid-template-rows: 55% 45%; */
     z-index: 0;
 }
 
@@ -824,12 +886,16 @@ ul {
 .passRgt {
     width: 90%;
     height: 50px;
+    /* border-left: 5px solid rgb(147,165,171); */
+    /* background-color: rgb(51,68,84); */
     background-color: #fff;
     display: block;
     z-index: 0;
     position: absolute;
     border: 0.5px solid #fff;
     border-radius: 25px;
+    /* margin-right: auto;
+    margin-left: auto; */
 }
 
 .passRgtConfirm_Ctn {
@@ -837,6 +903,8 @@ ul {
     margin-top: 12%;
     position: relative;
     display: block;
+    /* display: grid;
+    grid-template-rows: 55% 45%; */
     z-index: 0;
 }
 
@@ -852,12 +920,16 @@ ul {
 .passRgtConfirm {
     width: 90%;
     height: 50px;
+    /* border-left: 5px solid rgb(147,165,171); */
+    /* background-color: rgb(51,68,84); */
     background-color: #fff;
     display: block;
     z-index: 0;
     position: absolute;
     border: 0.5px solid #fff;
     border-radius: 25px;
+    /* margin-right: auto;
+    margin-left: auto; */
 }
 
 .submitRgt {
@@ -867,8 +939,14 @@ ul {
 	cursor: pointer;
 	display: block;
 	margin-top: 12%; 
+	/* margin-right: auto;
+    margin-left: auto; */
+	/* margin-left: 19%; */
 	background-color: var(--main-color);
+	/* border: 2.5px solid rgb(147,165,171); */
+    /* box-shadow: 0px 0px 10px rgb(35,46,57); */
 	font-size: 20px;
+	/* color: #fff; */
     color: rgb(222,222,223);
     margin-bottom: 5%;
     position: relative;
@@ -881,6 +959,7 @@ ul {
 
 .mainFormLogin input {
     font-size: 19px;
+    /* color: #fff; */
     color: black;
     padding-left: 60px;
     padding-right: 50px;
@@ -889,11 +968,35 @@ ul {
 .mainFormRgt input {
     font-size: 19px;
     text-decoration-line: none;
+    /* color:#fff; */
     color: black;
     padding-left: 60px;
     padding-right: 50px;
 }
 
+@keyframes wrongInput {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    /* 10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); } */
+    /* 30% { transform: translate(3px, 2px) rotate(0deg); } */
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    /* 50% { transform: translate(-1px, 2px) rotate(-1deg); } */
+    /* 60% { transform: translate(-3px, 1px) rotate(0deg); } */
+    /* 70% { transform: translate(3px, 1px) rotate(-1deg); } */
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    /* 90% { transform: translate(1px, 2px) rotate(0deg); } */
+    /* 100% { transform: translate(1px, -2px) rotate(-1deg); } */
+}
+
+/* .wrongInput {
+    animation: wrongInput 0.06s;
+    border: 1px solid rgb(247, 75, 75);
+    border-left: 5px solid rgb(247, 75, 75);
+} */
+
+/* .rightInput {
+    border: 1px solid rgb(100, 235, 100);
+} */
 
 /* Responsive */
 
@@ -952,6 +1055,8 @@ ul {
     .mainFormRgt { 
         width: 65%;
         margin-top: 40%;
+        /* margin-left: auto;
+        margin-right: auto; */
         overflow: auto;
     }
 
@@ -1037,12 +1142,34 @@ ul {
         overflow: auto;
     }
 
+    /* .welcomeRgt {
+        padding-top: 15%;
+    } */
+
+    /* .yourName_Ctn {
+        margin-top: 3%;
+    } */
+
     .emailRgt_Ctn, 
     .passRgt_Ctn,
     .passRgtConfirm_Ctn,
     .submitRgt {
         margin-top: 13%;
     }
+    
+
+/* 
+    .mainFormLogin input {
+        font-size: 18px;
+    }
+    
+    .mainFormRgt input {
+        font-size: 18px;
+    }
+
+    ::placeholder {
+        font-size: 17px;
+    } */
 }
 
 @media(max-width: 480px) {
@@ -1081,7 +1208,6 @@ ul {
         margin-top: 13%;
     }
 }
-
 /* ---------------Cart-------------- */
 
 .cart {

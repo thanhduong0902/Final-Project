@@ -250,7 +250,7 @@ function removeInputValue(input) {
     }
 }
 
-mainFormLogin.onsubmit = function (e) {
+mainFormLogin.onsubmit = function(e) {
     e.preventDefault();
     checkLoginInputs();
     userActionLogin();
@@ -268,7 +268,13 @@ function isEmail(email) {
 function setError(input, message) {
     input.setCustomValidity(message);
     input.nextElementSibling.style.color = "rgb(247, 75, 75)"
+    // input.classList.add("wrongInput");
 }
+
+// function setBlur(input) {
+//     // input.classList.add("wrongInput");
+//     input.nextElementSibling.style.color = "rgb(247, 75, 75)"
+// }
 
 function removeErrorMess(input) {
     input.setCustomValidity("");
@@ -276,10 +282,10 @@ function removeErrorMess(input) {
 }
 
 const checkRgtEmail = async () => {
-    const response = await fetch('https://61ec15037ec58900177cde6c.mockapi.io/api/login/users');
+    const response = await fetch('https://6277293e08221c9684618066.mockapi.io/users');
     const myJson = await response.json();
     for (let i = 0; i < myJson.length; i++) {
-        if (emailRgt.value.trim() == myJson[i].email) {
+        if(emailRgt.value.trim() == myJson[i].email) {
             setError(emailRgt, "Email is already registered!")
         }
     }
@@ -288,12 +294,12 @@ const checkRgtEmail = async () => {
 /*---------------------------API---------------------------*/
 const userAction = async () => {
     const currentUser = {
-        yourName: yourName.value.trim(),
-        password: passRgt.value.trim(),
-        email: emailRgt.value.trim(),
+        yourName : yourName.value.trim(),
+        password : passRgt.value.trim(),
+        email : emailRgt.value.trim(),
     }
-
-    const response = await fetch('https://61ec15037ec58900177cde6c.mockapi.io/api/login/users', {
+    
+    const response = await fetch('https://6277293e08221c9684618066.mockapi.io/users', {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -310,9 +316,10 @@ const userAction = async () => {
 
 //Check Name Register
 yourName.onblur = (e) => {
-    if (yourName.value.trim() === "") {
-        setError(yourName, "Please enter your Name!")
-    }
+    if(yourName.value.trim() === "") {
+        setError(yourName, "Please enter your Name!");
+        // setBlur(yourName)
+    } 
 }
 
 yourName.oninput = (e) => {
@@ -321,13 +328,17 @@ yourName.oninput = (e) => {
 
 // Check Email Register
 emailRgt.onblur = (e) => {
-    if (emailRgt.value.trim() === "") {
+    if(emailRgt.value.trim() === "") {
         setError(emailRgt, "Please enter your Email!")
-    } else if (emailRgt.value.trim() !== "") {
+        // setBlur(emailRgt)
+    } else if(emailRgt.value.trim() !== "") {
+
         checkRgtEmail()
-    } else if (!isEmail(emailRgt.value.trim())) {
+        // setBlur(emailRgt)
+    } else if(!isEmail(emailRgt.value.trim())) {
         setError(emailRgt, "Email is not valid")
-    }
+        // setBlur(emailRgt)
+    } 
 }
 
 emailRgt.oninput = (e) => {
@@ -336,11 +347,13 @@ emailRgt.oninput = (e) => {
 
 // Check Password Register
 passRgt.onblur = (e) => {
-    if (passRgt.value.trim() === "") {
+    if(passRgt.value.trim() === "") {
         setError(passRgt, "Please enter your Password!")
-    } else if (passRgt.value.trim().length <= 7) {
+        // setBlur(passRgt)
+    } else if(passRgt.value.trim().length <= 7) {
         setError(passRgt, "At least 7 characters!")
-    }
+        // setBlur(passRgt)
+    } 
 }
 
 passRgt.oninput = (e) => {
@@ -349,11 +362,13 @@ passRgt.oninput = (e) => {
 
 // Check Password Register Confirm
 passRgtConfirm.onblur = (e) => {
-    if (passRgtConfirm.value.trim() === "") {
+    if(passRgtConfirm.value.trim() === "") {
         setError(passRgtConfirm, "Please enter your Password Confirm!")
-    } else if (passRgtConfirm.value.trim() !== passRgt.value.trim()) {
+        // setBlur(passRgtConfirm)
+    } else if(passRgtConfirm.value.trim() !== passRgt.value.trim()) {
         setError(passRgtConfirm, "Passwords do not match!")
-    }
+        // setBlur(passRgtConfirm)
+    } 
 }
 
 passRgtConfirm.oninput = (e) => {
@@ -371,40 +386,48 @@ function checkRgtInputs() {
         passRgt.nextElementSibling.style.color = "rgb(247, 75, 75)";
         passRgtConfirm.nextElementSibling.style.color = "rgb(247, 75, 75)";
     }
-    
-    if (yourName.value.trim() === "") {
+
+    if(yourName.value.trim() === "") {
         setError(yourName, "Please enter your Name!")
+        // setBlur(yourName)
     } else removeErrorMess(yourName)
 
-    if (emailRgt.value.trim() === "") {
+    if(emailRgt.value.trim() === "") {
         setError(emailRgt, "Please enter your Email!")
-    } else if (!isEmail(emailRgt.value.trim())) {
+        // setBlur(emailRgt)
+    } else if(!isEmail(emailRgt.value.trim())) {
         setError(emailRgt, "Email is not valid")
-    } else if (emailRgt.value.trim() !== "") {
+        // setBlur(emailRgt)
+    } else if(emailRgt.value.trim() !== "") {
         checkRgtEmail()
+        // setBlur(emailRgt)
     } else removeErrorMess(emailRgt)
 
-    if (passRgt.value.trim() === "") {
+    if(passRgt.value.trim() === "") {
         setError(passRgt, "Please enter your Password!")
-    } else if (passRgt.value.trim().length <= 7) {
+        // setBlur(passRgt)
+    } else if(passRgt.value.trim().length <= 7) {
         setError(passRgt, "At least 7 characters!")
+        // setBlur(passRgt)
     } else removeErrorMess(passRgt)
 
-    if (passRgtConfirm.value.trim() === "") {
+    if(passRgtConfirm.value.trim() === "") {
         setError(passRgtConfirm, "Please enter Password Confirm!")
-    } else if (passRgtConfirm.value.trim() !== passRgt.value.trim()) {
+        // setBlur(passRgtConfirm)
+    } else if(passRgtConfirm.value.trim() !== passRgt.value.trim()) {
         setError(passRgtConfirm, "Passwords do not match!")
+        // setBlur(passRgtConfirm)
     } else removeErrorMess(passRgtConfirm)
 
 
-    if (yourName.value.trim() !== "" &&
+    if (yourName.value.trim() !== "" && 
         emailRgt.value.trim() !== "" && isEmail(emailRgt.value.trim()) &&
-        passRgt.value.trim() !== "" && passRgt.value.trim().length > 7 &&
-        passRgtConfirm.value.trim() !== "" &&
+        passRgt.value.trim() !== "" && passRgt.value.trim().length > 7 && 
+        passRgtConfirm.value.trim() !== "" && 
         passRgtConfirm.value.trim() === passRgt.value.trim()) {
-
-        userAction()
-        if(mainFormRgt.onsubmit) {
+            
+            userAction()
+            if(mainFormRgt.onsubmit) {
                 Swal.fire({
                     title: 'Successfully register!',
                     icon: "success",
@@ -414,11 +437,11 @@ function checkRgtInputs() {
                     confirmButtonColor:  '#eaa023',
                 })
 
-           RgtForm.style.display = "none"
-           LoginForm.style.display = "inline-block"
+                RgtForm.style.display = "none"
+                LoginForm.style.display = "inline-block"
 
-           clear()
-        }
+                clear()
+            }
     }
 
 }
@@ -432,21 +455,29 @@ emailLogin.oninput = (e) => {
 }
 
 emailLogin.onblur = (e) => {
-    if (emailLogin.value.trim() === "") {
+    if(emailLogin.value.trim() === "") {
         setError(emailLogin, "Please enter your Email!")
+        // setBlur(emailLogin)
 
-    } else if (!isEmail(emailLogin.value.trim())) {
+    } else if(!isEmail(emailLogin.value.trim())) {
         setError(emailLogin, "Email is not valid")
-    }
+        // setBlur(emailLogin)
+    } 
 }
+
+// emailLogin.oninput = (e) => {
+//     removeErrorMess(emailLogin)
+// }
 
 //Check Password Login
 passLogin.onblur = (e) => {
-    if (passLogin.value.trim() === "") {
+    if(passLogin.value.trim() === "") {
         setError(passLogin, "Please enter your Password!")
-    } else if (passLogin.value.trim().length <= 7) {
+        // setBlur(passLogin)
+    } else if(passLogin.value.trim().length <= 7) {
         setError(passLogin, "Password must be longer than 7 characters")
-    }
+        // setBlur(passLogin)
+    } 
 }
 
 passLogin.oninput = (e) => {
@@ -455,34 +486,60 @@ passLogin.oninput = (e) => {
 
 //Check Login submit
 function checkLoginInputs() {
-    if (emailLogin.value.trim() === "") {
+    if(emailLogin.value.trim() === "" && passLogin.value.trim() === "") {
         setError(emailLogin, "Please enter your Email!")
-    } else if (!isEmail(emailLogin.value.trim())) {
-        setError(emailLogin, "Email is not valid")
-    } else removeErrorMess(emailLogin)
-
-
-    if (passLogin.value.trim() === "") {
         setError(passLogin, "Please enter your Password!")
-    } else if (passLogin.value.trim().length <= 7) {
+    } else {
+        removeErrorMess(emailLogin)
+        removeErrorMess(passLogin)
+    }
+
+    if(emailLogin.value.trim() === "") {
+        setError(emailLogin, "Please enter your Email!")
+        // submitLogin.click();
+        // setBlur(emailLogin)
+    } else if(!isEmail(emailLogin.value.trim())) {
+        setError(emailLogin, "Email is not valid")
+        // submitLogin.click();
+        // setBlur(emailLogin)
+    } else removeErrorMess(emailLogin)
+    
+
+    if(passLogin.value.trim() === "") {
+        setError(passLogin, "Please enter your Password!")
+        // submitLogin.click();
+        // setBlur(passLogin)
+    } else if(passLogin.value.trim().length <= 7) {
         setError(passLogin, "Password must be longer than 7 characters")
+        // submitLogin.click();
+        // setBlur(passLogin)
     } else removeErrorMess(passLogin)
+
+    // if(emailLogin.value.trim() === "" && passLogin.value.trim() === "") {
+    //     setError(emailLogin, "Please enter your Email!")
+    //     setError(passLogin, "Please enter your Password!")
+    // } else {
+    //     removeErrorMess(emailLogin)
+    //     removeErrorMess(passLogin)
+    // }
 
     userActionLogin()
 }
 
 
 const userActionLogin = async () => {
-    const response = await fetch('https://61ec15037ec58900177cde6c.mockapi.io/api/login/users');
+    const response = await fetch('https://6277293e08221c9684618066.mockapi.io/users');
     const myJson = await response.json();
 
     if (emailLogin.value.trim() !== "" && isEmail(emailLogin.value.trim())
         && passLogin.value.trim().length > 7) {
         for (let i = 0; i < myJson.length; i++) {
-            if (emailLogin.value.trim() !== myJson[i].email
+            if(emailLogin.value.trim() !== myJson[i].email 
                 || passLogin.value.trim() !== myJson[i].password) {
                 setError(passLogin, "Wrong email or password")
                 emailLogin.nextElementSibling.style.color = "rgb(247, 75, 75)"
+                // setBlur(emailLogin)
+                // setBlur(passLogin)
                 emailLogin.oninput = (e) => {
                     removeErrorMess(emailLogin);
                     removeErrorMess(passLogin);
@@ -495,8 +552,8 @@ const userActionLogin = async () => {
                 removeErrorMess(passLogin)
                 removeErrorMess(emailLogin)
 
-                let checked = document.getElementById('check-box').checked;
-                if (checked) {
+                let checked = document.getElementById('check-box').checked; 
+                if (checked){
                     localStorage.setItem('user', JSON.stringify(emailLogin.value.trim()))
                 } else {
                     sessionStorage.setItem('user', JSON.stringify(emailLogin.value.trim()))
@@ -504,7 +561,6 @@ const userActionLogin = async () => {
 
                 if(emailLogin.value.trim() === myJson[i].email) {
                     const userName = myJson[i].yourName
-                    console.log(userName)
                     Swal.fire({
                         title: `Chào mừng ${userName} đến với Hugo's Restaurant!`,
                         icon: "success",
@@ -514,7 +570,7 @@ const userActionLogin = async () => {
                         confirmButtonColor:  '#eaa023',
                     })
                 }
-                
+
                 bgLogin.style.display = "none";
                 
                 document.getElementById("Login").innerHTML = "";
@@ -526,14 +582,15 @@ const userActionLogin = async () => {
     }
 }
 
+const user2 = JSON.parse(sessionStorage.getItem("user"))
 const user = JSON.parse(localStorage.getItem("user"))
 const checkLogin = async () => {
-    const response = await fetch('https://61ec15037ec58900177cde6c.mockapi.io/api/login/users');
+    const response = await fetch('https://6277293e08221c9684618066.mockapi.io/users');
     const myJson = await response.json();
     for (let i = 0; i < myJson.length; i++) {
         const userName = myJson[i].yourName
         if (user) {
-            if (user == myJson[i].email) {
+            if(user == myJson[i].email) {
                 const userName = myJson[i].yourName
                 Swal.fire({
                     title: `Chào mừng ${userName} đến với Hugo's Restaurant!`,
@@ -541,13 +598,13 @@ const checkLogin = async () => {
                     padding: '1.5em',
                     color: '#eaa023',
                     iconColor: 'green',
-                    confirmButtonColor: '#eaa023',
+                    confirmButtonColor:  '#eaa023',
                 })
             }
             document.getElementById("Login").innerHTML = "";
             document.getElementById("Logout").style.display = "inline-block";
-        }
     }
+}
 }
 
 checkLogin()
